@@ -3,14 +3,13 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { Introduccion } from './componentes/Introduccion'
-import fondointro from './assets/fondointro.mp4'
 import { Opciones } from './componentes/Opciones'
 
 function App() {
   // const [count, setCount] = useState(0)
   return (
     <div>
-      <Introduccion />
+      <Introduccion />  
       <Opciones />
     </div>
   )

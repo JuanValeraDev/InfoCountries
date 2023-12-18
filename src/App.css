@@ -43,14 +43,105 @@
     color: #888;
 }
 
-.buscador {
-    border: thick solid black;
+
+.rectangulo {
+    display: flex;
+    flex-direction: column;
+    border-radius: 50px;
+    border: thick solid;
+    text-align: start;
+    align-items: center;
+    padding: 15px;
 }
 
-.imagen_fondo {
-    width: 100vw;
-    height: 120vh;
-    object-fit: none;
-    object-position: center 45%;
+
+.fondo_solido_variacion {
+    background-color: #FFF2D8;
+}
+
+.fondo_color_liso {
+    position: relative;
+
+}
+
+/*AQUÍ LOS CAMBIOS PARA PANTALLAS PEQUEÑAS */
+@media only screen and (max-width: 767px) {
+    .imagen_fondo {
+        width: 100vw;
+        height: 110vh;
+        background-size: cover;
+        background-position: center;
+        object-fit: none;
+        object-position: center 45%;
+        opacity: 19%;
+    }
+
+    .rectangulo_buscador_1 {
+        width: 100vw !important;
+        top: 10%;
+        left: 0%;
+        margin-bottom: 50px;
+        flex-wrap: nowrap;
+    }
+
+    .rectangulo_buscador_2 {
+        width: 100vw !important;
+        top: 40%;
+        left: 0%;
+        margin: 50px;
+        flex-wrap: nowrap;
+    }
+}
+
+/*AQUÍ LOS CAMBIOS PARA PANTALLAS MEDIANAS */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .imagen_fondo {
+        width: 100vw;
+        height: 110vh;
+        background-size: cover;
+        background-position: center;
+        object-fit: none;
+        object-position: center 45%;
+        opacity: 19%;
+    }
+
+    .rectangulo_buscador_1 {
+        top: 10%;
+        left: 0%;
+        margin-bottom: 50px;
+    }
+
+    .rectangulo_buscador_2 {
+
+        top: 40%;
+        left: 10%;
+        margin-top: 50px;
+    }
+}
+
+/*AQUÍ LOS CAMBIOS PARA PANTALLAS GRANDES */
+@media only screen and (min-width: 1024px) {
+
+    .imagen_fondo {
+        width: 100vw;
+        height: 110vh;
+        background-size: cover;
+        background-position: center;
+        object-fit: none;
+        object-position: center 45%;
+        opacity: 19%;
+    }
+
+    .rectangulo_buscador_1 {
+        top: 10%;
+        left: 10%;
+        margin-bottom: 50px;
+    }
+
+    .rectangulo_buscador_2 {
+        top: 40%;
+        left: 20%;
+        margin: 50px;
+    }
 }
 

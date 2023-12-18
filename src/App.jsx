@@ -9,6 +9,7 @@ function App() {
     return (
         <>
             <Col>
+
                 <Introduccion/>
                 <Opciones/>
                 <Buscador/>

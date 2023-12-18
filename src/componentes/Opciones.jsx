@@ -8,7 +8,7 @@ import imagenmapamundi from '../assets/mapamundi.jpg'
 
 export const Opciones = () => {
   return (
-    <div>
+    <div className={"fondo_solido_variacion"}>
       <p id='opcionesTitulo'>¿Cómo encontrar tu país ideal?</p>
       <div className='conjuntoOpciones'>
         <article className='opcion'>

@@ -8,7 +8,7 @@ export const Introduccion = () => {
         <video src={videointro} autoPlay loop muted />
         <div id='titulointrodiv'>
           <p id='titulointro'>Descubre tu próximo
-            <text id='titulodestino'> destino</text>
+            <span id='titulodestino'> destino</span>
           </p>
           <p id='tituloextra'>Toda la información sobre paises en un mismo lugar.</p>
           <button id='buttonIntro'>EMPEZAR AHORA</button>

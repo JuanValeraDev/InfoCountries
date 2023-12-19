@@ -2,12 +2,14 @@ import React from "react"
 import {Rectangulo} from "./Rectangulo.jsx";
 import {Fondo} from "./Fondo.jsx";
 import fondo_buscador from "../assets/fondo_buscador 16.32.40.jpeg"
+import shape_1 from "../assets/shapes/shape_1.png"
+import shape_2 from "../assets/shapes/shape_2.png"
 
 export const Buscador = () => {
     return (<div className={"buscador"}>
 
 
-        <Fondo imagen={fondo_buscador}>
+        <Fondo imagen={fondo_buscador} shapes={{shape_1: shape_1, shape_2: shape_2}}>
             <Rectangulo classNames={"rectangulo_buscador_1 container"} backgroundColor={"#113946"}
                         borderColor={"#FDF6EA"}
                         textColor={"#FDF6EA"}
@@ -19,7 +21,8 @@ export const Buscador = () => {
                 ultrices. Ut nec tincidunt justo. Curabitur condimentum interdum elit, in sagittis purus tempus at. Sed
                 egestas venenatis blandit. Vestibulum ornare in erat vel consequat.
             </Rectangulo>
-            <Rectangulo classNames={"rectangulo_buscador_2 container"} backgroundColor={"#FFF2D8"} borderColor={"#113946"}
+            <Rectangulo classNames={"rectangulo_buscador_2 container"} backgroundColor={"#FFF2D8"}
+                        borderColor={"#113946"}
                         textColor={"#113946"}
                         size={{width: "850px", height: "370px"}}
                         position={{position: "absolute", top: "45%", left: "25%"}}>

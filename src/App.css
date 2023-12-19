@@ -12,6 +12,7 @@
     border: thick solid;
     text-align: start;
     align-items: center;
+    justify-content: center;
     padding: 15px;
 }
 
@@ -27,15 +28,15 @@
 }
 
 .fondo_shape_1 {
-    width: 60%;
+    width: 70%;
     height: auto;
     background-size: cover;
     background-position: center;
     position: absolute;
-    top: -20%;
+    top: -30%;
     left: 50%;
     flex-wrap: nowrap;
-    fill: #BCA37F;
+    transform: rotate(20deg);
 }
 
 .fondo_shape_2 {
@@ -44,49 +45,133 @@
     background-size: cover;
     background-position: center;
     position: absolute;
-    top: 60%;
+    top: 75%;
     left: -10%;
     flex-wrap: nowrap;
+    z-index: 2;
+    transform: rotate(10deg);
 
 }
 
-/*AQUÍ LOS CAMBIOS PARA PANTALLAS PEQUEÑAS */
-@media only screen and (max-width: 767px) {
-    .imagen_fondo {
+.fondo_shape_3 {
+    width: auto;
+    height: 150%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: -20%;
+    left: 65%;
+    flex-wrap: nowrap;
+    transform: rotate(10deg);
+}
+
+
+.titulo {
+    color: #113946;
+    font-family: 'Patua One', serif;
+    position: absolute;
+}
+.imagen_fondo_buscador, .imagen_fondo_galeria{
+    object-fit: cover;
+}
+
+
+/*AQUÍ LOS CAMBIOS PARA PANTALLAS GRANDES */
+@media only screen and (min-width: 1024px) {
+
+    .imagen_fondo_buscador {
         width: 100vw;
         height: 110vh;
-        background-size: cover;
         background-position: center;
-        object-fit: none;
+        object-position: center 45%;
+        opacity: 19%;
+    }
+    .imagen_fondo_galeria {
+        width: 100vw;
+        height: 110vh;
+        background-position: center;
         object-position: center 45%;
         opacity: 19%;
     }
 
     .rectangulo_buscador_1 {
-        width: 100vw !important;
         top: 10%;
-        left: 0%;
+        left: 10%;
         margin-bottom: 50px;
-        flex-wrap: nowrap;
     }
 
     .rectangulo_buscador_2 {
-        width: 100vw !important;
         top: 40%;
-        left: 0%;
+        left: 20%;
         margin: 50px;
-        flex-wrap: nowrap;
     }
+
+    .rectangulo_galeria_1{
+        top: 15%;
+        left: 10%;
+        margin: 50px;
+    }
+    .rectangulo_galeria_2{
+        top: 50%;
+        left: 10%;
+        margin: 50px;
+    }
+    .rectangulo_galeria_3{
+        top: 15%;
+        left: 35%;
+        margin: 50px;
+    }
+
+    .rectangulo_galeria_4{
+        top: 50%;
+        left: 35%;
+        margin: 50px;
+    }
+    .rectangulo_galeria_5{
+        top: 15%;
+        left: 60%;
+        margin: 50px;
+    }
+    .rectangulo_galeria_6{
+        top: 50%;
+        left: 60%;
+        margin: 50px;
+    }
+
+
+    .titulo {
+        font-size: 55px;
+        top: 10%;
+        left: 70%;
+    }
+
+    .row_buscador {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        width: 390px;
+
+    }
+
+    .buscador_input {
+        width: 150px;
+    }
+
 }
 
 /*AQUÍ LOS CAMBIOS PARA PANTALLAS MEDIANAS */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-    .imagen_fondo {
+    .imagen_fondo_buscador {
         width: 100vw;
         height: 110vh;
-        background-size: cover;
         background-position: center;
-        object-fit: none;
+        object-position: center 45%;
+        opacity: 19%;
+    }
+
+    .imagen_fondo_galeria {
+        width: 100vw;
+        height: 110vh;
+        background-position: center;
         object-position: center 45%;
         opacity: 19%;
     }
@@ -103,31 +188,73 @@
         left: 10%;
         margin-top: 50px;
     }
+
+    .titulo {
+        top: 4%;
+        left: 5%;
+        font-size: 40px;
+    }
+
+    .row_buscador {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        width: 300px;
+    }
+
+    .buscador_input {
+        width: 120px;
+    }
+
 }
 
-/*AQUÍ LOS CAMBIOS PARA PANTALLAS GRANDES */
-@media only screen and (min-width: 1024px) {
 
-    .imagen_fondo {
+/*AQUÍ LOS CAMBIOS PARA PANTALLAS PEQUEÑAS */
+@media only screen and (max-width: 767px) {
+    .imagen_fondo_buscador {
         width: 100vw;
         height: 110vh;
         background-size: cover;
         background-position: center;
-        object-fit: none;
+        object-position: center 45%;
+        opacity: 19%;
+    }
+
+    .imagen_fondo_galeria {
+        width: 100vw;
+        height: 110vh;
+        background-size: cover;
+        background-position: center;
         object-position: center 45%;
         opacity: 19%;
     }
 
     .rectangulo_buscador_1 {
+        width: 100vw !important;
         top: 10%;
-        left: 10%;
+        left: 0%;
         margin-bottom: 50px;
     }
 
     .rectangulo_buscador_2 {
+        width: 100vw !important;
         top: 40%;
-        left: 20%;
+        left: 0%;
         margin: 50px;
+        z-index: 3;
+    }
+
+    .fondo_shape_1 {
+        top: -20%;
+    }
+
+    .fondo_shape_2 {
+        top: 85%;
+    }
+
+    .titulo {
+        top: 4%;
+        left: 5%;
+        font-size: 40px;
     }
 }
 

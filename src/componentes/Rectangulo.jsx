@@ -9,6 +9,9 @@ export const Rectangulo = ({children, classNames, size, backgroundColor, borderC
         borderColor: borderColor,
         color: textColor,
         position:"absolute",
+        boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.6)",
+
+
     }
     return <div style={divStyle} className={`rectangulo ${classNames}`}>{children}</div>
 }

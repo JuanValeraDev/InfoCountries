@@ -5,6 +5,7 @@ import shape_4 from "../assets/shapes/shape_4.png"
 import {Fondo} from "./Fondo.jsx";
 import {Col, Row} from "react-bootstrap";
 import {Rectangulo} from "./Rectangulo.jsx";
+import {Titulo} from "./Titulo.jsx";
 
 export const Galeria = () => {
     return <>
@@ -12,8 +13,8 @@ export const Galeria = () => {
                class_imagen_fondo={"imagen_fondo_galeria"}
                class_shape_1={"fondo_shape_3"}
         >
-            <Row>
-                <Col>
+
+                <Titulo texto={"Observa con detalle"} clase={"titulo_galeria"} />
                     <Rectangulo classNames={"rectangulo_galeria_1 container"} backgroundColor={"#FFF2D8"}
                                 borderColor={"#113946"}
                                 textColor={"#113946"}
@@ -26,11 +27,6 @@ export const Galeria = () => {
                                 size={{width: "350px", height: "250px"}}
                     ></Rectangulo>
 
-                </Col>
-            </Row>
-
-            <Row>
-                <Col>
                     <Rectangulo classNames={"rectangulo_galeria_3 container"} backgroundColor={"#FFF2D8"}
                                 borderColor={"#113946"}
                                 textColor={"#113946"}
@@ -43,11 +39,6 @@ export const Galeria = () => {
                                 size={{width: "350px", height: "250px"}}
                     ></Rectangulo>
 
-                </Col>
-            </Row>
-
-            <Row>
-                <Col>
                     <Rectangulo classNames={"rectangulo_galeria_5 container"} backgroundColor={"#FFF2D8"}
                                 borderColor={"#113946"}
                                 textColor={"#113946"}
@@ -59,9 +50,6 @@ export const Galeria = () => {
                                 textColor={"#113946"}
                                 size={{width: "350px", height: "250px"}}
                     ></Rectangulo>
-
-                </Col>
-            </Row>
 
 
         </Fondo>

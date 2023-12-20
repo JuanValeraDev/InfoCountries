@@ -11,13 +11,10 @@ function App() {
         <>
             <Col>
 
-                {/*
+
                 <Introduccion/>
                 <Opciones/>
 
-                */
-
-                }
                 <Buscador/>
                 <Galeria/>
             </Col>

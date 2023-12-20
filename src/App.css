@@ -66,17 +66,24 @@
 }
 
 
-.titulo {
+.titulo_buscador {
     color: #113946;
     font-family: 'Patua One', serif;
     position: absolute;
 }
-.imagen_fondo_buscador, .imagen_fondo_galeria{
+
+.titulo_galeria{
+    color: #113946;
+    font-family: 'Patua One', serif;
+    position: absolute;
+}
+
+.imagen_fondo_buscador, .imagen_fondo_galeria {
     object-fit: cover;
 }
 
 
-/*AQUÍ LOS CAMBIOS PARA PANTALLAS GRANDES */
+/* -----------------AQUÍ LOS CAMBIOS PARA PANTALLAS GRANDES--------------------------- */
 @media only screen and (min-width: 1024px) {
 
     .imagen_fondo_buscador {
@@ -86,6 +93,7 @@
         object-position: center 45%;
         opacity: 19%;
     }
+
     .imagen_fondo_galeria {
         width: 100vw;
         height: 110vh;
@@ -96,7 +104,7 @@
 
     .rectangulo_buscador_1 {
         top: 10%;
-        left: 10%;
+        left: 5%;
         margin-bottom: 50px;
     }
 
@@ -106,43 +114,53 @@
         margin: 50px;
     }
 
-    .rectangulo_galeria_1{
+    .rectangulo_galeria_1 {
         top: 15%;
         left: 10%;
         margin: 50px;
     }
-    .rectangulo_galeria_2{
+
+    .rectangulo_galeria_2 {
         top: 50%;
         left: 10%;
         margin: 50px;
     }
-    .rectangulo_galeria_3{
+
+    .rectangulo_galeria_3 {
         top: 15%;
-        left: 35%;
+        left: 37%;
         margin: 50px;
     }
 
-    .rectangulo_galeria_4{
+    .rectangulo_galeria_4 {
         top: 50%;
-        left: 35%;
+        left: 37%;
         margin: 50px;
     }
-    .rectangulo_galeria_5{
+
+    .rectangulo_galeria_5 {
         top: 15%;
-        left: 60%;
+        left: 64%;
         margin: 50px;
     }
-    .rectangulo_galeria_6{
+
+    .rectangulo_galeria_6 {
         top: 50%;
-        left: 60%;
+        left: 64%;
         margin: 50px;
     }
 
 
-    .titulo {
-        font-size: 55px;
+    .titulo_buscador {
+        font-size: 65px;
         top: 10%;
-        left: 70%;
+        left: 60%;
+        margin-right: 20px;
+    }
+    .titulo_galeria{
+        font-size: 65px;
+        top: 10%;
+        left: 10%;
     }
 
     .row_buscador {
@@ -158,7 +176,7 @@
 
 }
 
-/*AQUÍ LOS CAMBIOS PARA PANTALLAS MEDIANAS */
+/*-----------------------AQUÍ LOS CAMBIOS PARA PANTALLAS MEDIANAS----------------------------*/
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .imagen_fondo_buscador {
         width: 100vw;
@@ -189,10 +207,15 @@
         margin-top: 50px;
     }
 
-    .titulo {
+    .titulo_buscador {
         top: 4%;
         left: 5%;
         font-size: 40px;
+    }
+    .titulo_galeria{
+        font-size: 55px;
+        top: 10%;
+        left: 10%;
     }
 
     .row_buscador {
@@ -205,10 +228,52 @@
         width: 120px;
     }
 
+    .rectangulo_galeria_1 {
+        top: 15%;
+        left: 10%;
+        margin: 50px;
+        width: 250px !important;
+    }
+
+    .rectangulo_galeria_2 {
+        top: 50%;
+        left: 10%;
+        margin: 50px;
+        width: 250px !important;
+
+    }
+
+    .rectangulo_galeria_3 {
+        top: 15%;
+        left: 37%;
+        margin: 50px;
+        width: 250px !important;
+    }
+
+    .rectangulo_galeria_4 {
+        top: 50%;
+        left: 37%;
+        margin: 50px;
+        width: 250px !important;
+    }
+
+    .rectangulo_galeria_5 {
+        top: 15%;
+        left: 64%;
+        margin: 50px;
+        width: 250px !important;
+    }
+
+    .rectangulo_galeria_6 {
+        top: 50%;
+        left: 64%;
+        margin: 50px;
+        width: 250px !important;
+    }
 }
 
 
-/*AQUÍ LOS CAMBIOS PARA PANTALLAS PEQUEÑAS */
+/*-------------------------AQUÍ LOS CAMBIOS PARA PANTALLAS PEQUEÑAS------------------------------*/
 @media only screen and (max-width: 767px) {
     .imagen_fondo_buscador {
         width: 100vw;
@@ -251,10 +316,45 @@
         top: 85%;
     }
 
-    .titulo {
+    .titulo_buscador {
         top: 4%;
         left: 5%;
         font-size: 40px;
     }
+    .titulo_galeria{
+        font-size: 40px;
+        top: 3%;
+        left: 15%;
+    }
+
+    .rectangulo_galeria_1 {
+        top: 15%;
+        left: 7%;
+        margin: 50px;
+        width: 230px !important;
+    }
+
+    .rectangulo_galeria_2 {
+        top: 50%;
+        left: 7%;
+        margin: 50px;
+        width: 230px !important;
+
+    }
+
+    .rectangulo_galeria_3 {
+        top: 15%;
+        left: 50%;
+        margin: 50px;
+        width: 230px !important;
+    }
+
+    .rectangulo_galeria_4 {
+        top: 50%;
+        left: 50%;
+        margin: 50px;
+        width: 230px !important;
+    }
+
 }
 

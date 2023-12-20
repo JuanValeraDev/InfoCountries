@@ -33,7 +33,7 @@ export const Buscador = () => {
                     </Col>
                 </Row>
             </Rectangulo>
-            <Titulo texto={"Busca como un profesional"}/>
+            <Titulo texto={"Busca como un profesional"} clase={"titulo_buscador"}/>
             <Rectangulo classNames={"rectangulo_buscador_2 container"} backgroundColor={"#FFF2D8"}
                         borderColor={"#113946"}
                         textColor={"#113946"}

@@ -8,8 +8,8 @@ export const Rectangulo = ({children, classNames, size, backgroundColor, borderC
         backgroundColor: backgroundColor,
         borderColor: borderColor,
         color: textColor,
-        position:"absolute",
         boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.6)",
+
 
 
     }

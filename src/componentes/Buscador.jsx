@@ -1,6 +1,6 @@
 import React from "react"
 import {Rectangulo} from "./Rectangulo.jsx";
-import shape_1 from "../assets/shapes/shape_1.png"
+import shape_1 from "../assets/shapes/shape_1_modified.png"
 import shape_2 from "../assets/shapes/shape_2.png"
 import {Titulo} from "./Titulo.jsx";
 import {RowBuscador} from "./RowBuscador.jsx";
@@ -10,26 +10,33 @@ export const Buscador = () => {
 
     return (
         <div className={"fondo fondo_buscador"}>
-                <Rectangulo classNames={"rectangulo_buscador_1 container"} backgroundColor={"#113946"}
-                            borderColor={"#FDF6EA"}
-                            textColor={"#FDF6EA"}
-                            size={{width: "800px", height: "200px"}
-                            }>
-                    <Row>
-                        <Col className={"col_row_buscador"}>
-                            <RowBuscador texto={"Nombre:"}/>
-                            <RowBuscador texto={"Moneda:"}/>
-                            <RowBuscador texto={"Idioma:"}/>
-                        </Col>
-                        <Col className={"col_row_buscador"}>
-                            <RowBuscador texto={"Región:"}/>
-                            <RowBuscador texto={"Subregión:"}/>
-                            <RowBuscador texto={"Código:"}/>
-                        </Col>
-                    </Row>
-                </Rectangulo>
+            <Row className={"mb-lg-5"}>
+                <Col className={"z-2"}>
+                    <Rectangulo classNames={"rectangulo_buscador_1 container"} backgroundColor={"#113946"}
+                                borderColor={"#FDF6EA"}
+                                textColor={"#FDF6EA"}
+                                size={{width: "800px", height: "200px"}
+                                }>
+                        <Row>
+                            <Col className={"col_row_buscador"}>
+                                <RowBuscador texto={"Nombre:"}/>
+                                <RowBuscador texto={"Moneda:"}/>
+                                <RowBuscador texto={"Idioma:"}/>
+                            </Col>
+                            <Col className={"col_row_buscador"}>
+                                <RowBuscador texto={"Región:"}/>
+                                <RowBuscador texto={"Subregión:"}/>
+                                <RowBuscador texto={"Código:"}/>
+                            </Col>
+                        </Row>
+                    </Rectangulo>
 
-                <Titulo texto={"Busca como un profesional"} clase={"titulo_buscador"}/>
+                </Col>
+                <Col className={"z-2"}>
+                    <Titulo texto={"Busca como un profesional"} clase={"titulo_buscador"}/>
+                    <img src={shape_1} alt={""} className={"fondo_shape_1"}/>
+                </Col>
+            </Row>
             <Rectangulo classNames={"rectangulo_buscador_2 container"} backgroundColor={"#FFF2D8"}
                         borderColor={"#113946"}
                         textColor={"#113946"}

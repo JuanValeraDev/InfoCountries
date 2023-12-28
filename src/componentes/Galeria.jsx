@@ -2,7 +2,6 @@ import React from "react";
 import shape_3 from "../assets/shapes/shape_3_modified.png"
 import {Col, Row} from "react-bootstrap";
 import {Rectangulo} from "./Rectangulo.jsx";
-import {Titulo} from "./Titulo.jsx";
 import {TextField} from "@mui/material";
 import galeria_1 from "../assets/galeria/galeria_1.jpeg"
 import galeria_2 from "../assets/galeria/galeria_2.jpeg"
@@ -15,12 +14,12 @@ export const Galeria = () => {
     return <div className={"fondo fondo_galeria"}>
 
         <Row>
-            <Col lg={6} className={"z-2 align-items-center me-3"}>
-                <Titulo texto={"Observa con detalle"} clase={"titulo_galeria mt-lg-5 mt-md-4 ms-5 ps-md-5"}/>
+            <Col lg={6} className={"z-2 align-items-center me-3 mb-4 mb-md-0"}>
+            <h1 className={"titulo_galeria mt-lg-5 mt-md-4"}>Observa con detalle</h1>
             </Col>
-            <Col className={"z-2 align-items-end pt-lg-0 pt-5"}>
+            <Col className={"z-2 align-items-end"}>
                 <TextField id="outlined-basic" label="País a buscar" variant="outlined"
-                           className={"bg-warning-subtle w-75 mt-5"}/>
+                           className={"bg-warning-subtle w-75 mt-3 mt-md-5"}/>
             </Col>
         </Row>
         <img src={shape_3} alt={""} className={"fondo_shape_3"}/>

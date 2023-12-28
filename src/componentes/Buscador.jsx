@@ -2,7 +2,6 @@ import React from "react"
 import {Rectangulo} from "./Rectangulo.jsx";
 import shape_1 from "../assets/shapes/shape_1_modified.png"
 import shape_2 from "../assets/shapes/shape_2_modified.png"
-import {Titulo} from "./Titulo.jsx";
 import {RowBuscador} from "./RowBuscador.jsx";
 import {Col, Row} from "react-bootstrap";
 
@@ -33,7 +32,7 @@ export const Buscador = () => {
 
                 </Col>
                 <Col className={"z-1"}>
-                    <Titulo texto={"Busca como un profesional"} clase={"titulo_buscador z-2 ms-md-4 mt-sm-3 mb-sm-3"}/>
+                    <h1 className={"titulo_buscador z-2 ms-md-4 mt-sm-3 mb-sm-3"}>Busca como un profesional</h1>
                     <img src={shape_1} alt={""} className={"fondo_shape_1"}/>
                 </Col>
             </Row>

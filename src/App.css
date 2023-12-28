@@ -36,6 +36,11 @@
     position: relative;
 }
 
+.fondo_juego {
+    background-image: url("./assets/fondo_juego.jpeg");
+    position: relative;
+}
+
 .rectangulo {
     display: flex;
     flex-direction: column;
@@ -76,7 +81,17 @@
     background-position: center;
     position: absolute;
     bottom: 0;
-   right: 0;
+    right: 0;
+}
+
+.fondo_shape_4 {
+    width: auto;
+    height: 60%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 
@@ -89,8 +104,12 @@
 .titulo_galeria {
     color: #113946;
     font-family: 'Patua One', serif;
-    position: absolute;
-
+    position: relative;
+}
+.titulo_juego {
+    color: #113946;
+    font-family: 'Patua One', serif;
+    position: relative;
 }
 
 .rectangulo_buscador_1 {
@@ -160,7 +179,10 @@
     }
 
     .titulo_galeria {
-
+        font-size: 65px;
+    }
+    .titulo_juego {
+        font-size: 65px;
     }
 
     .row_buscador {

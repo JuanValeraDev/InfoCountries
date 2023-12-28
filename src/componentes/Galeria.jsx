@@ -1,6 +1,5 @@
 import React from "react";
-import shape_3 from "../assets/shapes/shape_3.png"
-import shape_4 from "../assets/shapes/shape_4.png"
+import shape_3 from "../assets/shapes/shape_3_modified.png"
 import {Col, Row} from "react-bootstrap";
 import {Rectangulo} from "./Rectangulo.jsx";
 import {Titulo} from "./Titulo.jsx";
@@ -14,41 +13,50 @@ export const Galeria = () => {
             <Titulo texto={"Observa con detalle"} clase={"titulo_galeria"}/>
             <TextField id="outlined-basic" label="Outlined" variant="outlined"/>
         </Row>
-        <Rectangulo classNames={"rectangulo_galeria_1 container"} backgroundColor={"#FFF2D8"}
-                    borderColor={"#113946"}
-                    textColor={"#113946"}
-                    size={{width: "350px", height: "250px"}}
-        ></Rectangulo>
+        <img src={shape_3} alt={""} className={"fondo_shape_3"}/>
 
-        <Rectangulo classNames={"rectangulo_galeria_2 container"} backgroundColor={"#FFF2D8"}
-                    borderColor={"#113946"}
-                    textColor={"#113946"}
-                    size={{width: "350px", height: "250px"}}
-        ></Rectangulo>
+        <Row className={"mt-5 align-content-center row ms-lg-5 me-lg-5 ps-lg-5 pe-lg-5 flex-md-nowrap grid"}>
+            <Col className={"z-2"}>
+                <Rectangulo classNames={"rectangulo_galeria_1 container mb-3"} backgroundColor={"#FFF2D8"}
+                            borderColor={"#113946"}
+                            textColor={"#113946"}
+                            size={{width: "300px", height: "230px"}}
+                ></Rectangulo>
 
-        <Rectangulo classNames={"rectangulo_galeria_3 container"} backgroundColor={"#FFF2D8"}
-                    borderColor={"#113946"}
-                    textColor={"#113946"}
-                    size={{width: "350px", height: "250px"}}
-        ></Rectangulo>
+                <Rectangulo classNames={"rectangulo_galeria_2 container mb-3"} backgroundColor={"#FFF2D8"}
+                            borderColor={"#113946"}
+                            textColor={"#113946"}
+                            size={{width: "300px", height: "230px"}}
+                ></Rectangulo>
+            </Col>
+            <Col className={"z-2 d-none d-md-block"}>
+                <Rectangulo classNames={"rectangulo_galeria_3 container mb-3"} backgroundColor={"#FFF2D8"}
+                            borderColor={"#113946"}
+                            textColor={"#113946"}
+                            size={{width: "300px", height: "230px"}}
+                ></Rectangulo>
 
-        <Rectangulo classNames={"rectangulo_galeria_4 container"} backgroundColor={"#FFF2D8"}
-                    borderColor={"#113946"}
-                    textColor={"#113946"}
-                    size={{width: "350px", height: "250px"}}
-        ></Rectangulo>
+                <Rectangulo classNames={"rectangulo_galeria_4 container mb-3"} backgroundColor={"#FFF2D8"}
+                            borderColor={"#113946"}
+                            textColor={"#113946"}
+                            size={{width: "300px", height: "230px"}}
+                ></Rectangulo>
 
-        <Rectangulo classNames={"rectangulo_galeria_5 container"} backgroundColor={"#FFF2D8"}
-                    borderColor={"#113946"}
-                    textColor={"#113946"}
-                    size={{width: "350px", height: "250px"}}
-        ></Rectangulo>
+            </Col>
+            <Col className={"z-2 d-none d-xl-block"}>
+                <Rectangulo classNames={"rectangulo_galeria_5 container mb-3"} backgroundColor={"#FFF2D8"}
+                            borderColor={"#113946"}
+                            textColor={"#113946"}
+                            size={{width: "300px", height: "230px"}}
+                ></Rectangulo>
 
-        <Rectangulo classNames={"rectangulo_galeria_6 container"} backgroundColor={"#FFF2D8"}
-                    borderColor={"#113946"}
-                    textColor={"#113946"}
-                    size={{width: "350px", height: "250px"}}
-        ></Rectangulo>
+                <Rectangulo classNames={"rectangulo_galeria_6 container mb-3"} backgroundColor={"#FFF2D8"}
+                            borderColor={"#113946"}
+                            textColor={"#113946"}
+                            size={{width: "300px", height: "230px"}}
+                ></Rectangulo>
+            </Col>
+        </Row>
 
 
     </div>

@@ -160,7 +160,6 @@
     }
 
     .titulo_galeria {
-        font-size: 65px;
 
     }
 
@@ -210,9 +209,6 @@
     }
 
     .titulo_galeria {
-        font-size: 55px;
-        top: 10%;
-        left: 10%;
     }
 
     .row_buscador {
@@ -270,9 +266,7 @@
     }
 
     .titulo_galeria {
-        font-size: 40px;
-        top: 3%;
-        left: 15%;
+
     }
 
 

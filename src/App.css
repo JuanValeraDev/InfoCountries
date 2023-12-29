@@ -106,6 +106,7 @@
     font-family: 'Patua One', serif;
     position: relative;
 }
+
 .titulo_juego {
     color: #113946;
     font-family: 'Patua One', serif;
@@ -120,6 +121,56 @@
 .rectangulo_buscador_2 {
     position: relative;
 }
+
+
+
+
+
+
+
+
+
+
+.texto_opciones {
+    padding-top: 80px;
+    padding-bottom: 30px;
+}
+
+.imagenOpcion {
+    width: 200px;
+    height: 200px;
+    clip: rect(0px, 60px, 200px, 0px);
+    border-radius: 20%;
+    border-style: solid;
+    border-width: 5px;
+    margin: 10px;
+}
+
+.tarjetaOpcion {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    padding: 30px;
+}
+
+.tarjetaTexto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 350px;
+    height: 100%;
+}
+
+.div_estructura_opcion {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
 
 
 /* -----------------AQUÍ LOS CAMBIOS PARA PANTALLAS GRANDES--------------------------- */
@@ -145,32 +196,19 @@
         position: relative;
     }
 
-    .rectangulo_buscador_2 {
+    .rectangulo_buscador_2 {}
 
-    }
+    .rectangulo_galeria_1 {}
 
-    .rectangulo_galeria_1 {
+    .rectangulo_galeria_2 {}
 
-    }
+    .rectangulo_galeria_3 {}
 
-    .rectangulo_galeria_2 {
-    }
+    .rectangulo_galeria_4 {}
 
-    .rectangulo_galeria_3 {
+    .rectangulo_galeria_5 {}
 
-    }
-
-    .rectangulo_galeria_4 {
-
-    }
-
-    .rectangulo_galeria_5 {
-
-    }
-
-    .rectangulo_galeria_6 {
-
-    }
+    .rectangulo_galeria_6 {}
 
 
     .titulo_buscador {
@@ -181,6 +219,7 @@
     .titulo_galeria {
         font-size: 65px;
     }
+
     .titulo_juego {
         font-size: 65px;
     }
@@ -216,22 +255,16 @@
         opacity: 19%;
     }
 
-    .rectangulo_buscador_1 {
+    .rectangulo_buscador_1 {}
 
-    }
-
-    .rectangulo_buscador_2 {
-
-
-    }
+    .rectangulo_buscador_2 {}
 
     .titulo_buscador {
 
         font-size: 4em;
     }
 
-    .titulo_galeria {
-    }
+    .titulo_galeria {}
 
     .row_buscador {
         margin-top: 12px;
@@ -267,30 +300,22 @@
         opacity: 19%;
     }
 
-    .rectangulo_buscador_1 {
+    .rectangulo_buscador_1 {}
 
-    }
-
-    .rectangulo_buscador_2 {
-
-    }
+    .rectangulo_buscador_2 {}
 
     .fondo_shape_1 {
         top: -20%;
     }
 
-    .fondo_shape_2 {
-    }
+    .fondo_shape_2 {}
 
     .titulo_buscador {
 
         font-size: 3em;
     }
 
-    .titulo_galeria {
-
-    }
+    .titulo_galeria {}
 
 
 }
-

@@ -1,27 +1,24 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Container, Row, Col} from 'react-bootstrap';
-import {Introduccion} from './componentes/Introduccion'
-import {Opciones} from './componentes/Opciones'
-import {Buscador} from "./componentes/Buscador.jsx";
-import {Galeria} from "./componentes/Galeria.jsx";
-import {Juego} from "./componentes/Juego.jsx";
+import { Container, Row, Col } from 'react-bootstrap';
+import { Introduccion } from './componentes/Introduccion'
+import { Opciones } from './componentes/Opciones'
+import { Buscador } from "./componentes/Buscador.jsx";
+import { Galeria } from "./componentes/Galeria.jsx";
+import { Juego } from "./componentes/Juego.jsx";
 
 function App() {
     return (
         <>
-            <Col>
+            {/* <Introduccion /> */}
+            <Opciones />
+            {/* <Col>
+            
 
-                {/*
-                <Introduccion/>
-                <Opciones/>
-
-                */}
-
-                <Buscador/>
+            <Buscador/>
                 <Galeria/>
                 <Juego/>
-            </Col>
+            </Col> */}
         </>
     )
 }

@@ -108,11 +108,14 @@ a:hover {
 
 body {
   margin: 0;
-  width: fit-content;
-  display: flex;
+  /* width: fit-content; */
+  /* width: 100vh; */
+  height: 100vh;
+  /* display: flex; */
   place-items: center;
   min-width: 320px;
-  background-color: #fdf6ea;
+  background-color: #FFF2D8;
+  
 }
 
 h1 {

@@ -113,6 +113,25 @@
     position: relative;
 }
 
+.subtitulo_juego {
+    color: #FFF2D8;
+    font-family: 'Patua One', serif;
+    position: relative;
+}
+
+.boton_juego {
+    background-color: #DCC295;
+    color: #113946;
+    border: thick solid #FFF2D8;
+    border-radius: 50px;
+
+}
+
+.botonera_juego {
+    flex-wrap: nowrap;
+}
+
+
 .rectangulo_buscador_1 {
     position: relative;
     z-index: 3;
@@ -121,14 +140,6 @@
 .rectangulo_buscador_2 {
     position: relative;
 }
-
-
-
-
-
-
-
-
 
 
 .texto_opciones {
@@ -171,8 +182,6 @@
 }
 
 
-
-
 /* -----------------AQUÍ LOS CAMBIOS PARA PANTALLAS GRANDES--------------------------- */
 @media only screen and (min-width: 1024px) {
 
@@ -196,19 +205,26 @@
         position: relative;
     }
 
-    .rectangulo_buscador_2 {}
+    .rectangulo_buscador_2 {
+    }
 
-    .rectangulo_galeria_1 {}
+    .rectangulo_galeria_1 {
+    }
 
-    .rectangulo_galeria_2 {}
+    .rectangulo_galeria_2 {
+    }
 
-    .rectangulo_galeria_3 {}
+    .rectangulo_galeria_3 {
+    }
 
-    .rectangulo_galeria_4 {}
+    .rectangulo_galeria_4 {
+    }
 
-    .rectangulo_galeria_5 {}
+    .rectangulo_galeria_5 {
+    }
 
-    .rectangulo_galeria_6 {}
+    .rectangulo_galeria_6 {
+    }
 
 
     .titulo_buscador {
@@ -222,6 +238,10 @@
 
     .titulo_juego {
         font-size: 65px;
+    }
+
+    .subtitulo_juego {
+        font-size: 45px;
     }
 
     .row_buscador {
@@ -255,16 +275,19 @@
         opacity: 19%;
     }
 
-    .rectangulo_buscador_1 {}
+    .rectangulo_buscador_1 {
+    }
 
-    .rectangulo_buscador_2 {}
+    .rectangulo_buscador_2 {
+    }
 
     .titulo_buscador {
 
         font-size: 4em;
     }
 
-    .titulo_galeria {}
+    .titulo_galeria {
+    }
 
     .row_buscador {
         margin-top: 12px;
@@ -300,22 +323,37 @@
         opacity: 19%;
     }
 
-    .rectangulo_buscador_1 {}
+    .rectangulo_buscador_1 {
+    }
 
-    .rectangulo_buscador_2 {}
+    .rectangulo_buscador_2 {
+    }
 
     .fondo_shape_1 {
         top: -20%;
     }
 
-    .fondo_shape_2 {}
+    .fondo_shape_2 {
+    }
 
     .titulo_buscador {
 
         font-size: 3em;
     }
 
-    .titulo_galeria {}
+    .titulo_galeria {
+    }
 
+    .rectangulo_juego {
+        max-width: 90vw;
+    }
+
+    .botonera_juego {
+        flex-direction: column;
+    }
+
+    .subtitulo_juego {
+        font-size: 35px;
+    }
 
 }

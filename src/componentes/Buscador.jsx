@@ -11,7 +11,7 @@ export const Buscador = () => {
         <div className={"fondo fondo_buscador"}>
             <Row className={"mb-lg-5"}>
                 <Col className={"z-2 "}>
-                    <Rectangulo classNames={"rectangulo_buscador_1 container"} backgroundColor={"#113946"}
+                    <Rectangulo classNames={"rectangulo_buscador_1_grande container"} backgroundColor={"#113946"}
                                 borderColor={"#FDF6EA"}
                                 textColor={"#FDF6EA"}
                                 size={{width: "800px", height: "200px"}
@@ -29,10 +29,26 @@ export const Buscador = () => {
                             </Col>
                         </Row>
                     </Rectangulo>
+                    <Rectangulo classNames={"rectangulo_buscador_1_pequeño container"} backgroundColor={"#113946"}
+                                borderColor={"#FDF6EA"}
+                                textColor={"#FDF6EA"}
+                                size={{width: "450px", height: "300px"}
+                                }>
+                        <Row >
+                            <Col className={"col_row_buscador"}>
+                                <RowBuscador classNames={"mb-1"} texto={"Nombre:"}/>
+                                <RowBuscador classNames={"mb-1"} texto={"Moneda:"}/>
+                                <RowBuscador classNames={"mb-1"} texto={"Idioma:"}/>
+                                <RowBuscador classNames={"mb-1"} texto={"Región:"}/>
+                                <RowBuscador classNames={"mb-1"} texto={"Subregión:"}/>
+                                <RowBuscador classNames={"mb-1"} texto={"Código:"}/>
+                            </Col>
+                        </Row>
+                    </Rectangulo>
 
                 </Col>
                 <Col className={"z-1"}>
-                    <h1 className={"titulo_buscador z-2 ms-md-4 mt-sm-3 mb-sm-3"}>Busca como un profesional</h1>
+                    <h1 className={"titulo_buscador z-2 ms-md-4 mt-sm-3 mb-md-3"}>Busca como un profesional</h1>
                     <img src={shape_1} alt={""} className={"fondo_shape_1"}/>
                 </Col>
             </Row>

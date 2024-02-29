@@ -16,7 +16,7 @@ export const Juego = () => {
                             borderColor={"#FFF2D8"}
                             textColor={"#113946"}
                             size={{width: "700px", height: "550px"}}>
-                    <h1 className={"subtitulo_juego d-flex"}>Adivina la capital</h1>
+                    <h1 className={"subtitulo_juego"}>Adivina la capital</h1>
                     <TextField
                         id="outlined-basic"
                         variant="outlined"

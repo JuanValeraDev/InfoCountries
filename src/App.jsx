@@ -10,13 +10,15 @@ import {Juego} from "./componentes/Juego.jsx";
 function App() {
     return (
         <>
-            {/*
 
+            {/*
             <Introduccion/>
+
                 <Opciones/>
-                <Buscador/>
-                <Galeria/>
+
             */}
+            <Buscador/>
+            <Galeria/>
             <Juego/>
         </>
     )

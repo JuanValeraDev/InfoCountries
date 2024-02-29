@@ -23,7 +23,7 @@
 
 }
 
-.fondo:not(.rectangulo_buscador_1):not(.titulo_buscador)::before {
+.fondo:not(.rectangulo_buscador_1_grande):not(.titulo_buscador)::before {
     position: absolute;
     content: "";
     inset: 0;
@@ -58,7 +58,7 @@
     width: 50%;
     height: auto;
     position: absolute;
-    top: -10px;
+    top: -1px;
     right: 0;
     z-index: 1;
 }
@@ -117,6 +117,7 @@
     color: #FFF2D8;
     font-family: 'Patua One', serif;
     position: relative;
+    text-align: center;
 }
 
 .boton_juego {
@@ -132,7 +133,7 @@
 }
 
 
-.rectangulo_buscador_1 {
+.rectangulo_buscador_1_grande {
     position: relative;
     z-index: 3;
 }
@@ -201,8 +202,11 @@
         opacity: 19%;
     }
 
-    .rectangulo_buscador_1 {
+    .rectangulo_buscador_1_grande {
         position: relative;
+    }
+    .rectangulo_buscador_1_pequeño{
+        display: none;
     }
 
     .rectangulo_buscador_2 {
@@ -275,7 +279,10 @@
         opacity: 19%;
     }
 
-    .rectangulo_buscador_1 {
+    .rectangulo_buscador_1_grande {
+    }
+    .rectangulo_buscador_1_pequeño{
+        display: none;
     }
 
     .rectangulo_buscador_2 {
@@ -323,14 +330,19 @@
         opacity: 19%;
     }
 
-    .rectangulo_buscador_1 {
+    .rectangulo_buscador_1_grande {
+        display: none;
+    }
+    .rectangulo_buscador_1_pequeño {
+    align-items: center;
+        overflow: hidden;
+
     }
 
     .rectangulo_buscador_2 {
     }
 
     .fondo_shape_1 {
-        top: -20%;
     }
 
     .fondo_shape_2 {
@@ -339,6 +351,14 @@
     .titulo_buscador {
 
         font-size: 3em;
+    }
+    .row_buscador {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        width: 490px;
+        overflow: hidden;
+        padding-left: 10vw !important;
+
     }
 
     .titulo_galeria {
@@ -356,4 +376,28 @@
         font-size: 35px;
     }
 
+}
+
+/*-------------------------AQUÍ LOS CAMBIOS PARA PANTALLAS PEQUEÑAS------------------------------*/
+@media only screen and (max-width: 485px) {
+    .row_buscador {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        width: 60vw !important;
+        height: 40px !important;
+        margin-left: 0 !important;
+        overflow: hidden;
+        flex-wrap: nowrap;
+        padding-left: 10vw !important;
+
+    }
+    .row_buscador_flecha{
+        display: none;
+    }
+    .rectangulo_buscador_1_pequeño {
+        align-items: flex-start;
+        padding-left: 2px !important;
+        overflow: hidden;
+        width: 80vw !important;
+    }
 }

@@ -15,7 +15,7 @@ export const Galeria = () => {
 
         <Row>
             <Col lg={6} className={"z-2 align-items-center me-3 mb-4 mb-md-0"}>
-            <h1 className={"titulo_galeria mt-lg-5 mt-md-4"}>Observa con detalle</h1>
+                <h1 className={"titulo_galeria mt-lg-5 mt-md-4"}>Observa con detalle</h1>
             </Col>
             <Col className={"z-2 align-items-end"}>
                 <TextField id="outlined-basic" label="País a buscar" variant="outlined"
@@ -24,7 +24,7 @@ export const Galeria = () => {
         </Row>
         <img src={shape_3} alt={""} className={"fondo_shape_3"}/>
 
-        <Row className={"mt-5 align-content-center row ms-lg-5 me-lg-5 ps-lg-5 pe-lg-5 flex-md-nowrap grid"}>
+        <Row className={"mt-5 pt-5 align-content-center row ms-lg-5 me-lg-5 ps-lg-5 pe-lg-5 flex-md-nowrap grid"}>
             <Col className={"z-2"}>
                 <Rectangulo classNames={"rectangulo_galeria_1 container mb-3"} backgroundColor={"#FFF2D8"}
                             borderColor={"#113946"}

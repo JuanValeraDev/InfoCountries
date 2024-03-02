@@ -40,6 +40,10 @@
     background-image: url("./assets/fondo_juego.jpeg");
     position: relative;
 }
+.fondo_about{
+    background-color: #FFF2D8;
+    position: relative;
+}
 
 .rectangulo {
     display: flex;
@@ -93,6 +97,15 @@
     bottom: 0;
     right: 0;
 }
+.fondo_shape_7 {
+    width: auto;
+    height: 50%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
 
 
 .titulo_buscador {
@@ -108,6 +121,11 @@
 }
 
 .titulo_juego {
+    color: #113946;
+    font-family: 'Patua One', serif;
+    position: relative;
+}
+.titulo_about{
     color: #113946;
     font-family: 'Patua One', serif;
     position: relative;
@@ -141,6 +159,7 @@
 .rectangulo_buscador_2 {
     position: relative;
 }
+
 
 
 .texto_opciones {
@@ -247,6 +266,9 @@
     .subtitulo_juego {
         font-size: 45px;
     }
+    .titulo_about{
+        font-size: 65px;
+    }
 
     .row_buscador {
         margin-top: 12px;
@@ -341,6 +363,14 @@
 
     .rectangulo_buscador_2 {
     }
+    .rectangulo_about_1{
+        height: 240px !important;
+        font-size: smaller;
+    }
+    .rectangulo_about_2{
+        height: 440px !important;
+        font-size: smaller;
+    }
 
     .fondo_shape_1 {
     }
@@ -363,6 +393,9 @@
 
     .titulo_galeria {
     }
+    .titulo_about{
+        font-size: 3em;
+    }
 
     .rectangulo_juego {
         max-width: 90vw;
@@ -378,7 +411,7 @@
 
 }
 
-/*-------------------------AQUÍ LOS CAMBIOS PARA PANTALLAS PEQUEÑAS------------------------------*/
+/*-------------------------AQUÍ LOS CAMBIOS PARA PANTALLAS MUY PEQUEÑAS------------------------------*/
 @media only screen and (max-width: 485px) {
     .row_buscador {
         margin-top: 12px;
@@ -399,5 +432,13 @@
         padding-left: 2px !important;
         overflow: hidden;
         width: 80vw !important;
+    }
+    .rectangulo_about_1{
+        height: 240px !important;
+        font-size: smaller;
+    }
+    .rectangulo_about_2{
+        height: 440px !important;
+        font-size: smaller;
     }
 }

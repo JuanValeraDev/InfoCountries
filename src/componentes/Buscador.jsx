@@ -54,7 +54,7 @@ export const Buscador = () => {
             </Row>
             <Row>
                 <img src={shape_2} alt={""} className={"fondo_shape_2"}/>
-                <Rectangulo classNames={"rectangulo_buscador_2 container"} backgroundColor={"#FFF2D8"}
+                <Rectangulo classNames={"rectangulo_buscador_2 container mt-5"} backgroundColor={"#FFF2D8"}
                             borderColor={"#113946"}
                             textColor={"#113946"}
                             size={{width: "850px", height: "370px"}}>

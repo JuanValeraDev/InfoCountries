@@ -6,6 +6,7 @@ import {Opciones} from './componentes/Opciones'
 import {Buscador} from "./componentes/Buscador.jsx";
 import {Galeria} from "./componentes/Galeria.jsx";
 import {Juego} from "./componentes/Juego.jsx";
+import {About} from "./componentes/About.jsx";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
             <Buscador/>
             <Galeria/>
             <Juego/>
+            <About/>
         </>
     )
 }

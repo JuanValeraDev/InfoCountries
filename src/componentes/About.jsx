@@ -13,10 +13,10 @@ export const About = () => {
             <Row className={"d-flex "}>
                 <Col className={"z-2"} >
 
-                    <Rectangulo classNames={"rectangulo_about_1 container mt-5"} backgroundColor={"#113946"}
+                    <Rectangulo classNames={"rectangulo_about_1 container mt-md-5"} backgroundColor={"#113946"}
                                 borderColor={"#BCA37F"}
                                 textColor={"#FFF2D8"}
-                                size={{width: "375px", height: "370px"}}>
+                                size={{width: "350px", height: "370px"}}>
                         <h1>Quiénes somos</h1>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In placerat ac ante sed accumsan.
                         Vestibulum
@@ -24,18 +24,24 @@ export const About = () => {
                         tellus,
                         molestie et mauris sit amet, interdum imperdiet arcu. Pellentesque pulvinar nisl at elit sodales
                     </Rectangulo>
-                    <h2>Contacto</h2>
-                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In placerat ac ante sed accumsan.
+                    <h2 className={"subtitulo_about_contacto mt-4"}>Contacto</h2>
+                    <p className={"texto_about_contacto"}> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In placerat ac ante sed accumsan.
+                        VestibulumLorem ipsum dolor sit amet, consectetur adipiscing elit. In placerat ac ante sed accumsan.
                         Vestibulum
                        </p>
                 </Col>
                 <Col className={"z-2"}>
 
-                    <Rectangulo classNames={"rectangulo_about_2 container mt-5"} backgroundColor={"#113946"}
+                    <Rectangulo classNames={"rectangulo_about_2 container mt-md-5"} backgroundColor={"#113946"}
                                 borderColor={"#FFF2D8"}
                                 textColor={"#FFF2D8"}
-                                size={{width: "375px", height: "670px"}}>
+                                size={{width: "350px", height: "670px"}}>
                         <h1>FAQs</h1>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In placerat ac ante sed accumsan.
+                        Vestibulum
+                        venenatis magna orci, eu iaculis leo interdum eget. Aliquam eget nulla neque. Vivamus tellus
+                        tellus,
+                        molestie et mauris sit amet, interdum imperdiet arcu. Pellentesque pulvinar nisl at elit sodales
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In placerat ac ante sed accumsan.
                         Vestibulum
                         venenatis magna orci, eu iaculis leo interdum eget. Aliquam eget nulla neque. Vivamus tellus

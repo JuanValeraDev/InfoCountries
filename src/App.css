@@ -40,7 +40,8 @@
     background-image: url("./assets/fondo_juego.jpeg");
     position: relative;
 }
-.fondo_about{
+
+.fondo_about {
     background-color: #FFF2D8;
     position: relative;
 }
@@ -97,6 +98,7 @@
     bottom: 0;
     right: 0;
 }
+
 .fondo_shape_7 {
     width: auto;
     height: 50%;
@@ -125,7 +127,8 @@
     font-family: 'Patua One', serif;
     position: relative;
 }
-.titulo_about{
+
+.titulo_about {
     color: #113946;
     font-family: 'Patua One', serif;
     position: relative;
@@ -159,7 +162,6 @@
 .rectangulo_buscador_2 {
     position: relative;
 }
-
 
 
 .texto_opciones {
@@ -224,7 +226,8 @@
     .rectangulo_buscador_1_grande {
         position: relative;
     }
-    .rectangulo_buscador_1_pequeño{
+
+    .rectangulo_buscador_1_pequeño {
         display: none;
     }
 
@@ -266,7 +269,8 @@
     .subtitulo_juego {
         font-size: 45px;
     }
-    .titulo_about{
+
+    .titulo_about {
         font-size: 65px;
     }
 
@@ -303,7 +307,8 @@
 
     .rectangulo_buscador_1_grande {
     }
-    .rectangulo_buscador_1_pequeño{
+
+    .rectangulo_buscador_1_pequeño {
         display: none;
     }
 
@@ -355,21 +360,25 @@
     .rectangulo_buscador_1_grande {
         display: none;
     }
+
     .rectangulo_buscador_1_pequeño {
-    align-items: center;
+        align-items: center;
         overflow: hidden;
 
     }
 
     .rectangulo_buscador_2 {
     }
-    .rectangulo_about_1{
+
+    .rectangulo_about_1 {
         height: 240px !important;
         font-size: smaller;
     }
-    .rectangulo_about_2{
+
+    .rectangulo_about_2 {
         height: 440px !important;
         font-size: smaller;
+        margin-top: 8px !important;
     }
 
     .fondo_shape_1 {
@@ -379,9 +388,9 @@
     }
 
     .titulo_buscador {
-
         font-size: 3em;
     }
+
     .row_buscador {
         margin-top: 12px;
         margin-bottom: 12px;
@@ -393,7 +402,8 @@
 
     .titulo_galeria {
     }
-    .titulo_about{
+
+    .titulo_about {
         font-size: 3em;
     }
 
@@ -409,10 +419,22 @@
         font-size: 35px;
     }
 
+    .subtitulo_about_contacto {
+        font-size: smaller;
+    }
+
+    .texto_about_contacto {
+        font-size: small;
+    }
+
 }
 
 /*-------------------------AQUÍ LOS CAMBIOS PARA PANTALLAS MUY PEQUEÑAS------------------------------*/
 @media only screen and (max-width: 485px) {
+    .titulo_buscador {
+        font-size: 2em;
+        margin-top: 1em;
+    }
     .row_buscador {
         margin-top: 12px;
         margin-bottom: 12px;
@@ -424,21 +446,45 @@
         padding-left: 10vw !important;
 
     }
-    .row_buscador_flecha{
+
+    .row_buscador_flecha {
         display: none;
     }
+
     .rectangulo_buscador_1_pequeño {
         align-items: flex-start;
         padding-left: 2px !important;
         overflow: hidden;
         width: 80vw !important;
     }
-    .rectangulo_about_1{
+
+    .rectangulo_galeria_1 {
+        width: 90vw !important;
+    }
+
+    .rectangulo_galeria_2 {
+        width: 90vw !important;
+    }
+
+    .rectangulo_about_1 {
         height: 240px !important;
+        width: 90vw !important;
         font-size: smaller;
     }
-    .rectangulo_about_2{
-        height: 440px !important;
+
+    .rectangulo_about_2 {
+        height: 340px !important;
+        width: 90vw !important;
+
         font-size: smaller;
     }
+
+    .subtitulo_about_contacto {
+        font-size: smaller;
+    }
+
+    .texto_about_contacto {
+        font-size: small;
+    }
+
 }

@@ -4,9 +4,12 @@ import videointro from '../assets/fondointro.mp4'
 export const Introduccion = () => {
   return (
     <>
-      <div className='main'>
-        <video src={videointro} autoPlay loop muted />
-        <div id='titulointrodiv'>
+      <div className='introduccion'>
+        <video className='videoIntro' autoPlay loop muted>
+          < source src={videointro} type='video/mp4' />
+          Tu navegador no soporta el elemento de video.
+        </video>
+        <div className='content'>
           <p id='titulointro'>Descubre tu próximo
             <span id='titulodestino'> destino</span>
           </p>

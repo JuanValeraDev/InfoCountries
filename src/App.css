@@ -163,11 +163,7 @@
     position: relative;
 }
 
-
-.texto_opciones {
-    padding-top: 80px;
-    padding-bottom: 30px;
-}
+/* ------- COMPONENTE ESTRUCTURAOPCIONES ---------*/
 
 .imagenOpcion {
     width: 200px;
@@ -180,28 +176,102 @@
 }
 
 .tarjetaOpcion {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     width: fit-content;
     height: fit-content;
+    align-items: center;
     padding: 30px;
 }
 
 .tarjetaTexto {
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     max-width: 350px;
     height: 100%;
 }
 
-.div_estructura_opcion {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+/* ----------------- */
+
+/* ------- COMPONENTE OPCIONES ---------*/
+
+.texto_opciones {
+    padding-top: 80px;
+    padding-bottom: 30px;
+    align-items: center;
+    width: fit-content;
 }
+
+/* ----------------- */
+
+/* ------- COMPONENTE INTRODUCCION ---------*/
+
+.introduccion {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.videoIntro {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* .opcionTitulo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 1rem;
+}
+
+.opcionTexto {
+    font-size: 0.9rem;
+    margin: 1rem;
+} */
+
+/* a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+}
+
+a:hover {
+    color: #535bf2;
+} */
+
+#titulointro {
+    font-size: clamp(7vh, 3rem, 40%);
+    margin: 0px 30px 0px 30px;
+}
+
+#titulodestino {
+    font-size: inherit;
+    font-weight: bold;
+}
+
+#tituloextra {
+    font-size: clamp(3vh, 3rem, 40%);
+    margin: 50px 30px 0px 30px;
+}
+
+#buttonIntro {
+    color: white;
+    margin-top: 50px;
+    font-size: clamp(3vh, 3rem, 40%);
+    background-color: rgb(12, 12, 119);
+    border-radius: 50px;
+}
+
+/* ----------------- */
 
 
 /* -----------------AQUÍ LOS CAMBIOS PARA PANTALLAS GRANDES--------------------------- */
@@ -231,26 +301,19 @@
         display: none;
     }
 
-    .rectangulo_buscador_2 {
-    }
+    .rectangulo_buscador_2 {}
 
-    .rectangulo_galeria_1 {
-    }
+    .rectangulo_galeria_1 {}
 
-    .rectangulo_galeria_2 {
-    }
+    .rectangulo_galeria_2 {}
 
-    .rectangulo_galeria_3 {
-    }
+    .rectangulo_galeria_3 {}
 
-    .rectangulo_galeria_4 {
-    }
+    .rectangulo_galeria_4 {}
 
-    .rectangulo_galeria_5 {
-    }
+    .rectangulo_galeria_5 {}
 
-    .rectangulo_galeria_6 {
-    }
+    .rectangulo_galeria_6 {}
 
 
     .titulo_buscador {
@@ -305,23 +368,20 @@
         opacity: 19%;
     }
 
-    .rectangulo_buscador_1_grande {
-    }
+    .rectangulo_buscador_1_grande {}
 
     .rectangulo_buscador_1_pequeño {
         display: none;
     }
 
-    .rectangulo_buscador_2 {
-    }
+    .rectangulo_buscador_2 {}
 
     .titulo_buscador {
 
         font-size: 4em;
     }
 
-    .titulo_galeria {
-    }
+    .titulo_galeria {}
 
     .row_buscador {
         margin-top: 12px;
@@ -367,8 +427,7 @@
 
     }
 
-    .rectangulo_buscador_2 {
-    }
+    .rectangulo_buscador_2 {}
 
     .rectangulo_about_1 {
         height: 240px !important;
@@ -381,11 +440,9 @@
         margin-top: 8px !important;
     }
 
-    .fondo_shape_1 {
-    }
+    .fondo_shape_1 {}
 
-    .fondo_shape_2 {
-    }
+    .fondo_shape_2 {}
 
     .titulo_buscador {
         font-size: 3em;
@@ -400,8 +457,7 @@
 
     }
 
-    .titulo_galeria {
-    }
+    .titulo_galeria {}
 
     .titulo_about {
         font-size: 3em;
@@ -435,6 +491,7 @@
         font-size: 2em;
         margin-top: 1em;
     }
+
     .row_buscador {
         margin-top: 12px;
         margin-bottom: 12px;

@@ -31,11 +31,6 @@
 }
 
 
-.fondo_galeria {
-    background-image: url("./assets/fondo_galeria.jpeg");
-    position: relative;
-}
-
 .fondo_juego {
     background-image: url("./assets/fondo_juego.jpeg");
     position: relative;
@@ -116,11 +111,6 @@
     position: relative;
 }
 
-.titulo_galeria {
-    color: #113946;
-    font-family: 'Patua One', serif;
-    position: relative;
-}
 
 .titulo_juego {
     color: #113946;
@@ -162,8 +152,35 @@
 .rectangulo_buscador_2 {
     position: relative;
 }
+/* ------- COMPONENTE GALERIA ---------*/
+
+.titulo_galeria {
+    color: #113946;
+    font-family: 'Patua One', serif;
+    position: relative;
+}
+
+.fondo_galeria {
+    background-image: url("./assets/fondo_galeria.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    height: 100%;
+    background-position: bottom right;
+}
+
+.buscador-galería{
+    background-color: #f5f1e9;
+    height: fit-content;
+    width: 400px;
+}
+
+/* ----------------- */
+
+
 
 /* ------- COMPONENTE ESTRUCTURAOPCIONES ---------*/
+
 
 .imagenOpcion {
     width: 200px;
@@ -226,27 +243,6 @@
     align-items: center;
     color: white;
 }
-
-/* .opcionTitulo {
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin: 1rem;
-}
-
-.opcionTexto {
-    font-size: 0.9rem;
-    margin: 1rem;
-} */
-
-/* a {
-    font-weight: 500;
-    color: #646cff;
-    text-decoration: inherit;
-}
-
-a:hover {
-    color: #535bf2;
-} */
 
 #titulointro {
     font-size: clamp(7vh, 3rem, 40%);

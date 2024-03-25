@@ -11,6 +11,6 @@ export const Rectangulo = ({children, classNames, size, backgroundColor, borderC
         boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.6)",
         overflow: "hidden"
     }
-    return <div style={divStyle} className={`rectangulo ${classNames}`}>{children}</div>
+    return <div style={divStyle} className={`rectangulo ${classNames} d-flex align-items-center justify-content-center`}>{children}</div>
 }
 

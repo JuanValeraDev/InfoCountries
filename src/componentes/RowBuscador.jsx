@@ -3,7 +3,7 @@ import {Button, Col, Row} from "react-bootstrap";
 import {IoIosArrowDown} from "react-icons/io";
 
 export const RowBuscador = ({classNames, texto}) => {
-    return <Row className={`row_buscador ${classNames}`}>
+    return <Row className={`row_buscador ${classNames} d-flex align-items-center`}>
         <Col>
             {texto}
         </Col>

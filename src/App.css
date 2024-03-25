@@ -16,12 +16,12 @@
     background-size: cover;
     padding: 20px;
 }
-
+/*
 .fondo_buscador {
     background-image: url("./assets/fondo_buscador.jpeg");
     position: relative;
 
-}
+}*/
 
 .fondo:not(.rectangulo_buscador_1_grande):not(.titulo_buscador)::before {
     position: absolute;
@@ -152,6 +152,19 @@
 .rectangulo_buscador_2 {
     position: relative;
 }
+
+/* ------- COMPONENTE BUSCADOR ---------*/
+
+.fondo_buscador {
+    background-image: url("./assets/fondo_buscador.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    height: 100%;
+    position:relative;
+    background-position: center;
+    object-position: center 45%;
+}
 /* ------- COMPONENTE GALERIA ---------*/
 
 .titulo_galeria {
@@ -271,7 +284,7 @@
 
 
 /* -----------------AQUÍ LOS CAMBIOS PARA PANTALLAS GRANDES--------------------------- */
-@media only screen and (min-width: 1024px) {
+/*@media only screen and (min-width: 1024px) {
 
     .imagen_fondo_buscador {
         width: 100vw;
@@ -346,7 +359,7 @@
 
 }
 
-/*-----------------------AQUÍ LOS CAMBIOS PARA PANTALLAS MEDIANAS----------------------------*/
+/*-----------------------AQUÍ LOS CAMBIOS PARA PANTALLAS MEDIANAS----------------------------
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .imagen_fondo_buscador {
         width: 100vw;
@@ -393,7 +406,7 @@
 }
 
 
-/*-------------------------AQUÍ LOS CAMBIOS PARA PANTALLAS PEQUEÑAS------------------------------*/
+/*-------------------------AQUÍ LOS CAMBIOS PARA PANTALLAS PEQUEÑAS------------------------------
 @media only screen and (max-width: 767px) {
     .imagen_fondo_buscador {
         width: 100vw;
@@ -481,7 +494,7 @@
 
 }
 
-/*-------------------------AQUÍ LOS CAMBIOS PARA PANTALLAS MUY PEQUEÑAS------------------------------*/
+/*-------------------------AQUÍ LOS CAMBIOS PARA PANTALLAS MUY PEQUEÑAS------------------------------
 @media only screen and (max-width: 485px) {
     .titulo_buscador {
         font-size: 2em;
@@ -541,3 +554,4 @@
     }
 
 }
+*/

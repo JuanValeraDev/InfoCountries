@@ -12,14 +12,34 @@ export const Buscador = () => {
         <div className={"fondo fondo_buscador"}>
 
             <div className={"d-flex flex-column"}>
-                <h1 className={"titulo_buscador pt-5 mt-lg-5"}>Busca como un profesional</h1>
-                <Row className={"mb-lg-5"}>
-                    <Col className={"z-2 "}>
-                     <Col xs={5}>
+                <h1 className={"titulo_buscador pt-5 mt-lg-5 "}>Busca como un profesional</h1>
+                <Row className={"mb-lg-5 justify-content-lg-start justify-content-center "}>
+                    <Col xs={5} className={"z-2 "}>
 
-                            <RectanguloBuscador/>
-                     </Col>
 
+                        <RectanguloBuscador/>
+                        <Rectangulo classNames={"rectangulo_buscador_2 container mt-5"} backgroundColor={"#FFF2D8"}
+                                    borderColor={"#113946"}
+                                    textColor={"#113946"}
+                                    size={{width: "850px", height: "370px"}}>
+                            <h1>Resultados</h1>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In placerat ac ante sed accumsan.
+                            Vestibulum
+                            venenatis magna orci, eu iaculis leo interdum eget. Aliquam eget nulla neque. Vivamus tellus tellus,
+                            molestie et mauris sit amet, interdum imperdiet arcu. Pellentesque pulvinar nisl at elit sodales
+                            ultrices. Ut nec tincidunt justo. Curabitur condimentum interdum elit, in sagittis purus tempus at.
+                            Sed
+                            egestas venenatis blandit. Vestibulum ornare in erat vel consequat.
+                        </Rectangulo>
+
+                    </Col>
+                </Row>
+            </div>
+        </div>
+    )
+
+}
+{/*
                         <Rectangulo classNames={"rectangulo_buscador_1_grande container d-none"}
                                     backgroundColor={"#113946"}
                                     borderColor={"#FDF6EA"}
@@ -58,7 +78,7 @@ export const Buscador = () => {
                         </Rectangulo>
 
 
-                        {/*  <Row className={"mb-lg-5"}>
+                         <Row className={"mb-lg-5"}>
                 <Col className={"z-2 "}>
                     <Rectangulo classNames={"rectangulo_buscador_1_grande container"} backgroundColor={"#113946"}
                                 borderColor={"#FDF6EA"}
@@ -120,11 +140,5 @@ export const Buscador = () => {
             </Row>
 
         </div>)
-    */}
-                    </Col>
-                </Row>
-            </div>
-        </div>
-    )
-
+    */
 }

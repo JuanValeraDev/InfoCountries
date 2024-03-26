@@ -3,8 +3,8 @@ import React from "react"
 export const Rectangulo = ({
                                children,
                                classNames,
-                               width = {width: 'auto'},
-                               height = {height: 'auto'},
+                               width = {width: 'min-content'},
+                               height = {height: 'min-content'},
                                backgroundColor,
                                borderColor,
                                textColor
@@ -20,6 +20,6 @@ export const Rectangulo = ({
         overflow: "hidden"
     }
     return <div style={divStyle}
-                className={`rectangulo ${classNames} d-flex align-items-center justify-content-center`}>{children}</div>
+                className={`rectangulo ${classNames} d-flex align-items-center justify-content-around`}>{children}</div>
 }
 

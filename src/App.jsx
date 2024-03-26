@@ -11,14 +11,14 @@ import {About} from "./componentes/About.jsx";
 function App() {
     return (
         <>
-            { <Introduccion/> }
+            {/* { <Introduccion/> }
             { <Opciones/>  }
 
            
             { <Buscador/> }
-            <Galeria/>
+            <Galeria/> */}
             { <Juego/> }
-            { <About/> }
+            {/* { <About/> } */}
         </>
     )
 }

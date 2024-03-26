@@ -30,12 +30,6 @@
     background-color: rgba(255, 255, 255, .65);
 }
 
-
-.fondo_juego {
-    background-image: url("./assets/fondo_juego.jpeg");
-    position: relative;
-}
-
 .fondo_about {
     background-color: #FFF2D8;
     position: relative;
@@ -110,22 +104,27 @@
 }
 
 
-.titulo_juego {
-    color: #113946;
-    font-family: 'Patua One', serif;
-    position: relative;
-}
-
 .titulo_about {
     color: #113946;
     font-family: 'Patua One', serif;
     position: relative;
 }
 
+
+
+.rectangulo_buscador_1_grande {
+    position: relative;
+    z-index: 3;
+}
+
+.rectangulo_buscador_2 {
+    position: relative;
+}
+/* ------- COMPONENTE JUEGO ---------*/
+
 .subtitulo_juego {
     color: #FFF2D8;
     font-family: 'Patua One', serif;
-    position: relative;
     text-align: center;
 }
 
@@ -142,14 +141,25 @@
 }
 
 
-.rectangulo_buscador_1_grande {
-    position: relative;
-    z-index: 3;
+.titulo_juego {
+    color: #f5f5f5;
+    font-family: 'Patua One', serif;
+    font-size: 5.5em;
+    margin-top: 200px;
+    margin-bottom: 200px;
+    -webkit-text-stroke-width: 5px;
+    -webkit-text-stroke-color: black;
 }
 
-.rectangulo_buscador_2 {
-    position: relative;
+.fondo_juego {
+    min-height: 100vh;
+    background-image: url("./assets/fondo_juego_transparente.jpeg");
+    background-size: cover;
 }
+
+/* ----------------- */
+
+
 
 /* ------- COMPONENTE BUSCADOR ---------*/
 
@@ -163,6 +173,10 @@
     background-position: center;
     object-position: center 45%;
 }
+
+/* ----------------- */
+
+
 /* ------- COMPONENTE GALERIA ---------*/
 
 .titulo_galeria {

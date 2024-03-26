@@ -14,7 +14,7 @@ export const Buscador = () => {
             <div className={"d-flex flex-column"}>
                 <h1 className={"titulo_buscador pt-5 mt-lg-5 "}>Busca como un profesional</h1>
                 <Row className={"mb-lg-5 justify-content-lg-start justify-content-center "}>
-                    <Col xs={5} className={"z-2 "}>
+                    <Col xs={7} lg={6} xl={5} className={"z-2 "}>
 
 
                         <RectanguloBuscador/>

@@ -10,7 +10,7 @@ export const Juego = () => {
     return <div className={"d-flex flex-column flex-lg-row justify-content-xl-around align-items-center fondo_juego"}>
         <h1 className={"titulo_juego"}>¡Hora de divertirse!</h1>
 
-        <Rectangulo classNames={""} backgroundColor={"#113946"}
+        <Rectangulo classNames={"mx-5 my-5"} backgroundColor={"#113946"}
             borderColor={"#FFF2D8"}
             textColor={"#113946"}>
             <h1 className={"subtitulo_juego my-3 mx-5"}>Adivina la capital</h1>

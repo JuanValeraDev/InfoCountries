@@ -3,8 +3,8 @@ import React from "react"
 export const Rectangulo = ({
                                children,
                                classNames,
-                               width = {width: 'min-content'},
-                               height = {height: 'min-content'},
+                               width = {width: 'auto'},
+                               height = {height: 'auto'},
                                backgroundColor,
                                borderColor,
                                textColor

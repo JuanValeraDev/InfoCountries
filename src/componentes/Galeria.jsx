@@ -9,8 +9,7 @@ import galeria_6 from "../assets/galeria/galeria_6.jpeg"
 import {Col, Row} from "react-bootstrap";
 
 export const Galeria = () => {
-    {   /* <img src={shape_3} alt={""} className={"fondo_shape_3"}/> forma geometrica fondo*/
-    }
+
     return <div className={"fondo_galeria"}>
 
         <div className="d-flex flex-column">

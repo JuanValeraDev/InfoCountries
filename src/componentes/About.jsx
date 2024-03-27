@@ -51,7 +51,6 @@ export const About = () => {
                 </Col>
 
             </Row>
-            <img src={shape_7} alt={""} className={"fondo_shape_7"}/>
 
         </div>
     )

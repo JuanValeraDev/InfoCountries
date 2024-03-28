@@ -10,6 +10,7 @@ import { About } from "./componentes/About.jsx";
 import { Comparador } from './componentes/Comparador.jsx';
 import { BrowserRouter } from 'react-router-dom';
 import {Routes, Route, Outlet, Link as Router} from "react-router-dom";
+import { Pagenotfound } from './componentes/Pagenotfound.jsx';
 
 function App() {
     return (
@@ -25,6 +26,11 @@ function App() {
                 <Routes>
                     <Route index element={<Introduccion/>} />
                     <Route path="/opciones" element={<Opciones />} />
+                    <Route path="/opciones/busquedaAvanzada" element={<Buscador />} />
+                    <Route path="/opciones/comparador" element={<Comparador />} />
+                    <Route path="/opciones/galeria" element={<Galeria />} />
+                    <Route path="/opciones/minijuego" element={<Juego />} />
+                    <Route path="*" element={<Pagenotfound />} />
                 </Routes>
             </BrowserRouter>
 

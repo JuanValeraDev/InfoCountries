@@ -17,13 +17,13 @@ export const Opciones = () => {
       <div className='d-flex flex-column align-items-center mx-3'>
         <h1 className='texto_opciones'>¿Cómo encontrar tu país ideal?</h1>
         <div className='d-flex flex-column flex-xl-row align-items-center'>
-          <EstructuraOpcion urlImage={imagenbusqueda} tittle="Búsqueda avanzada" text={textBusqueda} />
-          <EstructuraOpcion urlImage={imagencomparador} tittle="Comparador de países" text={textComparador} />
+          <EstructuraOpcion ruta="busquedaAvanzada" urlImage={imagenbusqueda} tittle="Búsqueda avanzada" text={textBusqueda} />
+          <EstructuraOpcion ruta="comparador" urlImage={imagencomparador} tittle="Comparador de países" text={textComparador} />
         </div>
 
         <div className='d-flex flex-column flex-xl-row align-items-center'>
-          <EstructuraOpcion urlImage={imagenobservar} tittle="Observa con detalle" text={textDetalle} />
-          <EstructuraOpcion urlImage={imagenmapamundi} tittle="¿Conoces el país?" text={textJuego} />
+          <EstructuraOpcion ruta="galeria" urlImage={imagenobservar} tittle="Observa con detalle" text={textDetalle} />
+          <EstructuraOpcion ruta="minijuego" urlImage={imagenmapamundi} tittle="¿Conoces el país?" text={textJuego} />
         </div>
       </div>
   )

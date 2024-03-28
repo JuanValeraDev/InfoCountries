@@ -18,8 +18,8 @@ export const Comparador = () => {
         <div className="d-flex flex-column flex-lg-row">
             <Rectangulo classNames={"my-5 mx-5"}
                         backgroundColor={"#113946"}
-                        borderColor={"white"}
-                        textColor={"white"}
+                        borderColor={"#FDF6EA"}
+                        textColor={"#FDF6EA"}
                         height={{height: "min-content"}}
                         width={{width: "auto"}}>
                 <text className="p-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint esse beatae
@@ -35,8 +35,8 @@ export const Comparador = () => {
             </Rectangulo>
             <Rectangulo classNames={"my-5 mx-5"}
                         backgroundColor={"#113946"}
-                        borderColor={"white"}
-                        textColor={"white"}
+                        borderColor={"#FDF6EA"}
+                        textColor={"#FDF6EA"}
                         height={{height: "min-content"}}
                         width={{width: "auto"}}>
                 <text className="p-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint esse beatae

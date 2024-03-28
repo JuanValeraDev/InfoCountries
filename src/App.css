@@ -209,6 +209,7 @@
     align-items: center;
     max-width: 350px;
     height: 100%;
+
 }
 
 /* ----------------- */
@@ -220,6 +221,42 @@
     padding-bottom: 30px;
     align-items: center;
     width: fit-content;
+    font-family: 'Patua One', serif;
+    color: #113946;
+}
+.componente_opciones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px 10%;
+}
+.titulo_opciones{
+    font-size: 2em;
+    font-family: 'Patua One', serif;
+    color: #113946;
+    margin-bottom: 20px;
+}
+.descripcion_opciones{
+    font-size: 1em;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    color: #113946;
+    margin-bottom: 20px;
+}
+.card_opciones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 20px !important;
+    background-color: #FDF6EA !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease-in-out;
+}
+.card_opciones:hover{
+    transform: scale(1.05);
 }
 
 /* ----------------- */
@@ -247,28 +284,40 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #FFF2D8;
 }
 
-#titulointro {
-    font-size: clamp(7vh, 3rem, 40%);
+.titulo_introduccion {
+    font-family: 'Patua One', serif;
+    font-size: 4em;
     margin: 0px 30px 0px 30px;
 }
 
-#titulodestino {
-    font-size: inherit;
+.destacado {
     font-weight: bold;
 }
 
-#tituloextra {
-    font-size: clamp(3vh, 3rem, 40%);
+.subtitulo_introduccion {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 2em;
     margin: 50px 30px 0px 30px;
 }
 
-#buttonIntro {
-    color: white;
+.boton_introduccion {
+    color: #113946;
     margin-top: 50px;
-    font-size: clamp(3vh, 3rem, 40%);
-    background-color: rgb(12, 12, 119);
+    font-size: 1.5em;
+    background-color: #FFF2D8;
     border-radius: 50px;
+    margin-bottom: 1em;
+    font-family: 'Patua One', serif;
+    border: thick solid #BCA37F;
+
+}
+.fondo_transparente {
+    background-color: rgba(17, 57, 70, 0.7);
+    padding: 10px;
+    border-radius: 50px;
+    border: thin solid #FFF2D8;
+    margin: 10px;
 }

@@ -3,7 +3,12 @@ import videointro from '../assets/fondointro.mp4'
 import { Navigate, useNavigate } from 'react-router-dom'
 
 export const Introduccion = () => {
-  const navigate = useNavigate()
+  const handleScroll = () => {
+    window.scrollTo({
+      top: document.body.scrollHeight -1000,
+      behavior: 'smooth'  //
+    });
+  }
   return (
       <>
         <div className='introduccion'>
@@ -15,7 +20,7 @@ export const Introduccion = () => {
             <div className='fondo_transparente'>
               <p className='titulo_introduccion'>Descubre tu próximo <span className='destacado'>destino</span></p>
               <p className='subtitulo_introduccion'>Toda la información sobre paises en un mismo lugar.</p>
-              <button className='boton_introduccion' onClick={() => navigate("opciones")}>EMPEZAR AHORA</button>
+              <button className='boton_introduccion' onClick={handleScroll}>EMPEZAR AHORA</button>
             </div>
           </div>
         </div>

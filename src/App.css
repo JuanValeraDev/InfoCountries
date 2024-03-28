@@ -36,6 +36,11 @@
     position: relative;
 }
 
+.about:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
 .rectangulo {
     display: flex;
     flex-direction: column;
@@ -279,7 +284,6 @@
 .introduccion {
     width: 100%;
     height: 100vh;
-    overflow: hidden;
 }
 
 .videoIntro {

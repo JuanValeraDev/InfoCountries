@@ -94,6 +94,19 @@
 
 /* ----------------- */
 
+/* ------- COMPONENTE PAGENOTFOUND ---------*/
+.cryingflag {
+    max-width: 50%;
+    max-height: 70%;
+    width: auto;
+    height: auto;
+}
+.pagenotfound {
+    font-size: 4vh;
+}
+
+/* ----------------- */
+
 /* ------- COMPONENTE COMPARADOR ---------*/
 .fondo_comparador {
     min-height: 100vh;

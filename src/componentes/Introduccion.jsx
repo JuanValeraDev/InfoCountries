@@ -1,8 +1,9 @@
-// Introduccion.jsx
 import React from 'react'
 import videointro from '../assets/fondointro.mp4'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 export const Introduccion = () => {
+  const navigate = useNavigate()
   return (
       <>
         <div className='introduccion'>
@@ -14,7 +15,7 @@ export const Introduccion = () => {
             <div className='fondo_transparente'>
               <p className='titulo_introduccion'>Descubre tu próximo <span className='destacado'>destino</span></p>
               <p className='subtitulo_introduccion'>Toda la información sobre paises en un mismo lugar.</p>
-              <button className='boton_introduccion'>EMPEZAR AHORA</button>
+              <button className='boton_introduccion' onClick={() => navigate("opciones")}>EMPEZAR AHORA</button>
             </div>
           </div>
         </div>

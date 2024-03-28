@@ -1,9 +1,12 @@
 import React from 'react';
 import {Col, Row} from "react-bootstrap";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
  
 const Footer = () => {
     const navigate = useNavigate()
+    const location = useLocation();
+
+    const isAboutPage = location.pathname === "/about";
     return (
         <footer style={{
             position: 'fixed',
@@ -17,7 +20,7 @@ const Footer = () => {
         }}>
             <Row className={"d-flex row"}>
                 <Col className={"align-self-center"}>InfoCountries</Col>
-                <Col>Juan Valera y Víctor Gálvez <u onClick={() => navigate("about")} className='mx-2 about'>about</u></Col>
+                <Col>Juan Valera y Víctor Gálvez <u onClick={() => !isAboutPage && navigate("/about")} className='mx-2 about'>about</u></Col>
             </Row>
         </footer>
     );

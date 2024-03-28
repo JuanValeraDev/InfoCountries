@@ -28,10 +28,10 @@ function App() {
                     <Route index element={<> <Introduccion/>
                         <Opciones/></>}/>
                     {/*} <Route path="/opciones" element={<Opciones/>}/>*/}
-                    <Route path="/opciones/busquedaAvanzada" element={<Buscador/>}/>
-                    <Route path="/opciones/comparador" element={<Comparador/>}/>
-                    <Route path="/opciones/galeria" element={<Galeria/>}/>
-                    <Route path="/opciones/minijuego" element={<Juego/>}/>
+                    <Route path="/busquedaAvanzada" element={<Buscador/>}/>
+                    <Route path="/comparador" element={<Comparador/>}/>
+                    <Route path="/galeria" element={<Galeria/>}/>
+                    <Route path="/minijuego" element={<Juego/>}/>
                     <Route path="*" element={<Pagenotfound/>}/>
                 </Routes>
             </BrowserRouter>

@@ -29,7 +29,6 @@ function App() {
                         <>
                             <Introduccion />
                             <Opciones />
-                            <Footer />
                         </>} />
                     {/*} <Route path="/opciones" element={<Opciones/>}/>*/}
                     <Route path="/busquedaAvanzada" element={<Buscador />} />
@@ -39,6 +38,7 @@ function App() {
                     <Route path="/about" element={<About />} />
                     <Route path="*" element={<Pagenotfound />} />
                 </Routes>
+                <Footer />
             </BrowserRouter>
         </>
     )

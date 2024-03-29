@@ -185,34 +185,7 @@
 /* ----------------- */
 
 
-/* ------- COMPONENTE ESTRUCTURAOPCIONES ---------*/
 
-
-.imagenOpcion {
-    width: 200px;
-    height: 200px;
-    clip: rect(0px, 60px, 200px, 0px);
-    border-radius: 20%;
-    border-style: solid;
-    border-width: 5px;
-    margin: 10px;
-}
-
-.tarjetaOpcion {
-    width: fit-content;
-    height: fit-content;
-    align-items: center;
-    padding: 30px;
-}
-
-.tarjetaTexto {
-    align-items: center;
-    max-width: 350px;
-    height: 100%;
-
-}
-
-/* ----------------- */
 
 /* ------- COMPONENTE OPCIONES ---------*/
 
@@ -258,6 +231,31 @@
 .card_opciones:hover{
     transform: scale(1.05);
 }
+
+.imagenOpcion {
+    width: 200px;
+    height: 200px;
+    clip: rect(0px, 60px, 200px, 0px);
+    border-radius: 25px;
+    border-style: solid;
+    border-width: 5px;
+    margin: 10px;
+}
+
+.tarjetaOpcion {
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    padding: 30px;
+}
+
+.tarjetaTexto {
+    align-items: center;
+    max-width: 350px;
+    height: 100%;
+
+}
+
 
 /* ----------------- */
 

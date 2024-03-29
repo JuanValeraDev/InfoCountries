@@ -1,7 +1,4 @@
 #root {
-    /* max-width: 1280px; */
-    /* margin: 0 auto;
-    padding: 2rem; */
     text-align: center;
 }
 
@@ -9,37 +6,21 @@
 .fondo {
     display: flex;
     flex-direction: column;
-    height: 110vh;
+    min-height: 110vh;
     width: 100vw;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     padding: 20px;
-}
-
-/*
-.fondo_buscador {
-    background-image: url("./assets/fondo_buscador.jpeg");
-    position: relative;
+    align-items: stretch;
 
 }
 
-.fondo:not(.rectangulo_buscador_1_grande):not(.titulo_buscador)::before {
-    position: absolute;
-    content: "";
-    inset: 0;
-    background-color: rgba(255, 255, 255, .65);
-}
-*/
 .fondo_about {
     background-color: #FFF2D8;
     position: relative;
 }
 
-.about:hover {
-    font-weight: bold;
-    cursor: pointer;
-}
 
 .rectangulo {
     display: flex;
@@ -124,6 +105,7 @@
     color: #113946;
     font-family: 'Patua One', serif;
     position: relative;
+    font-size: clamp(2rem, 8vw, 4rem);
 }
 
 .comparador_2 {
@@ -235,8 +217,8 @@
 /* ------- COMPONENTE OPCIONES ---------*/
 
 .texto_opciones {
-    padding-top: 80px;
-    padding-bottom: 30px;
+    padding-top: 50px;
+    padding-bottom: 20px;
     align-items: center;
     width: fit-content;
     font-family: 'Patua One', serif;
@@ -247,19 +229,19 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px 20px 10%;
+    padding: 15px;
 }
 .titulo_opciones{
-    font-size: 2em;
+    font-size: 1.5em;
     font-family: 'Patua One', serif;
     color: #113946;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 .descripcion_opciones{
     font-size: 1em;
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     color: #113946;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 .card_opciones{
     display: flex;
@@ -306,7 +288,7 @@
 
 .titulo_introduccion {
     font-family: 'Patua One', serif;
-    font-size: 4em;
+    font-size: clamp(2rem, 8vw, 4rem);
     margin: 0px 30px 0px 30px;
 }
 
@@ -316,7 +298,7 @@
 
 .subtitulo_introduccion {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    font-size: 2em;
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
     margin: 50px 30px 0px 30px;
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Col, Row} from "react-bootstrap";
 import { useNavigate, useLocation } from 'react-router-dom';
- 
+
 const Footer = () => {
     const navigate = useNavigate()
     const location = useLocation();
@@ -12,6 +12,7 @@ const Footer = () => {
             position: 'fixed',
             bottom: '0',
             width: '100%',
+            height: '60px',
             backgroundColor: '#113946',
             color: '#FFF2D8',
             textAlign: 'center',

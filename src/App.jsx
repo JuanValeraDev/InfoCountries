@@ -16,28 +16,22 @@ import Footer from "./componentes/Footer.jsx";
 function App() {
     return (
         <>
-            {/* {<Introduccion />}
-            {<Opciones />}
-            {<Comparador />}
-            {<Buscador />}
-            {<Galeria />}
-            {<Juego />}
-            {<About />} */}
             <BrowserRouter>
-                <Routes>
-                    <Route index element={
-                        <>
-                            <Introduccion />
-                            <Opciones />
-                        </>} />
-                    {/*} <Route path="/opciones" element={<Opciones/>}/>*/}
-                    <Route path="/busquedaAvanzada" element={<Buscador />} />
-                    <Route path="/comparador" element={<Comparador />} />
-                    <Route path="/galeria" element={<Galeria />} />
-                    <Route path="/minijuego" element={<Juego />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="*" element={<Pagenotfound />} />
-                </Routes>
+                <div style={{ marginBottom: '60px' }}>
+                    <Routes>
+                        <Route index element={
+                            <>
+                                <Introduccion />
+                                <Opciones />
+                            </>} />
+                        <Route path="/busquedaAvanzada" element={<Buscador />} />
+                        <Route path="/comparador" element={<Comparador />} />
+                        <Route path="/galeria" element={<Galeria />} />
+                        <Route path="/minijuego" element={<Juego />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="*" element={<Pagenotfound />} />
+                    </Routes>
+                </div>
                 <Footer />
             </BrowserRouter>
         </>

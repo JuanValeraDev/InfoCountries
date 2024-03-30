@@ -22,7 +22,7 @@ export const Introduccion = () => {
           <Col xs={11} md={9} xxl={5}>
             <div className='fondo_transparente'>
               <p className='titulo_introduccion'>Descubre tu próximo <span className='destacado'>destino</span></p>
-                <p className='subtitulo_introduccion'>Toda la información sobre paises en un mismo lugar.</p>
+                <p className='subtitulo_introduccion'>Toda la información sobre países en un mismo lugar.</p>
               <button className='boton_introduccion' onClick={handleScroll}>EMPEZAR AHORA</button>
             </div>
           </Col>

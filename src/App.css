@@ -36,6 +36,11 @@
     position: relative;
 }
 
+.about:hover {
+    cursor: pointer;
+    color: white;
+}
+
 /* ----------------- */
 
 
@@ -301,7 +306,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #FFF2D8;
+    color: #ece5d7;
 }
 
 .titulo_introduccion {

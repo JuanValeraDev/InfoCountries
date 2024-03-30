@@ -15,7 +15,7 @@
     align-items: stretch;
 
 }
-@media (max-width: 1440px) {
+@media (max-width: 1024px) {
     .fondo {
         min-height: 80vh !important;
     }

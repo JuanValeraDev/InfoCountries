@@ -8,7 +8,7 @@ const Header = () => {
     return (
         <Navbar expanded={expanded} variant="dark" expand="lg" className={"navbar"}>
             <Container>
-                <Navbar.Brand onClick={() => setExpanded(false)} as={Link} to="/">Mi Aplicación</Navbar.Brand>
+                <Navbar.Brand onClick={() => setExpanded(false)} as={Link} to="/">InfoCountries</Navbar.Brand>
                 <Navbar.Toggle onClick={() => setExpanded(expanded ? false : "expanded")} aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">

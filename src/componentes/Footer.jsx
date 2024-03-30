@@ -9,7 +9,7 @@ const Footer = () => {
     const isAboutPage = location.pathname === "/about";
     return (
         <footer style={{
-            position: 'fixed',
+            position: 'relative',
             bottom: '0',
             width: '100%',
             height: '60px',
@@ -17,11 +17,11 @@ const Footer = () => {
             color: '#FFF2D8',
             textAlign: 'center',
             padding: '15px',
-            zIndex: 1000
+            zIndex: 100
         }}>
             <Row className={"d-flex row"}>
                 <Col className={"align-self-center"}>InfoCountries</Col>
-                <Col>Juan Valera y Víctor Gálvez <u onClick={() => !isAboutPage && navigate("/about")} className='mx-2 about'>about</u></Col>
+                <Col>Juan Valera y Víctor Gálvez <u onClick={() => !isAboutPage && navigate("/about")} className='mx-2 about'>Conócenos</u></Col>
             </Row>
         </footer>
     );

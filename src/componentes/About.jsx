@@ -10,7 +10,7 @@ export const About = () => {
     return (
         <div>
 
-            <div className={"fondo fondo_about"}>
+            <div className={"fondo fondo_about pb-5 pb-sm-0"}>
 
                 <h1 className={"titulo_about pt-5 mt-lg-5"}>Sobre nosotros</h1>
                 <Row className={"d-flex "}>

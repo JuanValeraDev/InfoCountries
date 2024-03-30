@@ -6,7 +6,7 @@
 .fondo {
     display: flex;
     flex-direction: column;
-    min-height: 110vh;
+    min-height: 100vh !important;
     width: 100vw;
     background-repeat: no-repeat;
     background-position: center;
@@ -15,11 +15,28 @@
     align-items: stretch;
 
 }
+@media (max-width: 1440px) {
+    .fondo {
+        min-height: 80vh !important;
+    }
+}
+
+/* ------- COMPONENTE ABOUT ---------*/
+
 
 .fondo_about {
     background-color: #FFF2D8;
     position: relative;
+    min-height: 100vh !important;
 }
+
+.titulo_about {
+    color: #113946;
+    font-family: 'Patua One', serif;
+    position: relative;
+}
+
+/* ----------------- */
 
 
 .rectangulo {
@@ -34,11 +51,16 @@
 }
 
 
-.titulo_about {
-    color: #113946;
+/* ------- COMPONENTE HEADER ---------*/
+.navbar {
+    background-color: #113946;
+    color: #FFF2D8 !important;
     font-family: 'Patua One', serif;
-    position: relative;
+    display: flex;
+    z-index: 100;
 }
+
+/* ----------------- */
 
 
 /* ------- COMPONENTE JUEGO ---------*/
@@ -69,7 +91,6 @@
 }
 
 .fondo_juego {
-    min-height: 100vh;
     background-image: url("./assets/fondo_juego_con_filtro.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -87,6 +108,7 @@
     width: auto;
     height: auto;
 }
+
 .pagenotfound {
     font-size: 4vh;
 }
@@ -95,8 +117,6 @@
 
 /* ------- COMPONENTE COMPARADOR ---------*/
 .fondo_comparador {
-    min-height: 100vh;
-    height: 100%;
     background-image: url("./assets/fondo_comparador_con_filtro.png");
     background-size: cover;
 }
@@ -116,16 +136,6 @@
     max-width: 200px;
 }
 
-/*
-@media only screen and (min-width: 1024px) {
-    .comparador_textfield {
-        min-width: 500px;
-    }
-}
-
- */
-
-
 /* ----------------- */
 
 /* ------- COMPONENTE BUSCADOR ---------*/
@@ -134,7 +144,6 @@
     background-image: url("./assets/fondo_buscador_con_filtro.png");
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vh;
     height: 100%;
     position: relative;
     background-position: center;
@@ -171,7 +180,6 @@
     background-image: url("./assets/fondo_galeria_con_filtro.png");
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vh;
     height: 100%;
     background-position: bottom right;
 }
@@ -182,9 +190,16 @@
     width: 400px;
 }
 
+.imagen_galeria {
+    border-radius: 25px !important;
+}
+@media (max-width: 425px) {
+    .imagen_galeria {
+        height: 200px !important;
+    }
+}
+
 /* ----------------- */
-
-
 
 
 /* ------- COMPONENTE OPCIONES ---------*/
@@ -197,26 +212,30 @@
     font-family: 'Patua One', serif;
     color: #113946;
 }
-.componente_opciones{
+
+.componente_opciones {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 15px;
 }
-.titulo_opciones{
+
+.titulo_opciones {
     font-size: 1.5em;
     font-family: 'Patua One', serif;
     color: #113946;
     margin-bottom: 15px;
 }
-.descripcion_opciones{
+
+.descripcion_opciones {
     font-size: 1em;
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     color: #113946;
     margin-bottom: 15px;
 }
-.card_opciones{
+
+.card_opciones {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -228,7 +247,8 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
     transition: transform 0.3s ease-in-out;
 }
-.card_opciones:hover{
+
+.card_opciones:hover {
     transform: scale(1.05);
 }
 
@@ -236,7 +256,7 @@
     width: 200px;
     height: 200px;
     clip: rect(0px, 60px, 200px, 0px);
-    border-radius: 25px;
+    border-radius: 20px;
     border-style: solid;
     border-width: 5px;
     margin: 10px;
@@ -311,6 +331,7 @@
     border: thick solid #BCA37F;
 
 }
+
 .fondo_transparente {
     background-color: rgba(17, 57, 70, 0.7);
     padding: 10px;

@@ -10,7 +10,7 @@ import {Col, Row} from "react-bootstrap";
 
 export const Galeria = () => {
 
-    return <div className={"fondo_galeria"}>
+    return <div className={"fondo fondo_galeria"}>
         <div className="d-flex flex-column">
             <div className="d-flex flex-column flex-lg-row justify-content-around align-items-center mb-5">
                 <h1 className={"titulo_galeria mt-5"}>Observa con detalle</h1>
@@ -23,7 +23,7 @@ export const Galeria = () => {
 
                 <Col xs={9} md={7} lg={5} xl={3} className={"z-2 align-items-center p-3"}>
                     <Rectangulo
-                        classNames={"my-5"}
+                        classNames={"my-5 imagen_galeria"}
                         backgroundColor={"#FFF2D8"}
                         borderColor={"#113946"}
                         textColor={"#113946"}
@@ -32,7 +32,7 @@ export const Galeria = () => {
                         <img src={galeria_1}/>
                     </Rectangulo>
                     <Rectangulo
-                        classNames={"my-5"}
+                        classNames={"my-5 imagen_galeria"}
                         backgroundColor={"#FFF2D8"}
                         borderColor={"#113946"}
                         textColor={"#113946"}
@@ -42,7 +42,7 @@ export const Galeria = () => {
                 </Col>
                 <Col xs={9} md={7} lg={5} xl={3} className={"z-2 p-3"}>
                     <Rectangulo
-                        classNames={"my-5"}
+                        classNames={"my-5 imagen_galeria"}
                         backgroundColor={"#FFF2D8"}
                         borderColor={"#113946"}
                         textColor={"#113946"}
@@ -50,7 +50,7 @@ export const Galeria = () => {
                     > <img src={galeria_3}/>
                     </Rectangulo>
                     <Rectangulo
-                        classNames={"my-5"}
+                        classNames={"my-5 imagen_galeria"}
                         backgroundColor={"#FFF2D8"}
                         borderColor={"#113946"}
                         textColor={"#113946"}
@@ -60,7 +60,7 @@ export const Galeria = () => {
                 </Col>
                 <Col xs={9} md={7} lg={5} xl={3} className={"z-2 p-3 d-lg-none d-xl-block"}>
                     <Rectangulo
-                        classNames={"my-5"}
+                        classNames={"my-5 imagen_galeria"}
                         backgroundColor={"#FFF2D8"}
                         borderColor={"#113946"}
                         textColor={"#113946"}
@@ -69,7 +69,7 @@ export const Galeria = () => {
                     </Rectangulo>
 
                     <Rectangulo
-                        classNames={"my-5"}
+                        classNames={"my-5 imagen_galeria"}
                         backgroundColor={"#FFF2D8"}
                         borderColor={"#113946"}
                         textColor={"#113946"}

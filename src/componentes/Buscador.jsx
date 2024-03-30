@@ -6,7 +6,7 @@ import RectanguloBuscador from "./RectanguloBuscador.jsx";
 export const Buscador = () => {
 
     return (
-        <div className={"fondo fondo_buscador"}>
+        <div className={"fondo fondo_buscador pb-5 pb-lg-0 main-content"}>
             <div className={"d-flex flex-column"}>
                 <h1 className={"titulo_buscador pt-5 mt-lg-5 mb-5"}>Busca como un profesional</h1>
                 <Row className={"mb-lg-5  justify-content-center "}>

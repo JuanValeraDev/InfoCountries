@@ -21,6 +21,12 @@
     }
 }
 
+
+.buscadores {
+    z-index: 999;
+    /* esto de momento lo dejo por aquí que como has hecho la galeria con posiciones, el dropdown menu se veia por detrás */
+}
+
 /* ------- COMPONENTE ABOUT ---------*/
 
 
@@ -201,7 +207,14 @@
 
 .imagen_galeria {
     border-radius: 25px !important;
+    transition: transform 0.3s ease-in-out;
 }
+
+.imagen_galeria:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
 @media (max-width: 425px) {
     .imagen_galeria {
         height: 200px !important;

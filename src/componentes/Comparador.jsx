@@ -1,6 +1,8 @@
 import {Rectangulo} from "./Rectangulo"
 import {Col} from "react-bootstrap";
 import React from "react";
+import Select from 'react-select'
+import {countries} from '../utils/countries.js'
 
 export const Comparador = () => {
 
@@ -9,8 +11,11 @@ export const Comparador = () => {
             <div className="d-flex flex-column flex-lg-row justify-content-around align-items-center mb-5">
                 <h1 className={"titulo_comparador mt-5"}>Comparador de países</h1>
                 <Col xs={7} md={5} xl={3}>
-                    <input className="form-control mt-5 buscador-galeria" placeholder={"País a comparar"} type="text"/>
-                    <input className="form-control mt-3 buscador-galeria" placeholder={"País a comparar"} type="text"/>
+                    <Select className="mt-5 buscador-galeria text-start buscadores" options={countries} isClearable isSearchable placeholder={"País a comparar"} />
+                    <Select className="mt-3 buscador-galeria text-start buscadores" options={countries} isClearable isSearchable placeholder={"País a comparar"} />
+                    {/* <input className="form-control mt-5 buscador-galeria" placeholder={"País a comparar"} type="text"/> */}
+                    {/* <input className="form-control mt-3 buscador-galeria" placeholder={"País a comparar"} type="text"/> */}
+                    
                 </Col>
 
             </div>

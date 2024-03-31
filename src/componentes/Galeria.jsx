@@ -7,6 +7,8 @@ import galeria_4 from "../assets/galeria/galeria_4.jpeg"
 import galeria_5 from "../assets/galeria/galeria_5.jpeg"
 import galeria_6 from "../assets/galeria/galeria_6.jpeg"
 import {Col, Row} from "react-bootstrap";
+import Select from "react-select";
+import {countries} from '../utils/countries.js'
 
 export const Galeria = () => {
 
@@ -15,7 +17,8 @@ export const Galeria = () => {
             <div className="d-flex flex-column flex-lg-row justify-content-around align-items-center mb-5">
                 <h1 className={"titulo_galeria mt-5"}>Observa con detalle</h1>
                 <Col xs={7} md={5} xl={3}>
-                    <input className="form-control mt-5 buscador-galeria" placeholder={"País a buscar"} type="text"/>
+                    <Select className="mt-5 buscador-galeria text-start buscadores" options={countries} isClearable isSearchable placeholder={"País a buscar"} />
+                    {/* <input className="form-control mt-5 buscador-galeria" placeholder={"País a buscar"} type="text"/> */}
                 </Col>
 
             </div>

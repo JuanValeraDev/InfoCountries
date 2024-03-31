@@ -22,6 +22,7 @@ export const Rectangulo = ({
         padding: padding.padding,
     }
     return <div style={divStyle}
-                className={`rectangulo ${classNames} d-flex align-items-center justify-content-around`}>{children}</div>
+                className={`rectangulo ${classNames} d-flex align-items-center justify-content-around`}
+                >{children}</div>
 }
 

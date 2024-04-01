@@ -30,7 +30,16 @@ const RectanguloBuscador = () => {
                 const response = await fetch("https://restcountries.com/v3.1/all?fields=name");
                 const data = await response.json();
                 const commonNames = data.map(country => ({value: country.name.common, label: country.name.common}));
-                setNames(commonNames);
+                const uniqueNames = commonNames.reduce((acc, current) => {
+                    const x = acc.find(item => item.label === current.label);
+                    if (!x) {
+                        return acc.concat([current]);
+                    } else {
+                        return acc;
+                    }
+                }, []);
+                uniqueNames.sort((a, b) => a.label.localeCompare(b.label));
+                setNames(uniqueNames);
             } catch (error) {
                 console.error("Error al obtener los países:", error);
             }
@@ -42,7 +51,16 @@ const RectanguloBuscador = () => {
                 const currencyNames = data.flatMap(country =>
                     Object.values(country.currencies).map(currency => ({value: currency.name, label: currency.name}))
                 );
-                setCurrencies(currencyNames);
+                const uniqueNames = currencyNames.reduce((acc, current) => {
+                    const x = acc.find(item => item.label === current.label);
+                    if (!x) {
+                        return acc.concat([current]);
+                    } else {
+                        return acc;
+                    }
+                }, []);
+                uniqueNames.sort((a, b) => a.label.localeCompare(b.label));
+                setCurrencies(uniqueNames);
             } catch (error) {
                 console.error("Error al obtener las monedas:", error);
             }
@@ -54,18 +72,36 @@ const RectanguloBuscador = () => {
                 const languageNames = data.flatMap(country =>
                     Object.values(country.languages).map(language => ({value: language, label: language}))
                 );
-                setLanguages(languageNames);
+                const uniqueLanguageNames = languageNames.reduce((acc, current) => {
+                    const x = acc.find(item => item.label === current.label);
+                    if (!x) {
+                        return acc.concat([current]);
+                    } else {
+                        return acc;
+                    }
+                }, []);
+                uniqueLanguageNames.sort((a, b) => a.label.localeCompare(b.label));
+                setLanguages(uniqueLanguageNames);
             } catch (error) {
                 console.error("Error al obtener los idiomas:", error);
-
             }
         };
+
         const fetchRegion = async () => {
             try {
                 const response = await fetch("https://restcountries.com/v3.1/all?fields=region");
                 const data = await response.json();
                 const regionNames = data.map(country => ({value: country.region, label: country.region}));
-                setRegions(regionNames);
+                const uniqueNames = regionNames.reduce((acc, current) => {
+                    const x = acc.find(item => item.label === current.label);
+                    if (!x) {
+                        return acc.concat([current]);
+                    } else {
+                        return acc;
+                    }
+                }, []);
+                uniqueNames.sort((a, b) => a.label.localeCompare(b.label));
+                setRegions(uniqueNames);
 
             } catch (error) {
                 console.error("Error al obtener las regiones:", error);
@@ -77,7 +113,16 @@ const RectanguloBuscador = () => {
                 const response = await fetch("https://restcountries.com/v3.1/all?fields=subregion");
                 const data = await response.json();
                 const subregionNames = data.map(country => ({value: country.subregion, label: country.subregion}));
-                setSubregions(subregionNames);
+                const uniqueNames = subregionNames.reduce((acc, current) => {
+                    const x = acc.find(item => item.label === current.label);
+                    if (!x) {
+                        return acc.concat([current]);
+                    } else {
+                        return acc;
+                    }
+                }, []);
+                uniqueNames.sort((a, b) => a.label.localeCompare(b.label));
+                setSubregions(uniqueNames);
             } catch (error) {
                 console.error("Error al obtener las subregiones:", error);
             }
@@ -88,7 +133,16 @@ const RectanguloBuscador = () => {
                 const response = await fetch("https://restcountries.com/v3.1/all?fields=capital");
                 const data = await response.json();
                 const capitalNames = data.map(country => ({value: country.capital, label: country.capital}));
-                setCapitals(capitalNames);
+                const uniqueNames = capitalNames.reduce((acc, current) => {
+                    const x = acc.find(item => item.label === current.label);
+                    if (!x) {
+                        return acc.concat([current]);
+                    } else {
+                        return acc;
+                    }
+                }, []);
+                uniqueNames.sort((a, b) => a.label.localeCompare(b.label));
+                setCapitals(uniqueNames);
             } catch (error) {
                 console.error("Error al obtener las capitales:", error);
             }

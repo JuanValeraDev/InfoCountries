@@ -1,5 +1,7 @@
 import React from "react";
-import {Row, Col} from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
+import Select from "react-select";
+import { countries } from '../utils/countries.js'
 
 
 const RectanguloBuscador = () => {
@@ -20,34 +22,46 @@ const RectanguloBuscador = () => {
             borderRadius: "50px",
             border: "thick solid"
         }}>
-        <div className="container p-4">
-            <Row>
-                <Col xs={12} md={6}>
-                    {fields.slice(0, 3).map((field, index) => (
-                        <Row key={index} className="mb-3">
-                            <Col xs={12} lg={4}>
-                                <label >{field}</label>
-                            </Col>
-                            <Col xs={12} lg={8}>
-                                <input className="form-control" type="text"/>
-                            </Col>
-                        </Row>
-                    ))}
-                </Col>
-                <Col xs={12} md={6}>
-                    {fields.slice(3).map((field, index) => (
-                        <Row key={index} className="mb-3">
-                            <Col xs={12} lg={4}>
-                                <label >{field}</label>
-                            </Col>
-                            <Col xs={12} lg={8}>
-                                <input className="form-control" type="text"/>
-                            </Col>
-                        </Row>
-                    ))}
-                </Col>
-            </Row>
-        </div>
+            <div className="container p-4">
+                <Row>
+                    <Col xs={12} md={6}>
+                        {fields.slice(0, 3).map((field, index) => (
+                            <Row key={index} className="mb-3">
+                                <Col xs={12} lg={4}>
+                                    <label >{field}</label>
+                                </Col>
+                                <Col xs={12} lg={8}>
+                                    <Select
+                                        className="text-start buscadores"
+                                        options={countries}
+                                        isClearable
+                                        isSearchable
+                                    />
+                                    {/* <input className="form-control" type="text"/> */}
+                                </Col>
+                            </Row>
+                        ))}
+                    </Col>
+                    <Col xs={12} md={6}>
+                        {fields.slice(3).map((field, index) => (
+                            <Row key={index} className="mb-3">
+                                <Col xs={12} lg={4}>
+                                    <label >{field}</label>
+                                </Col>
+                                <Col xs={12} lg={8}>
+                                    <Select
+                                        className="text-start"
+                                        options={countries}
+                                        isClearable
+                                        isSearchable
+                                    />
+                                    {/* <input className="form-control" type="text" /> */}
+                                </Col>
+                            </Row>
+                        ))}
+                    </Col>
+                </Row>
+            </div>
         </div>
     );
 };
@@ -55,7 +69,7 @@ const RectanguloBuscador = () => {
 
 export default RectanguloBuscador;
 
-            {    /*
+{    /*
 const filas1 = ["Nombre:", "Moneda:", "Idioma:"];
 const filas2 = ["Región:", "Subreg:", "Código:"];
 

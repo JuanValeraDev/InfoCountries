@@ -1,12 +1,106 @@
-import React from "react";
-import { Row, Col } from "react-bootstrap";
+import React, {useEffect, useState} from "react";
+import {Row, Col} from "react-bootstrap";
 import Select from "react-select";
-import { countries } from '../utils/countries.js'
+import {countries} from '../utils/countries.js'
 
 
 const RectanguloBuscador = () => {
 
-    const fields = ["Nombre", "Moneda", "Idioma", "Región", "Subregión", "Código"];
+    const fields = ["Nombre", "Moneda", "Idioma", "Región", "Subregión", "Gentilicio"];
+    const [names, setNames] = useState([]);
+    const [currencies, setCurrencies] = useState([]);
+    const [languages, setLanguages] = useState([]);
+    const [regions, setRegions] = useState([]);
+    const [subregions, setSubregions] = useState([]);
+    const [capitals, setCapitals] = useState([]);
+
+    const selectData = [
+        {field: 'Nombre', options: names},
+        {field: 'Moneda', options: currencies},
+        {field: 'Idioma', options: languages},
+        {field: 'Región', options: regions},
+        {field: 'Subregión', options: subregions},
+        {field: 'Capital', options: capitals},
+    ];
+
+
+    useEffect(() => {
+        const fetchNames = async () => {
+            try {
+                const response = await fetch("https://restcountries.com/v3.1/all?fields=name");
+                const data = await response.json();
+                const commonNames = data.map(country => ({value: country.name.common, label: country.name.common}));
+                setNames(commonNames);
+            } catch (error) {
+                console.error("Error al obtener los países:", error);
+            }
+        };
+        const fetchCurrency = async () => {
+            try {
+                const response = await fetch("https://restcountries.com/v3.1/all?fields=currencies");
+                const data = await response.json();
+                const currencyNames = data.flatMap(country =>
+                    Object.values(country.currencies).map(currency => ({value: currency.name, label: currency.name}))
+                );
+                setCurrencies(currencyNames);
+            } catch (error) {
+                console.error("Error al obtener las monedas:", error);
+            }
+        };
+        const fetchLanguage = async () => {
+            try {
+                const response = await fetch("https://restcountries.com/v3.1/all?fields=languages");
+                const data = await response.json();
+                const languageNames = data.flatMap(country =>
+                    Object.values(country.languages).map(language => ({value: language, label: language}))
+                );
+                setLanguages(languageNames);
+            } catch (error) {
+                console.error("Error al obtener los idiomas:", error);
+
+            }
+        };
+        const fetchRegion = async () => {
+            try {
+                const response = await fetch("https://restcountries.com/v3.1/all?fields=region");
+                const data = await response.json();
+                const regionNames = data.map(country => ({value: country.region, label: country.region}));
+                setRegions(regionNames);
+
+            } catch (error) {
+                console.error("Error al obtener las regiones:", error);
+            }
+
+        };
+        const fetchSubregion = async () => {
+            try {
+                const response = await fetch("https://restcountries.com/v3.1/all?fields=subregion");
+                const data = await response.json();
+                const subregionNames = data.map(country => ({value: country.subregion, label: country.subregion}));
+                setSubregions(subregionNames);
+            } catch (error) {
+                console.error("Error al obtener las subregiones:", error);
+            }
+
+        };
+        const fetchCapitals = async () => {
+            try {
+                const response = await fetch("https://restcountries.com/v3.1/all?fields=capital");
+                const data = await response.json();
+                const capitalNames = data.map(country => ({value: country.capital, label: country.capital}));
+                setCapitals(capitalNames);
+            } catch (error) {
+                console.error("Error al obtener las capitales:", error);
+            }
+        };
+        fetchLanguage();
+        fetchRegion();
+        fetchSubregion();
+        fetchCapitals();
+        fetchNames();
+        fetchCurrency();
+    }, []);
+
 
     return (
         <div style={{
@@ -14,7 +108,6 @@ const RectanguloBuscador = () => {
             borderColor: "#FDF6EA",
             color: "#FDF6EA",
             boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.6)",
-            overflow: "hidden",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -24,48 +117,28 @@ const RectanguloBuscador = () => {
         }}>
             <div className="container p-4">
                 <Row>
-                    <Col xs={12} md={6}>
-                        {fields.slice(0, 3).map((field, index) => (
-                            <Row key={index} className="mb-3">
+                    {selectData.map((select, index) => (
+                        <Col xs={12} md={6} key={index}>
+                            <Row className="mb-3">
                                 <Col xs={12} lg={4}>
-                                    <label >{field}</label>
+                                    <label>{select.field}</label>
                                 </Col>
                                 <Col xs={12} lg={8}>
                                     <Select
-                                        className="text-start buscadores"
-                                        options={countries}
+                                        className="text-start select_buscador"
+                                        options={select.options}
                                         isClearable
                                         isSearchable
                                     />
-                                    {/* <input className="form-control" type="text"/> */}
                                 </Col>
                             </Row>
-                        ))}
-                    </Col>
-                    <Col xs={12} md={6}>
-                        {fields.slice(3).map((field, index) => (
-                            <Row key={index} className="mb-3">
-                                <Col xs={12} lg={4}>
-                                    <label >{field}</label>
-                                </Col>
-                                <Col xs={12} lg={8}>
-                                    <Select
-                                        className="text-start"
-                                        options={countries}
-                                        isClearable
-                                        isSearchable
-                                    />
-                                    {/* <input className="form-control" type="text" /> */}
-                                </Col>
-                            </Row>
-                        ))}
-                    </Col>
+                        </Col>
+                    ))}
                 </Row>
             </div>
         </div>
     );
 };
-
 
 export default RectanguloBuscador;
 
@@ -121,6 +194,7 @@ return (
     </Row>
 </div>
 );
-*/}
+*/
+}
 
 

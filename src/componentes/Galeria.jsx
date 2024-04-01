@@ -46,7 +46,7 @@ export const Galeria = () => {
                     <h1 className={"titulo_galeria mt-5"}>Observa con detalle</h1>
                     <Col xs={7} md={5} xl={3}>
                         <Select
-                            className="mt-5 buscador-galeria text-start buscadores"
+                            className="mt-5 text-start buscadores"
                             options={countries}
                             isClearable
                             isSearchable

@@ -22,15 +22,6 @@
 }
 
 
-.buscadores {
-    z-index: 999;
-
-}
-.imagenes_fullsize {
-    z-index: 1000;
-}
-/* esto de momento lo dejo por aquí que como has hecho la galeria con posiciones, el dropdown menu se veia por detrás y las imágenes se ven raras */
-
 /* ------- COMPONENTE ABOUT ---------*/
 
 
@@ -226,6 +217,25 @@
     .imagen_galeria {
         height: 200px !important;
     }
+}
+
+.buscador_galeria {
+    z-index: 10;
+}
+
+.imageGallery{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.imageModal {
+    width: 100%;
+    height: 100vh; 
+    object-fit: cover; 
+}
+
+.modal_gallery {
+    background: black !important;
 }
 
 /* ----------------- */

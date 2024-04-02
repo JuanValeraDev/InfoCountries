@@ -5,7 +5,7 @@ import Select from "react-select";
 import { countries } from '../utils/countries.js'
 import { createClient } from 'pexels'
 import { useEffect, useState } from "react";
-import ModalImage from 'react-modal-image'
+
 
 export const Galeria = () => {
 

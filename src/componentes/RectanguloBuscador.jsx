@@ -132,7 +132,12 @@ const RectanguloBuscador = () => {
             try {
                 const response = await fetch("https://restcountries.com/v3.1/all?fields=capital");
                 const data = await response.json();
-                const capitalNames = data.map(country => ({value: country.capital, label: country.capital}));
+                const capitalNames = data.reduce((acc, country) => {
+                    if (country.capital[0]) {
+                        acc.push({value: country.capital[0], label: country.capital[0]});
+                    }
+                    return acc;
+                }, []);
                 const uniqueNames = capitalNames.reduce((acc, current) => {
                     const x = acc.find(item => item.label === current.label);
                     if (!x) {

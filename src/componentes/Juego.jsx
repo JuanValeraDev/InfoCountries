@@ -1,9 +1,7 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Col, Row } from "react-bootstrap";
 import shape_4 from "../assets/shapes/shape_4_modified.png"
 import { Rectangulo } from "./Rectangulo.jsx";
-import { TextField } from "@mui/material";
-import { useState, useEffect } from "react";
 
 
 export const Juego = () => {
@@ -56,15 +54,13 @@ export const Juego = () => {
                     <h1 className={"subtitulo_juego my-3 mx-5"}>Adivina la capital</h1>
                     <img src={correctCountry.flags.png} />
 
-
                     <div className={"botonera_juego m-4 mt-md-5 d-flex flex-column flex-xl-row align-items-center"}>
-                        {/* {options.map((option, index) => (
-                            <button key={index} onClick={() => handleOptionClick(option)}>
+                        {options.map((option, index) => (
+                            <button>
                                 {option.name.common}
                             </button>
-                        ))} */}
-                    
-                        {/* <button className={" m-4 p-3 ps-5 pe-5 boton_juego"}>Texto</button>
+                        ))}
+                        {/* <button className={" m-4 p-3 ps-5 pe-5 boton_juego"}>{correctCountry.name.common}</button>
                         <button className={" m-4 p-3 ps-5 pe-5 boton_juego"}>Texto</button>
                         <button className={" m-4 p-3 ps-5 pe-5 boton_juego"}>Texto</button> */}
                     </div>
@@ -73,3 +69,11 @@ export const Juego = () => {
         </div>
     )
 }
+
+
+
+{/* {options.map((option, index) => (
+                            <button key={index} onClick={() => handleOptionClick(option)}>
+                                {option.name.common}
+                            </button>
+                        ))} */}

@@ -15,6 +15,7 @@ export const Juego = () => {
         setButtonOptions(buttonOptions);
     }, []);
 
+    console.log(correctAnswer);
     return (
         <div className={"fondo fondo_juego justify-content-center "}>
             <div

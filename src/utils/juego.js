@@ -7,10 +7,10 @@ const fetchData = async () => {
         const countriesData = await flagsApiResponse.json();
 
         countries = countriesData.map(country => ({
-            name: country.name.common,
+            name: country.translations.spa.common,
             flag: country.flags.png,
-            capital: country.capital
-        }));
+            capital: country.translations.spa.capital
+        }));    
     } catch (error) {
         console.error('Error con el fetch:', error);
     }

@@ -35,3 +35,49 @@
 //         </div>
 //     )
 // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const flagsApiResponse = await fetch('https://restcountries.com/v3.1/all');
+    //             const countriesData = await flagsApiResponse.json();
+
+    //             const countries = countriesData.map(country => ({
+    //                 name: country.name.common,
+    //                 flag: country.flags.png
+    //             }));           
+
+    //             const randomIndex = Math.floor(Math.random() * countries.length);
+    //             const correctCountryData = countries[randomIndex];
+    //             setCorrectCountry(correctCountryData)
+
+
+    //             const otherCountries = countries.filter(country => country.name !== correctCountryData.name).sort(() => Math.random() - 0.5).slice(0, 2);
+    //             const combinedOptions = [...otherCountries, correctCountryData];
+    //             setOptions(shuffleArray(combinedOptions));
+    //         } catch (error) {
+    //             console.error('Error con el fetch:', error);
+    //         }
+    //     };
+    //     fetchData();
+    // }, []);
+
+    // const shuffleArray = (array) => {
+    //     const shuffledArray = array.sort(() => Math.random() - 0.5);
+    //     return shuffledArray;
+    // };

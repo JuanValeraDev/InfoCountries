@@ -8,7 +8,8 @@ const fetchData = async () => {
 
         countries = countriesData.map(country => ({
             name: country.name.common,
-            flag: country.flags.png
+            flag: country.flags.png,
+            capital: country.capital
         }));
     } catch (error) {
         console.error('Error con el fetch:', error);
@@ -24,6 +25,7 @@ export function options(correctCountryVar) {
     const otherCountries = countries.filter(country => country.name !== correctCountryVar.name).sort(() => Math.random() - 0.5).slice(0, 2);
     return shuffleArray([...otherCountries, correctCountryVar]);
 }
+
 
 // FUNCIONES COMUNES
 

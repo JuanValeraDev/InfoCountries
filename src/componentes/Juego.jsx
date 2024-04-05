@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Rectangulo } from "./Rectangulo.jsx";
+import { Modal } from 'react-bootstrap'
 import { correctCountry, options } from '../utils/juego.js';
 
 
@@ -46,7 +47,7 @@ export const Juego = () => {
             if (round === 10) {
                 setShowModal(true);
             }
-        }, 2000);
+        }, 1200);
     };
 
     return (
@@ -86,15 +87,19 @@ export const Juego = () => {
                 </Rectangulo>
             </div>
 
-            {showModal && (
-                <div className="modal">
-                    <div className="modal-content">
-                        <p>Game Over!</p>
-                        <p>Your score: {count}</p>
-                        <button onClick={resetGame}>Restart</button>
+
+            <Modal show={showModal} centered size="xl">
+                {/* onHide={handleModalClose} */}
+                <Modal.Body>
+                    <div className=" d-flex flex-column align-items-center">
+                    <p>Game Over!</p>
+                    <p>Your score: {count}</p>
+                    <button onClick={resetGame}>Restart</button>
                     </div>
-                </div>
-            )}
+                    
+                </Modal.Body>
+            </Modal>
+
         </div>
     )
 }

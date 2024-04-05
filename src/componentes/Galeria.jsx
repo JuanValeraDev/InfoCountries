@@ -1,6 +1,6 @@
 import React from "react";
 import { Rectangulo } from "./Rectangulo.jsx";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, Modal } from "react-bootstrap";
 import Select from "react-select";
 import { countries } from '../utils/countries.js'
 import { createClient } from 'pexels'
@@ -12,6 +12,16 @@ export const Galeria = () => {
 
     const [selectedCountry, setSelectedCountry] = useState(null);
     const [images, setImages] = useState([]);
+
+    const [showModal, setShowModal] = useState(false);
+    const [modalImage, setModalImage] = useState(null);
+
+    const handleModalClose = () => setShowModal(false);
+
+    const handleImageClick = (image) => {
+        setModalImage(image);
+        setShowModal(true);
+    };
 
     const client = createClient(
         "s80PZl05y2VQ3IiHUeFEZMEOKvYGaHAngMtqVi0XGkl2zxw77tcHlYln"
@@ -46,7 +56,7 @@ export const Galeria = () => {
                     <h1 className={"titulo_galeria mt-5"}>Observa con detalle</h1>
                     <Col xs={7} md={5} xl={3}>
                         <Select
-                            className="mt-5 text-start buscadores"
+                            className="mt-5 buscador-galeria text-start buscador_galeria"
                             options={countries}
                             isClearable
                             isSearchable
@@ -67,11 +77,7 @@ export const Galeria = () => {
                                         textColor={"#113946"}
                                         height={{ height: "400px" }}
                                     >
-                                        <ModalImage className="imagenes_fullsize"
-                                            small={images[index].src.large}
-                                            large={images[index].src.large2x}
-                                        />
-                                        {/* <img src={images[index].src.large} alt={`Pexels Image ${index}`} /> */}
+                                        <img className="imageGallery" src={images[index].src.large} onClick={() => handleImageClick(images[index])} />
                                     </Rectangulo>
                                     {images[index + 1] && (
                                         <Rectangulo
@@ -81,11 +87,7 @@ export const Galeria = () => {
                                             textColor={"#113946"}
                                             height={{ height: "400px" }}
                                         >
-                                            <ModalImage className="imagenes_fullsize"
-                                                small={images[index + 1].src.large}
-                                                large={images[index + 1].src.large2x}
-                                            />
-                                            {/* <img src={images[index + 1].src.large} alt={`Pexels Image ${index + 1}`} /> */}
+                                            <img className="imageGallery" src={images[index + 1].src.large} onClick={() => handleImageClick(images[index + 1])} />
                                         </Rectangulo>
                                     )}
                                 </Col>
@@ -94,6 +96,14 @@ export const Galeria = () => {
                     </Row>
                 </Row>
             </div>
+
+            <Modal show={showModal} onHide={handleModalClose} centered size="xl">
+                <Modal.Body className="modal_gallery">
+                    {modalImage && (
+                        <img src={modalImage.src.large2x} alt="" className="img-fluid imageModal" />
+                    )}
+                </Modal.Body>
+            </Modal>
         </div>
     );
 };

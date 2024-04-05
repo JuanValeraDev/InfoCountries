@@ -26,14 +26,9 @@ export function options(correctCountryVar) {
     return shuffleArray([...otherCountries, correctCountryVar]);
 }
 
-
-// FUNCIONES COMUNES
-
 function shuffleArray(array) {
     return array.sort(() => Math.random() - 0.5);
 };
-
-// const shuffleArray = array => array.sort(() => Math.random() - 0.5);
 
 fetchData();
 

@@ -7,20 +7,54 @@ export const Juego = () => {
 
     const [correctAnswer, setCorrectAnswer] = useState({});
     const [buttonOptions, setButtonOptions] = useState([]);
+    const [count, setCount] = useState(0);
+    const [round, setRound] = useState(1)
+    const [isSelect, setIsSelect] = useState(false);
+    const [selectedButton, setSelectedButton] = useState(null);
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
+        loadGame()
+    }, []);
+
+
+    const loadGame = () => {
         const correctAnswerResult = correctCountry();
         const buttonOptions = options(correctAnswerResult);
         setCorrectAnswer(correctAnswerResult)
         setButtonOptions(buttonOptions);
-    }, []);
+    }
 
-    console.log(correctAnswer);
+    const resetGame = () => {
+        setRound(1);
+        setCount(0);
+        setShowModal(false);
+        loadGame();
+    };
+
+    const buttonClick = (option) => {
+        setIsSelect(true);
+        setSelectedButton(option.name);
+        if (option.name === correctAnswer.name) {
+            setCount(count + 1);
+        }
+
+        setTimeout(() => {
+            setIsSelect(false);
+            loadGame()
+            setRound(round + 1)
+            if (round === 10) {
+                setShowModal(true);
+            }
+        }, 2000);
+    };
+
     return (
         <div className={"fondo fondo_juego justify-content-center "}>
             <div
                 className={"d-flex flex-column flex-lg-row justify-content-xl-around align-items-center "}>
                 <h1 className={"titulo_juego"}>¡Hora de divertirse!</h1>
+                <h2>Ronda {round}/10</h2>
 
                 <Rectangulo classNames={"z-2 mx-5 my-5"} backgroundColor={"#113946"}
                     borderColor={"#FFF2D8"}
@@ -34,9 +68,15 @@ export const Juego = () => {
                     <div className={"botonera_juego m-4 mt-md-5 d-flex flex-column flex-xl-row align-items-center"}>
                         {buttonOptions.map((option, index) => (
 
-                            <button key={index} className={" m-4 p-3 ps-5 pe-5 boton_juego"}>
+                            <button key={index} onClick={() => buttonClick(option)}
+                                className={" m-4 p-3 ps-5 pe-5 boton_juego" + (selectedButton === option.name ? (option.name === correctAnswer.name ? " respuesta_correcta" : " respuesta_incorrecta") : "")}
+                                disabled={isSelect}>
                                 {option.name}
                             </button>
+
+                            // (isSelect && option.name === correctAnswer.name ? " respuesta_correcta" : isSelect && option.name !== correctAnswer.name ? " respuesta_incorrecta" :"")} disabled={isSelect}>
+
+
 
                             // <button key={index} className={" m-4 p-3 ps-5 pe-5 boton_juego"}>
                             //     {option.capital}
@@ -45,6 +85,16 @@ export const Juego = () => {
                     </div>
                 </Rectangulo>
             </div>
+
+            {showModal && (
+                <div className="modal">
+                    <div className="modal-content">
+                        <p>Game Over!</p>
+                        <p>Your score: {count}</p>
+                        <button onClick={resetGame}>Restart</button>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }

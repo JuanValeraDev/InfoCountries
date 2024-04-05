@@ -3,27 +3,39 @@ import {Rectangulo} from "./Rectangulo.jsx";
 import {Card, Col, Row} from "react-bootstrap";
 import RectanguloBuscador from "./RectanguloBuscador.jsx";
 
-export const MyContext = React.createContext();
+export const MyContext = React.createContext({
+    handlers: {},
+    selectData: [],
+    dataSelected: {
+        "Nombre": null,
+        "Moneda": null,
+        "Idioma": null,
+        "Región": null,
+        "Subregión": null,
+        "Capital": null
+    }
+});
 
 
 export const Buscador = () => {
     const [names, setNames] = useState([]);
-    const [selectedName, setSelectedName] = useState(null);
     const [currencies, setCurrencies] = useState([]);
-    const [selectedCurrency, setSelectedCurrency] = useState(null);
     const [languages, setLanguages] = useState([]);
-    const [selectedLanguage, setSelectedLanguage] = useState(null);
     const [regions, setRegions] = useState([]);
-    const [selectedRegion, setSelectedRegion] = useState(null);
     const [subregions, setSubregions] = useState([]);
-    const [selectedSubregion, setSelectedSubregion] = useState(null);
     const [capitals, setCapitals] = useState([]);
-    const [selectedCapital, setSelectedCapital] = useState(null);
 
     const [results, setResults] = useState([]);
     const [lastFetchedName, setLastFetchedName] = useState(null);
 
-
+    const [dataSelected, setDataSelected] = useState({
+        "Nombre": null,
+        "Moneda": null,
+        "Idioma": null,
+        "Región": null,
+        "Subregión": null,
+        "Capital": null
+    });
 
     const selectData = [
         {field: 'Nombre', options: names},
@@ -43,17 +55,11 @@ export const Buscador = () => {
         "Capital": capitals
     }
 
-    const dataSelected = {
-        "Nombre": selectedName,
-        "Moneda": selectedCurrency,
-        "Idioma": selectedLanguage,
-        "Región": selectedRegion,
-        "Subregión": selectedSubregion,
-        "Capital": selectedCapital
-    }
+
 
     let filteredData = {};
     for (let [key, value] of Object.entries(dataSelected)) {
+        console.log("En filteredData, key", key, "value", value,  "dataSelected", dataSelected[key]);
         if (value !== null) {
             filteredData[key] = dataSearched[key].filter(option => option === value);
         }
@@ -61,26 +67,24 @@ export const Buscador = () => {
 
 
 
+
     const handleNameChange = (selectedOption) => {
-        setSelectedName(selectedOption);
+        setDataSelected(prevState => ({...prevState, "Nombre": selectedOption}));
     };
     const handleCurrencyChange = (selectedOption) => {
-        setSelectedCurrency(selectedOption);
+        setDataSelected(prevState => ({...prevState, "Moneda": selectedOption}));
     }
     const handleLanguageChange = (selectedOption) => {
-        setSelectedLanguage(selectedOption);
+        setDataSelected(prevState => ({...prevState, "Idioma": selectedOption}));
     }
     const handleRegionChange = (selectedOption) => {
-        setSelectedRegion(selectedOption);
+        setDataSelected(prevState => ({...prevState, "Región": selectedOption}));
     }
     const handleSubregionChange = (selectedOption) => {
-        setSelectedSubregion(selectedOption);
-
+        setDataSelected(prevState => ({...prevState, "Subregión": selectedOption}));
     }
-
     const handleCapitalChange = (selectedOption) => {
-        setSelectedCapital(selectedOption);
-
+        setDataSelected(prevState => ({...prevState, "Capital": selectedOption}));
     }
 
     const handlers = {
@@ -100,10 +104,10 @@ export const Buscador = () => {
                 const data = await response.json();
 
                 let apiUrl = "https://restcountries.com/v3.1/name/";
-                if (filteredData["Nombre"] && filteredData["Nombre"][0].value !== lastFetchedName) {
-                    apiUrl += filteredData["Nombre"][0].value;
-                    setLastFetchedName(filteredData["Nombre"][0].value);
-
+                console.log("filteredData", filteredData, "lastFetchedName", lastFetchedName);
+                if (filteredData["Nombre"] && filteredData["Nombre"] !== lastFetchedName) {
+                    apiUrl += filteredData["Nombre"];
+                    setLastFetchedName(filteredData["Nombre"]);
                 }
                 try {
                     const response = await fetch(apiUrl);
@@ -164,7 +168,7 @@ export const Buscador = () => {
         };
 
         fetchData();
-    }, [filteredData]);
+    }, []);
 
     return (
         <MyContext.Provider value={{selectData, handlers}}>

@@ -22,7 +22,7 @@ Para el modal, puedo usar react-bootstrap y hacer un componente Modal que reciba
 
 const RectanguloBuscador = () => {
 
-   const {handlers, selectData} = useContext(MyContext);
+   const {handlers, selectData, dataSelected} = useContext(MyContext);
 
     return (
         <div style={{

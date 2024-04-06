@@ -108,6 +108,27 @@
 .descripcion_juego {
     font-weight: bold;   
 }
+.buttonPopUp {
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+    background-color: transparent;
+    color: white;
+    margin-left: 20px;
+    border: 0;
+}
+
+.game_desc {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    padding: 0.8em;
+    border: 2px solid;
+    border-color: black;
+    border-radius: 20px;
+    max-width: 300px;
+}
+
 
 /* botonera */
 .boton_seleccion_nivel {

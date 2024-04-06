@@ -9,7 +9,7 @@ const fetchData = async () => {
         countries = countriesData.map(country => ({
             name: country.translations.spa.common,
             flag: country.flags.png,
-            capital: country.translations.spa.capital
+            capital: country.capital ? country.capital[0] : "Sin capital"
         }));    
     } catch (error) {
         console.error('Error con el fetch:', error);

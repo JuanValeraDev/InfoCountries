@@ -1,22 +1,11 @@
 import React, { useState, useEffect } from "react"
 import Popup from 'reactjs-popup';
 import { FaQuestionCircle } from 'react-icons/fa';
-
-// export const BotonNivel = (props) => {
-//     return (
-//         <div className="align-items-center text-center p-2">
-//             <button className="boton_seleccion_nivel">{props.name}
-//                 <Popup trigger={<button className="buttonPopUp"><FaQuestionCircle className="icono_interrogacion"/></button>}
-//                     position="right center">
-//                     <div className="game_desc">{props.desc}</div>
-//                 </Popup>
-//             </button>
-//         </div>
-//     )
-// }
+import { Navigate, useNavigate } from 'react-router-dom'
 
 export const BotonNivel = (props) => {
     const [popupPosition, setPopupPosition] = useState("right center");
+    const navigate = useNavigate()
 
     useEffect(() => {
         const handleResize = () => {
@@ -34,7 +23,7 @@ export const BotonNivel = (props) => {
 
     return (
         <div className="align-items-center text-center p-2">
-            <button className="boton_seleccion_nivel">{props.name}
+            <button className="boton_seleccion_nivel" onClick={() => navigate(props.nav)}>{props.name}
                 <Popup trigger={<button className="buttonPopUp"><FaQuestionCircle className="icono_interrogacion"/></button>}
                     position={popupPosition}>
                     <div className="game_desc">{props.desc}</div>

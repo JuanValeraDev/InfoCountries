@@ -24,19 +24,6 @@
 
 
 
-
-
-
-
-.respuesta_correcta {
-    background-color: green !important;
-}
-
-.respuesta_incorrecta {
-    background-color: rgb(128, 7, 7) !important;
-}
-
-
 .buscadores {
     z-index: 999;
 
@@ -129,7 +116,6 @@
     max-width: 300px;
 }
 
-
 /* botonera */
 .boton_seleccion_nivel {
     color: white;
@@ -140,10 +126,35 @@
     font-size: 2em;
 }
 
+/* bandera */
+
+.img_bandera {
+    border-radius: 20px;
+}
+
 
 /* generales */
 .animacionbandera {
     animation: animacionkey 8s ease-in-out infinite alternate;
+}
+
+.respuesta_correcta {
+    background-color: green !important;
+    animation: clickBotonJuego 1.2s forwards;
+}
+
+.respuesta_incorrecta {
+    background-color: rgb(128, 7, 7) !important;
+    animation: clickBotonJuego 1.2s forwards;
+}
+.boton_modal_juego {
+    background-color: #113946;
+    color: white;
+    border: solid black;
+}
+.modal_juego {
+    background-color: #FFF2D8;
+    border: 5px solid black;
 }
 
 @keyframes animacionkey {
@@ -168,15 +179,17 @@
     }
 }
 
-
-
-
-
-
-
-
-
-
+@keyframes clickBotonJuego {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 
 
 .subtitulo_juego {
@@ -186,15 +199,12 @@
 }
 
 .boton_juego {
-    background-color: #DCC295;
-    color: #113946;
-    border: thick solid #FFF2D8;
+    background-color: #4b48f3;
+    font-weight: bold;
+    color: white;
+    border: thick solid #c7c6c4;
     border-radius: 50px;
 
-}
-
-.botonera_juego {
-    flex-wrap: nowrap;
 }
 
 .fondo_juego {
@@ -204,6 +214,18 @@
     /* background-position: center; */
     /* object-position: center 45%; */
     min-width: 100vh;
+}
+
+.round_counter {
+    /* background-color: #4862f3; */
+    font-size: 2em;
+    margin-top: 10%;
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    margin-top: 5px;
 }
 
 /* ----------------- */

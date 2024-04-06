@@ -56,16 +56,12 @@ export const Buscador = () => {
     }
 
 
-
     let filteredData = {};
     for (let [key, value] of Object.entries(dataSelected)) {
-        console.log("En filteredData, key", key, "value", value,  "dataSelected", dataSelected[key]);
         if (value !== null) {
-            filteredData[key] = dataSearched[key].filter(option => option === value);
+            filteredData[key] = dataSearched[key].filter(option => option.value === value.value);
         }
     }
-
-
 
 
     const handleNameChange = (selectedOption) => {
@@ -104,18 +100,21 @@ export const Buscador = () => {
                 const data = await response.json();
 
                 let apiUrl = "https://restcountries.com/v3.1/name/";
-                console.log("filteredData", filteredData, "lastFetchedName", lastFetchedName);
+
+
                 if (filteredData["Nombre"] && filteredData["Nombre"] !== lastFetchedName) {
-                    apiUrl += filteredData["Nombre"];
+                    apiUrl += filteredData["Nombre"][0].value;
                     setLastFetchedName(filteredData["Nombre"]);
                 }
                 try {
                     const response = await fetch(apiUrl);
                     const data = await response.json();
                     setResults(data);
+                    console.log(results);
                 } catch (error) {
                     console.error("Error al obtener los países:", error);
                 }
+
                 const names = data.map(country => ({value: country.name.common, label: country.name.common}));
                 const uniqueNames = getUniqueSorted(names);
                 setNames(uniqueNames);
@@ -168,7 +167,7 @@ export const Buscador = () => {
         };
 
         fetchData();
-    }, []);
+    }, [dataSelected]);
 
     return (
         <MyContext.Provider value={{selectData, handlers}}>
@@ -192,14 +191,19 @@ export const Buscador = () => {
                                 <div className={"container"}>
                                     <Row>
                                         {Object.entries(results).map(([field, options], index) => (
-                                            <Col xs={12} sm={6} lg={4} key={index}>
-                                                <Card key={index} field={field} option={options}>
-                                                    <Card.Body>
-                                                        <Card.Title>{field}</Card.Title>
-                                                        <Card.Text>{options.label}</Card.Text>
-                                                    </Card.Body>
-                                                </Card>
-                                            </Col>
+                                            options["name"] !== undefined && (
+                                                <Col xs={12} sm={6} lg={4} key={index}>
+                                                    <Card key={index} field={field} option={options}>
+                                                        {
+                                                            options["name"] !== undefined && console.log("index,", index, "field, ", field, "options,", options["name"].common)
+                                                        }
+                                                        <Card.Body>
+                                                            <Card.Title>{options["name"].common}</Card.Title>
+                                                            <Card.Text>{options["flag"]}</Card.Text>
+                                                        </Card.Body>
+                                                    </Card>
+                                                </Col>
+                                            )
                                         ))}
                                     </Row>
                                 </div>

@@ -13,6 +13,7 @@ import {Pagenotfound} from './componentes/Pagenotfound.jsx';
 import Footer from "./componentes/Footer.jsx";
 import {useEffect} from 'react';
 import Header from './componentes/Header.jsx';
+import { SeleccionNivel } from './componentes/SeleccionNivel.jsx';
 
 function App() {
     const {pathname} = useLocation();
@@ -33,8 +34,9 @@ function App() {
                     <Route path="/busquedaAvanzada" element={<Buscador/>}/>
                     <Route path="/comparador" element={<Comparador/>}/>
                     <Route path="/galeria" element={<Galeria/>}/>
-                    <Route path="/minijuego" element={<Juego/>}/>
+                    <Route path="/minijuego" element={<SeleccionNivel/>}/>
                     <Route path="/about" element={<About/>}/>
+
                     <Route path="*" element={<Pagenotfound/>}/>
                 </Routes>
             <Footer/>

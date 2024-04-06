@@ -3,7 +3,6 @@ import { Rectangulo } from "./Rectangulo.jsx";
 import { Modal } from 'react-bootstrap'
 import { correctCountry, options } from '../utils/juego.js';
 
-
 export const Juego = () => {
 
     const [correctAnswer, setCorrectAnswer] = useState({});
@@ -62,7 +61,7 @@ export const Juego = () => {
                     textColor={"#113946"}>
                     <h1 className={"subtitulo_juego my-3 mx-5"}>Adivina la capital</h1>
 
-                    <img src={correctAnswer.flag} />
+                    <img className="animacionbandera" src={correctAnswer.flag} />
 
                     {/* <h2 className={"subtitulo_juego my-3 mx-5"}>{correctAnswer.name}</h2> */}
 
@@ -99,7 +98,6 @@ export const Juego = () => {
                     
                 </Modal.Body>
             </Modal>
-
         </div>
     )
 }

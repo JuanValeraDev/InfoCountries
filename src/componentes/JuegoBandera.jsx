@@ -3,6 +3,9 @@ import { Rectangulo } from "./Rectangulo.jsx";
 import { Modal } from 'react-bootstrap'
 import { correctCountry, options } from '../utils/juego.js';
 import { Navigate, useNavigate } from 'react-router-dom'
+import gameMusic from '../assets/audio/game.mp3';
+import correctSound from '../assets/audio/correct.mp3';
+import incorrectSound from '../assets/audio/incorrect.mp3';
 
 export const JuegoBandera = () => {
 
@@ -14,6 +17,9 @@ export const JuegoBandera = () => {
     const [selectedButton, setSelectedButton] = useState(null);
     const [showModal, setShowModal] = useState(false);
     const navigate = useNavigate()
+    const correctAudio = new Audio(correctSound);
+    const incorrectAudio = new Audio(incorrectSound);
+
 
     useEffect(() => {
         loadGame()
@@ -59,6 +65,9 @@ export const JuegoBandera = () => {
         setSelectedButton(option.name);
         if (option.name === correctAnswer.name) {
             setCount(count + 1);
+            
+        } else {
+            correctAudio.play();
         }
 
         setTimeout(() => {
@@ -71,9 +80,11 @@ export const JuegoBandera = () => {
             }
         }, 1200);
     };
-
     return (
         <div className={"fondo fondo_juego justify-content-center"}>
+            <audio loop autoPlay>
+                <source src={gameMusic} type="audio/mpeg" />
+            </audio>
             <div
                 className={"d-flex flex-column align-items-center justify-content-center"}>
                 <Rectangulo classNames={"z-2 mx-5 my-5"} backgroundColor={"#113946"}
@@ -82,7 +93,7 @@ export const JuegoBandera = () => {
                     <h1 className={"subtitulo_juego my-4 mx-5"}>Adivina la bandera</h1>
                     <div className="round_counter">Ronda {round}/10</div>
                     <img className="animacionbandera img-fluid img_bandera my-3" src={correctAnswer.flag} />
-                    
+
                     <div className={"d-flex flex-column align-items-center"}>
                         {buttonOptions.map((option, index) => (
                             <button key={index} onClick={() => buttonClick(option)}
@@ -95,16 +106,16 @@ export const JuegoBandera = () => {
                 </Rectangulo>
             </div>
             <Modal show={showModal} centered>
-                <Modal.Body  className="modal_juego">
+                <Modal.Body className="modal_juego">
                     <div className=" d-flex flex-column align-items-center">
                         <h1>¡Se acabó!</h1>
                         <h2 className="my-2">Has acertado: {count} de 10</h2>
                         <p className="text-center my-4">{finalMessage()}</p>
                         <div className="d-flex">
                             <button className="mx-2 boton_modal_juego" onClick={resetGame}>Reiniciar</button>
-                            <button className="mx-2 boton_modal_juego" onClick={()=> navigate("/minijuego")}>Salir</button>
+                            <button className="mx-2 boton_modal_juego" onClick={() => navigate("/minijuego")}>Salir</button>
                         </div>
-                        
+
                     </div>
                 </Modal.Body>
             </Modal>

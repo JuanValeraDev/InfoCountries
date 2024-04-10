@@ -134,6 +134,14 @@
 
 
 /* generales */
+.button_sound {
+    position: absolute;
+    top: 92%;
+    left: 3%;
+    font-size: 2em;
+    padding: 0;
+    background: transparent;
+}
 .animacionbandera {
     animation: animacionkey 8s ease-in-out infinite alternate;
 }

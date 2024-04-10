@@ -16,6 +16,7 @@ export const JuegoBandera = () => {
     const [isSelect, setIsSelect] = useState(false);
     const [selectedButton, setSelectedButton] = useState(null);
     const [showModal, setShowModal] = useState(false);
+    const [isMuted, setIsMuted] = useState(false);
     const navigate = useNavigate()
     const correctAudio = new Audio(correctSound);
     const incorrectAudio = new Audio(incorrectSound);
@@ -65,7 +66,7 @@ export const JuegoBandera = () => {
         setSelectedButton(option.name);
         if (option.name === correctAnswer.name) {
             setCount(count + 1);
-            
+
         } else {
             correctAudio.play();
         }
@@ -80,16 +81,25 @@ export const JuegoBandera = () => {
             }
         }, 1200);
     };
+
+    const toggleMute = () => {
+        setIsMuted(!isMuted);
+    };
+
     return (
         <div className={"fondo fondo_juego justify-content-center"}>
-            <audio loop autoPlay>
-                <source src={gameMusic} type="audio/mpeg" />
-            </audio>
-            <div
-                className={"d-flex flex-column align-items-center justify-content-center"}>
-                <Rectangulo classNames={"z-2 mx-5 my-5"} backgroundColor={"#113946"}
+            {!isMuted && (
+                <audio loop autoPlay>
+                    <source src={gameMusic} type="audio/mpeg" />
+                </audio>
+            )}
+            <div className={" d-flex flex-column align-items-center justify-content-center"}>
+                <Rectangulo classNames={"position-relative z-2 mx-5 my-5"} backgroundColor={"#113946"}
                     borderColor={"#FFF2D8"}
                     textColor={"#113946"}>
+                    <button className="button_sound" onClick={toggleMute}>
+                        {isMuted ? '🔇' : '🔊'}
+                    </button>
                     <h1 className={"subtitulo_juego my-4 mx-5"}>Adivina la bandera</h1>
                     <div className="round_counter">Ronda {round}/10</div>
                     <img className="animacionbandera img-fluid img_bandera my-3" src={correctAnswer.flag} />

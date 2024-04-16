@@ -3,9 +3,11 @@ import { Rectangulo } from "./Rectangulo.jsx";
 import { Col, Row, Modal } from "react-bootstrap";
 import Select from "react-select";
 import { countries } from '../utils/countries.js'
-import { createClient } from 'pexels'
+// import { createClient } from 'pexels'
 import { useEffect, useState } from "react";
 
+
+//    "pexels": "^1.4.0",           debafo de "esbuild": "^0.20.2",
 
 export const Galeria = () => {
 
@@ -23,19 +25,40 @@ export const Galeria = () => {
         setShowModal(true);
     };
 
-    const client = createClient(
-        "s80PZl05y2VQ3IiHUeFEZMEOKvYGaHAngMtqVi0XGkl2zxw77tcHlYln"
-    );
+
+    // const client = createClient(
+    //     "s80PZl05y2VQ3IiHUeFEZMEOKvYGaHAngMtqVi0XGkl2zxw77tcHlYln"
+    // );
+
+    // try {
+            //     if (selectedCountry) {
+            //         const response = await client.photos.search({
+            //             query: selectedCountry.label,
+            //             per_page: 6,
+            //         });
+            //         setImages(response.photos);
+            //     }
+            // } catch (error) {
+            //     console.error("Error con las imágenes de pexel:", error);
+            // }
+
+
+    const APIkey = "s80PZl05y2VQ3IiHUeFEZMEOKvYGaHAngMtqVi0XGkl2zxw77tcHlYln"
 
     useEffect(() => {
         const fetchImages = async () => {
             try {
                 if (selectedCountry) {
-                    const response = await client.photos.search({
-                        query: selectedCountry.label,
-                        per_page: 6,
-                    });
-                    setImages(response.photos);
+                    const imageRequest = await fetch(
+                        `https://api.pexels.com/v1/search?query=${selectedCountry.label}&per_page=6&page=1`,
+                        {
+                            headers: {
+                                Authorization: APIkey,
+                            },
+                        },
+                    )
+                    const imageData = await imageRequest.json();
+                    setImages(imageData.photos);
                 }
             } catch (error) {
                 console.error("Error con las imágenes de pexel:", error);

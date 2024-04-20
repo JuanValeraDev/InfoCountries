@@ -25,8 +25,17 @@ export const Buscador = () => {
     const [subregions, setSubregions] = useState([]);
     const [capitals, setCapitals] = useState([]);
 
-    const [results, setResults] = useState([]);
+    const [resultsName, setResultsName] = useState([]);
+    const [resultsCurrency, setResultsCurrency] = useState([]);
     const [lastFetchedName, setLastFetchedName] = useState(null);
+    const [lastFetchedCurrency, setLastFetchedCurrency] = useState(null);
+
+
+    let combinedResults = resultsName.map(nameResult => {
+        console.log("In combinedResults, \nresultsName", resultsName, "resultsCurrency", resultsCurrency)
+        let currencyResult = resultsCurrency.find(currencyResult => currencyResult.name.common === nameResult.name.common);
+        return {...nameResult, ...currencyResult};
+    });
 
     const [dataSelected, setDataSelected] = useState({
         "Nombre": null,
@@ -37,7 +46,7 @@ export const Buscador = () => {
         "Capital": null
     });
 
-    const selectData = [
+    const searchFieldOptions = [
         {field: 'Nombre', options: names},
         {field: 'Moneda', options: currencies},
         {field: 'Idioma', options: languages},
@@ -94,23 +103,26 @@ export const Buscador = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            try {
-
-                const response = await fetch("https://restcountries.com/v3.1/all?fields=name,currencies,languages,region,subregion,capital");
-                const data = await response.json();
-
+            async function fetchName(data) {
                 let apiUrl = "https://restcountries.com/v3.1/name/";
 
 
                 if (filteredData["Nombre"] && filteredData["Nombre"] !== lastFetchedName) {
                     apiUrl += filteredData["Nombre"][0].value;
                     setLastFetchedName(filteredData["Nombre"]);
+                    //    console.log("apiUrl", apiUrl, "lastFetchedName", lastFetchedName, "filteredData[Nombre]", filteredData["Nombre"])
                 }
                 try {
                     const response = await fetch(apiUrl);
                     const data = await response.json();
-                    setResults(data);
-                    console.log(results);
+                    if (Array.isArray(data)) {
+                        setResultsName(data);
+                    } else {
+                        console.error("Data is not an array:", data);
+                        // handle the situation appropriately, e.g., setResultsName to an empty array
+                        setResultsName([]);
+                    }
+                    //   console.log("Nombre results:", resultsName);
                 } catch (error) {
                     console.error("Error al obtener los países:", error);
                 }
@@ -118,12 +130,46 @@ export const Buscador = () => {
                 const names = data.map(country => ({value: country.name.common, label: country.name.common}));
                 const uniqueNames = getUniqueSorted(names);
                 setNames(uniqueNames);
+            }
+
+            async function fetchCurrencies(data) {
+                let apiUrl = "https://restcountries.com/v3.1/currency/";
+
+
+                if (filteredData["Moneda"] && filteredData["Moneda"] !== lastFetchedCurrency) {
+                    apiUrl += filteredData["Moneda"][0].value.toLowerCase()
+                    setLastFetchedCurrency(filteredData["Moneda"]);
+                    console.log("apiUrl", apiUrl, "lastFetchedCurrency", lastFetchedCurrency, "filteredData[Moneda]", filteredData["Moneda"])
+                }
+                try {
+                    const response = await fetch(apiUrl);
+                    const data = await response.json();
+                    if (Array.isArray(data)) {
+                        setResultsCurrency(data);
+                    } else {
+                        //  console.error("Data is not an array:", data);
+                        // handle the situation appropriately, e.g., setResultsName to an empty array
+                        setResultsCurrency([]);
+                    }
+                    // console.log("Moneda results: ", resultsCurrency);
+                } catch (error) {
+                    console.error("Error al obtener los países:", error);
+                }
+
 
                 const currencies = data.flatMap(country =>
                     Object.values(country.currencies).map(currency => ({value: currency.name, label: currency.name}))
                 );
                 const uniqueCurrencies = getUniqueSorted(currencies);
                 setCurrencies(uniqueCurrencies);
+            }
+
+            try {
+
+                const response = await fetch("https://restcountries.com/v3.1/all?fields=name,currencies,languages,region,subregion,capital");
+                const data = await response.json();
+                await fetchName(data);
+                await fetchCurrencies(data);
 
                 const languages = data.flatMap(country =>
                     Object.values(country.languages).map(language => ({value: language, label: language}))
@@ -170,7 +216,7 @@ export const Buscador = () => {
     }, [dataSelected]);
 
     return (
-        <MyContext.Provider value={{selectData, handlers}}>
+        <MyContext.Provider value={{selectData: searchFieldOptions, handlers}}>
 
             <div className={"fondo fondo_buscador pb-5 pb-lg-0 main-content"}>
                 <div className={"d-flex flex-column"}>
@@ -190,21 +236,23 @@ export const Buscador = () => {
                                 <h1 className={"m-4"}>Resultados</h1>
                                 <div className={"container"}>
                                     <Row>
-                                        {Object.entries(results).map(([field, options], index) => (
-                                            options["name"] !== undefined && (
-                                                <Col xs={12} sm={6} lg={4} key={index}>
-                                                    <Card key={index} field={field} option={options}>
+                                        {
+                                            combinedResults.map((options, index) => (
+                                                options["name"] !== undefined &&
+                                                options["currencies"] !== undefined && (
+                                                    <Col xs={12} sm={6} lg={4} key={index}>
                                                         {
-                                                            options["name"] !== undefined && console.log("index,", index, "field, ", field, "options,", options["name"].common)
+                                                            console.log("combinedResults ", combinedResults)
                                                         }
-                                                        <Card.Body>
-                                                            <Card.Title>{options["name"].common}</Card.Title>
-                                                            <Card.Text>{options["flag"]}</Card.Text>
-                                                        </Card.Body>
-                                                    </Card>
-                                                </Col>
-                                            )
-                                        ))}
+                                                        <Card key={index} option={options}>
+                                                            <Card.Body>
+                                                                <Card.Title>{options["name"].common}</Card.Title>
+                                                                <Card.Text>{options["flag"]}</Card.Text>
+                                                            </Card.Body>
+                                                        </Card>
+                                                    </Col>
+                                                )
+                                            ))}
                                     </Row>
                                 </div>
                             </Rectangulo>

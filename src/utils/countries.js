@@ -194,4 +194,11 @@ export const countries = [
     { value: 'Zambia', label: 'Zambia' },
     { value: 'Zimbabue', label: 'Zimbabue' }
   ];
-  
+
+  export const theme = [
+    { value: 'Politica', label: 'Política' },
+    { value: 'Historica', label: 'Histórica' },
+    { value: 'Gastronomica', label: 'Gastronómica' },
+    { value: 'Cultural', label: 'Cultural' },
+    { value: 'Turistica', label: 'Turística' }
+  ];

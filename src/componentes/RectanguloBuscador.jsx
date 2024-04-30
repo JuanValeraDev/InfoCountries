@@ -4,22 +4,6 @@ import Select from "react-select";
 import {countries} from '../utils/countries.js'
 import {MyContext} from "./Buscador.jsx";
 
-
-/*
-En el rectángulo del resultado puedo poner los resultados en forma de tarjetas con la imagen de la bandera del país y el nombre del país.
-Para ello, puedo hacer un fetch a la API de restcountries y obtener los nombres y las banderas de los países.
-Luego, puedo mostrar los resultados en forma de tarjetas.
-
-Para las tarjetas, puedo usar react-bootstrap y hacer un componente Card que reciba los detalles del país y los muestre.
-Cada tarjeta se puede abrir al hacer click en ella y mostrar más detalles del país en un modal.
-
-Para el modal, puedo usar react-bootstrap y hacer un componente Modal que reciba los detalles del país y los muestre.
-
-
-
-
- */
-
 const RectanguloBuscador = () => {
 
    const {handlers, selectData} = useContext(MyContext);
@@ -52,6 +36,14 @@ const RectanguloBuscador = () => {
                                         isClearable
                                         isSearchable
                                         onChange={handlers[select.field]}
+                                        styles={{
+                                            control: (provided) => ({
+                                                ...provided,
+                                                '&:hover': {
+                                                    cursor: 'pointer'
+                                                }
+                                            })
+                                        }}
                                     />
                                 </Col>
                             </Row>

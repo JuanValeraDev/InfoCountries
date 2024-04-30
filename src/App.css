@@ -95,6 +95,7 @@
 .descripcion_juego {
     font-weight: bold;
 }
+
 .buttonPopUp {
     width: fit-content;
     height: fit-content;
@@ -142,6 +143,7 @@
     padding: 0;
     background: transparent;
 }
+
 .animacionbandera {
     animation: animacionkey 8s ease-in-out infinite alternate;
 }
@@ -155,11 +157,13 @@
     background-color: rgb(128, 7, 7) !important;
     animation: clickBotonJuego 1.2s forwards;
 }
+
 .boton_modal_juego {
     background-color: #113946;
     color: white;
     border: solid black;
 }
+
 .modal_juego {
     background-color: #FFF2D8;
     border: 5px solid black;
@@ -189,15 +193,17 @@
 
 @keyframes clickBotonJuego {
     0% {
-      transform: scale(1);
+        transform: scale(1);
     }
+
     50% {
-      transform: scale(1.2);
+        transform: scale(1.2);
     }
+
     100% {
-      transform: scale(1);
+        transform: scale(1);
     }
-  }
+}
 
 
 .subtitulo_juego {
@@ -275,6 +281,29 @@
 
 .comparador_textfield {
     max-width: 200px;
+}
+
+.slick-prev::before,
+.slick-next::before {
+    color: #113946 !important;
+    size: 2em !important;
+}
+
+.slick-slide {
+    padding: 5px;
+}
+
+.slick-dots li button:before {
+    font-size: 10px !important;
+}
+
+.boton_comparar {
+    background-color: #113946;
+    border-radius: 20px;
+    border-color: white;
+    color: white;
+    border: solid 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* ----------------- */

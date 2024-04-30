@@ -15,25 +15,11 @@
     align-items: stretch;
 
 }
-/*
-@media (max-width: 1024px) {
-    .fondo {
-        min-height: 80vh !important;
-    }
-}
-*/
-
-
-.buscadores {
-    z-index: 999;
-
-}
 
 .imagenes_fullsize {
     z-index: 1000;
 }
 
-/* esto de momento lo dejo por aquí que como has hecho la galeria con posiciones, el dropdown menu se veia por detrás y las imágenes se ven raras */
 
 /* ------- COMPONENTE ABOUT ---------*/
 
@@ -295,6 +281,15 @@
 
 .slick-dots li button:before {
     font-size: 10px !important;
+}
+
+.disabled {
+    opacity: 0.5;
+}
+
+.disabled:hover {
+    cursor: default !important;
+    border-color: white !important;
 }
 
 .boton_comparar {
@@ -561,8 +556,10 @@
 }
 
 .custom-card {
-    background-color: #113946 !important; /* Cambia el color según tus necesidades */
-    color: #FDF6EA !important; /* Cambia el color del texto según tus necesidades */
+    background-color: #113946 !important;
+    /* Cambia el color según tus necesidades */
+    color: #FDF6EA !important;
+    /* Cambia el color del texto según tus necesidades */
     margin-top: 0.8rem;
     border: 2px solid #BCA37F !important;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
@@ -573,6 +570,7 @@
     transform: scale(1.05);
     cursor: pointer;
 }
+
 .custom-card .card-title {
     white-space: nowrap;
     overflow: hidden;

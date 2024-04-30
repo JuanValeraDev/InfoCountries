@@ -199,6 +199,6 @@ export const countries = [
     { value: 'Politica', label: 'Política' },
     { value: 'Historica', label: 'Histórica' },
     { value: 'Gastronomica', label: 'Gastronómica' },
-    { value: 'Cultural', label: 'Cultural' },
+    { value: 'Artística', label: 'Cultural' },
     { value: 'Turistica', label: 'Turística' }
   ];

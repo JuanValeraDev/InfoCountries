@@ -11,8 +11,10 @@ import { testText } from "../utils/temp.js";
 
 export const Comparador = () => {
 
-    const [selectedOptions, setSelectedOptions] = useState([]);
     const [result, setResult] = useState([])
+    const [firstCountry, setFirstCountry] = useState(null)
+    const [secondCountry, setSecondCountry] = useState(null)
+
 
     const settings = {
         dots: true,
@@ -27,32 +29,33 @@ export const Comparador = () => {
         setResult(testText)
     }
 
+    const handleFirstCountryChange = (selectedOption) => {
+        setFirstCountry(selectedOption);
+    };
+
+    const handleSecondCountryChange = (selectedOption) => {
+        setSecondCountry(selectedOption);
+    };
+
 
     return <div className={"fondo fondo_comparador"}>
         <div className="d-flex flex-column">
             <div className="d-flex flex-column flex-lg-row justify-content-around align-items-center mb-5">
                 <h1 className={"titulo_comparador mt-5"}>Comparador de países</h1>
                 <Col xs={7} md={5} xl={3}>
-                    <Select className="mt-5 buscador-galeria text-start buscadores"
-                        value={selectedOptions}
-                        onChange={(o) => setSelectedOptions(o)}
-                        isOptionDisabled={() => selectedOptions.length >= 3}
-                        isMulti options={countries}
-                        isClearable
-                        isSearchable
-                        placeholder={"Paises a comparar (Máximo 3 países)"} />
-                    <Select className="mt-3 buscador-galeria text-start buscadores" options={theme} isClearable isSearchable placeholder={"temática a comparar"} />
-                    <button onClick={compare} className="my-3 boton_comparar">Comparar</button>
+                    <Select className="mt-5 buscador-galeria text-start" onChange={handleFirstCountryChange} options={(secondCountry != null ? countries.filter(x => x != secondCountry) : countries)} isClearable isSearchable placeholder={"Primer país a comparar"} />
+                    <Select className="mt-3 buscador-galeria text-start" onChange={handleSecondCountryChange} options={(firstCountry != null ? countries.filter(x => x != firstCountry) : countries)} isClearable isSearchable placeholder={"Segundo país a comparar"} />
+                    <button onClick={compare} disabled={(firstCountry== null || secondCountry== null )} className={"my-3 boton_comparar" + (firstCountry == null || secondCountry == null ? " disabled" : "")}>Comparar</button>
                 </Col>
-
-
             </div>
             <div className="d-flex flex-column align-items-center">
                 <Col xs={12} sm={10} lg={5} xxl={5}>
                     {result.length > 0 && (<Slider {...settings}>
 
                         {result.map((text, index) => (
-                            <Rectangulo classNames={"my-5"}
+                            <Rectangulo 
+                                key={index}
+                                classNames={"my-5"}
                                 backgroundColor={"#113946"}
                                 borderColor={"#FDF6EA"}
                                 textColor={"#FDF6EA"}

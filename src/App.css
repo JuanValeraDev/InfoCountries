@@ -123,11 +123,12 @@
 /* generales */
 .button_sound {
     position: absolute;
-    top: 92%;
-    left: 3%;
-    font-size: 2em;
+    top: 88%;
+    left: 2%;
+    font-size: 3em;
     padding: 0;
     background: transparent;
+    color: rgb(216, 214, 214);
 }
 
 .animacionbandera {
@@ -147,7 +148,6 @@
 .boton_modal_juego {
     background-color: #113946;
     color: white;
-    border: solid black;
 }
 
 .modal_juego {

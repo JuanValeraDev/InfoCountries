@@ -1,6 +1,4 @@
 import { ChatOpenAI } from "@langchain/openai";
-import dotenv from 'dotenv';
-
 const apiKey = "no-key-retrieval"
 
 const chatModel = new ChatOpenAI({

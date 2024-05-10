@@ -6,6 +6,8 @@ import { Navigate, useNavigate } from 'react-router-dom'
 import gameMusic from '../assets/audio/game.mp3';
 import correctSound from '../assets/audio/correct.mp3';
 import incorrectSound from '../assets/audio/incorrect.mp3';
+import { MdMusicOff } from "react-icons/md";
+import { MdMusicNote } from "react-icons/md";
 
 export const JuegoBandera = () => {
 
@@ -20,7 +22,6 @@ export const JuegoBandera = () => {
     const navigate = useNavigate()
     const correctAudio = new Audio(correctSound);
     const incorrectAudio = new Audio(incorrectSound);
-
 
     useEffect(() => {
         loadGame()
@@ -66,9 +67,14 @@ export const JuegoBandera = () => {
         setSelectedButton(option.name);
         if (option.name === correctAnswer.name) {
             setCount(count + 1);
+            if (!isMuted) {
+                correctAudio.play()
+            }
 
         } else {
-            correctAudio.play();
+            if (!isMuted) {
+                incorrectAudio.play()
+            }
         }
 
         setTimeout(() => {
@@ -98,7 +104,7 @@ export const JuegoBandera = () => {
                     borderColor={"#FFF2D8"}
                     textColor={"#113946"}>
                     <button className="button_sound" onClick={toggleMute}>
-                        {isMuted ? '🔇' : '🔊'}
+                        {isMuted ? <MdMusicOff /> : <MdMusicNote />}
                     </button>
                     <h1 className={"subtitulo_juego my-4 mx-5"}>Adivina la bandera</h1>
                     <div className="round_counter">Ronda {round}/10</div>

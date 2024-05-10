@@ -70,7 +70,6 @@ export const JuegoBandera = () => {
             if (!isMuted) {
                 correctAudio.play()
             }
-
         } else {
             if (!isMuted) {
                 incorrectAudio.play()

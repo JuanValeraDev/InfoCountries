@@ -67,9 +67,13 @@ export const JuegoCapital = () => {
         setSelectedButton(option.name);
         if (option.name === correctAnswer.name) {
             setCount(count + 1);
-            incorrectAudio.play();
+            if (!isMuted) {
+                correctAudio.play()
+            }
         } else {
-            correctAudio.play();
+            if (!isMuted) {
+                incorrectAudio.play()
+            }
         }
 
         setTimeout(() => {

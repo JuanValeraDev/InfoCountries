@@ -1,16 +1,26 @@
 /* eslint-env node */
 import dotenv from 'dotenv';
-dotenv.config();
 import express from "express";
-
+import path from 'path';
 import cors from "cors";
-
 import OpenAI from "openai";
+
+dotenv.config();
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+
+// Sirve los archivos estáticos de tu aplicación (por ejemplo, CSS, JS, imágenes)
+const publicPath = path.join(__dirname, '..', 'dist');
+app.use(express.static(publicPath));
+
+// Todas las rutas no reconocidas deben redirigirse al index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(publicPath, 'index.html'));
+});
 
 const openai = new OpenAI(process.env.OPENAI_API_KEY);
 

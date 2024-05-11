@@ -28,6 +28,7 @@ export const Comparador = () => {
     const compare = async () => {
         setLoading(true);
         const answer = await compareCountries(firstCountry, secondCountry)
+        console.log("Answer: ", answer)
         setLoading(false);
         const finalResult = answer.split('\n\n')
         setResult(finalResult)

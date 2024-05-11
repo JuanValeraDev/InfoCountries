@@ -3,18 +3,25 @@
 const API_URL = process.env.NODE_ENV === 'production' ? 'https://infocountries-32ap.onrender.com' : 'http://localhost:3000';
 
 export const compareCountries = async (firstCountry, secondCountry) => {
-    const response = await fetch(`${API_URL}/compareCountries`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({firstCountry, secondCountry}),
-    });
-    const data = await response.json();
-    return data;
+    try {
+        const response = await fetch(`${API_URL}/compareCountries`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({firstCountry, secondCountry}),
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('There was a problem with the fetch operation: ', error);
+    }
 };
-
-
 /*
 Esto es pa borrarlo en verdad.
 

@@ -123,12 +123,15 @@
 /* generales */
 .button_sound {
     position: absolute;
-    top: 88%;
-    left: 2%;
+    top: 5%;
+    left: 1%;
     font-size: 3em;
     padding: 0;
     background: transparent;
-    color: rgb(216, 214, 214);
+}
+
+.button_sound:hover {
+    border-color: transparent;
 }
 
 .animacionbandera {
@@ -213,7 +216,7 @@
     background-repeat: no-repeat;
     /* background-position: center; */
     /* object-position: center 45%; */
-    min-width: 100vh;
+    /* min-width: 100vh; */
 }
 
 .round_counter {

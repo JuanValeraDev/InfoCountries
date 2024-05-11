@@ -99,12 +99,12 @@ export const JuegoCapital = () => {
             )}
             <div
                 className={"d-flex flex-column align-items-center justify-content-center"}>
-                <Rectangulo classNames={"position-relative z-2 mx-5 my-5"} backgroundColor={"#113946"}
+                <button className="button_sound" onClick={toggleMute}>
+                    {isMuted ? <MdMusicOff /> : <MdMusicNote />}
+                </button>
+                <Rectangulo classNames={"z-2 mx-5 my-5"} backgroundColor={"#113946"}
                     borderColor={"#FFF2D8"}
                     textColor={"#113946"}>
-                    <button className="button_sound" onClick={toggleMute}>
-                        {isMuted ? <MdMusicOff /> : <MdMusicNote />}
-                    </button>
                     <h1 className={"subtitulo_juego my-4 mx-5"}>Adivina la bandera</h1>
                     <div className="round_counter">Ronda {round}/10</div>
                     <h2 className={"animacionbandera subtitulo_juego my-3"}>{correctAnswer.name}</h2>

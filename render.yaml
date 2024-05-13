@@ -1,6 +1,6 @@
 services:
 - type: web
-  name: infocountries
+  name: InfoCountries
   buildCommand: npm run server
   envVars:
   - key: NODE_ENV

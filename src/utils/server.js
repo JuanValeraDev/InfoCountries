@@ -20,10 +20,7 @@ const __dirname = path.dirname(__filename);
 const publicPath = path.join(__dirname, '..', 'dist');
 app.use(express.static(publicPath));
 
-// Todas las rutas no reconocidas deben redirigirse al index.html
-app.get('*', (req, res) => {
-    res.sendFile(path.join(publicPath, 'index.html'));
-});
+
 
 const openai = new OpenAI(process.env.OPENAI_API_KEY);
 
@@ -46,6 +43,11 @@ app.post('/compareCountries', async (req, res) => {
 
 app.get('/compareCountries', async (req, res) => {
     res.json("Get request received");
+});
+
+// Todas las rutas no reconocidas deben redirigirse al index.html
+app.get('*', (req, res) => {
+    res.sendFile(path.join(publicPath, 'index.html'));
 });
 
 const port = process.env.PORT || 3000;

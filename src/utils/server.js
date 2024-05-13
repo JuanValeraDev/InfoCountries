@@ -12,7 +12,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-
 // Sirve los archivos estáticos de tu aplicación (por ejemplo, CSS, JS, imágenes)
 const publicPath = path.join(__dirname, '..', 'dist');
 app.use(express.static(publicPath));

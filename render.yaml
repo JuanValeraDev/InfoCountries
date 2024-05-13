@@ -1,8 +1,7 @@
 services:
 - type: web
   name: infocountries
-  buildCommand: npm run dev
-  staticPublishPath: ./dist
+  buildCommand: npm run server
   envVars:
   - key: NODE_ENV
     value: production

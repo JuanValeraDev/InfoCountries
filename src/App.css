@@ -52,7 +52,6 @@
     text-align: start;
     align-items: center;
     justify-content: center;
-
 }
 
 
@@ -128,6 +127,7 @@
     font-size: 3em;
     padding: 0;
     background: transparent;
+    color: black !important;
 }
 
 .button_sound:hover {
@@ -317,13 +317,13 @@
 
 @keyframes loading {
     0% {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
-  
+
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
+}
 
 /* ----------------- */
 
@@ -551,6 +551,8 @@
     margin-bottom: 1em;
     font-family: 'Patua One', serif;
     border: thick solid #BCA37F;
+    opacity: 0;
+    animation: fadeIn 1.5s 2s forwards;
 
 }
 
@@ -560,6 +562,18 @@
     border-radius: 50px;
     border: thin solid #FFF2D8;
     margin: 10px;
+    animation: fadeIn 1.5s 0.5s forwards;
+    opacity: 0
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 /* ModalStyles.css */

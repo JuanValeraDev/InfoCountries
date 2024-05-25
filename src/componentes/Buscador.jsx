@@ -155,6 +155,7 @@ export const Buscador = () => {
             setCountryDetails(data[0]);
         } catch (error) {
             console.error("Error al obtener los detalles del país:", error);
+            alert("Ha ocurrido un error con el servidor. Sentimos las molestias!")
         }
     };
 
@@ -181,6 +182,7 @@ export const Buscador = () => {
                     }
                 } catch (error) {
                     console.error("Error al obtener los países:", error);
+                    alert("Ha ocurrido un error con el servidor. Sentimos las molestias!")
                 }
 
                 const names = data.map(country => ({value: country.name.common, label: country.name.common}));
@@ -206,6 +208,7 @@ export const Buscador = () => {
                     }
                 } catch (error) {
                     console.error("Error al obtener los países:", error);
+                    alert("Ha ocurrido un error con el servidor. Sentimos las molestias!")
                 }
 
                 const currencies = data.flatMap(country =>
@@ -233,6 +236,7 @@ export const Buscador = () => {
                     }
                 } catch (error) {
                     console.error("Error al obtener los países:", error);
+                    alert("Ha ocurrido un error con el servidor. Sentimos las molestias!")
                 }
 
                 const languages = data.flatMap(country =>
@@ -260,6 +264,7 @@ export const Buscador = () => {
                     }
                 } catch (error) {
                     console.error("Error al obtener los países:", error);
+                    alert("Ha ocurrido un error con el servidor. Sentimos las molestias!")
                 }
 
                 const regions = data.flatMap(country =>
@@ -287,6 +292,7 @@ export const Buscador = () => {
                     }
                 } catch (error) {
                     console.error("Error al obtener los países:", error);
+                    alert("Ha ocurrido un error con el servidor. Sentimos las molestias!")
                 }
 
                 const subregions = data.map(country => ({value: country.subregion, label: country.subregion}));
@@ -312,6 +318,7 @@ export const Buscador = () => {
                     }
                 } catch (error) {
                     console.error("Error al obtener los países:", error);
+                    alert("Ha ocurrido un error con el servidor. Sentimos las molestias!")
                 }
 
                 const capitals = data.reduce((acc, country) => {
@@ -360,6 +367,7 @@ export const Buscador = () => {
 
             } catch (error) {
                 console.error("Error al obtener los datos:", error);
+                alert("Ha ocurrido un error con el servidor. Sentimos las molestias!")
             }
         };
 

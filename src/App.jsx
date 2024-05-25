@@ -10,7 +10,7 @@ import { useLocation } from 'react-router-dom';
 import { Routes, Route, } from "react-router-dom";
 import { Pagenotfound } from './componentes/Pagenotfound.jsx';
 import Footer from "./componentes/Footer.jsx";
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Header from './componentes/Header.jsx';
 import { SeleccionNivel } from './componentes/SeleccionNivel.jsx';
 import { JuegoBandera } from './componentes/JuegoBandera.jsx';
@@ -18,6 +18,7 @@ import { JuegoCapital } from './componentes/JuegoCapital.jsx';
 
 function App() {
     const { pathname } = useLocation();
+    const opcionesRef = useRef(null);
 
     useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
@@ -29,8 +30,11 @@ function App() {
             <Routes>
                 <Route index element={
                     <>
-                        <Introduccion />
-                        <Opciones />
+                        <Introduccion opcionesRef={opcionesRef}/>
+                        <div ref={opcionesRef}>
+                            <Opciones />
+                        </div>
+
                     </>} />
                 <Route path="/busquedaAvanzada" element={<Buscador />} />
                 <Route path="/comparador" element={<Comparador />} />

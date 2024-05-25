@@ -13,6 +13,7 @@ const fetchData = async () => {
         }));    
     } catch (error) {
         console.error('Error con el fetch:', error);
+        alert("Ha ocurrido un error con el servidor. Sentimos las molestias!")
     }
 };
 

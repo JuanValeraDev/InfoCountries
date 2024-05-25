@@ -420,6 +420,12 @@
     background: black !important;
 }
 
+.no_images {
+    font-size: 1.3em;
+    color: #113946;
+    margin: 20px;
+}
+
 
 /* ----------------- */
 

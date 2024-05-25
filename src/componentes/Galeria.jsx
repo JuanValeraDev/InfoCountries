@@ -67,19 +67,14 @@ export const Galeria = () => {
                     </Col>
                 </div>
                 <div className={"d-flex flex-column flex-xl-row align-items-center justify-content-center justify-content-lg-around"}>
-                    {images.map((image, index) => (
-                        (index % 2 === 0) && (
-                            <Col key={index} xs={9} md={7} lg={5} xl={3} className={"z-2 align-items-center p-3"}>
-                                <Rectangulo
-                                    classNames={"my-5 imagen_galeria"}
-                                    backgroundColor={"#FFF2D8"}
-                                    borderColor={"#113946"}
-                                    textColor={"#113946"}
-                                    height={{ height: "400px" }}
-                                >
-                                    <img className="imageGallery" src={images[index].src.large} onClick={() => handleImageClick(images[index])} />
-                                </Rectangulo>
-                                {images[index + 1] && (
+                    {images.length === 0 && selectedCountry ? (
+                        <div>
+                            <p className="no_images">No hay imágenes para mostrar</p>
+                        </div>
+                    ) : (
+                        images.map((image, index) => (
+                            (index % 2 === 0) && (
+                                <Col key={index} xs={9} md={7} lg={5} xl={3} className={"z-2 align-items-center p-3"}>
                                     <Rectangulo
                                         classNames={"my-5 imagen_galeria"}
                                         backgroundColor={"#FFF2D8"}
@@ -87,12 +82,23 @@ export const Galeria = () => {
                                         textColor={"#113946"}
                                         height={{ height: "400px" }}
                                     >
-                                        <img className="imageGallery" src={images[index + 1].src.large} onClick={() => handleImageClick(images[index + 1])} />
+                                        <img className="imageGallery" src={images[index].src.large} onClick={() => handleImageClick(images[index])} />
                                     </Rectangulo>
-                                )}
-                            </Col>
-                        )
-                    ))}
+                                    {images[index + 1] && (
+                                        <Rectangulo
+                                            classNames={"my-5 imagen_galeria"}
+                                            backgroundColor={"#FFF2D8"}
+                                            borderColor={"#113946"}
+                                            textColor={"#113946"}
+                                            height={{ height: "400px" }}
+                                        >
+                                            <img className="imageGallery" src={images[index + 1].src.large} onClick={() => handleImageClick(images[index + 1])} />
+                                        </Rectangulo>
+                                    )}
+                                </Col>
+                            )
+                        ))
+                    )}
                 </div>
             </div>
 

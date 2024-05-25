@@ -26,7 +26,7 @@ const openai = new OpenAI(process.env.OPENAI_API_KEY);
 
 app.post('/compareCountries', async (req, res) => {
     const {firstCountry, secondCountry} = req.body;
-    console.log(req.body)
+    // console.log(req.body)
     const messages = [
         {role: "system", content: "Eres un experto sobre de países."},
         {
@@ -34,11 +34,16 @@ app.post('/compareCountries', async (req, res) => {
             content: `Quiero que compares ${firstCountry.label} y ${secondCountry.label} en función de las siguientes temáticas: política, gastronomía, cultural y turísitca. Quiero que cada comparación me la devuelvas en un párrafo distinto de no más de 600 palabras. No escribas nada más que lo que te pido`
         }
     ];
-    const completion = await openai.chat.completions.create({
-        messages: messages,
-        model: "gpt-3.5-turbo",
-    });
-    res.json(completion.choices[0].message.content);
+    try {
+        const completion = await openai.chat.completions.create({
+            messages: messages,
+            model: "gpt-3.5-turbo",
+        });
+        res.json(completion.choices[0].message.content);
+    } catch (error) {
+        console.log("Ha ocurrido un error: ", error);
+        alert("Ha ocurrido un error con el servidor. Sentimos las molestias!")
+    }
 });
 
 app.get('/compareCountries', async (req, res) => {

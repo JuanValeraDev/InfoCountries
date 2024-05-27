@@ -18,9 +18,11 @@ const __dirname = path.dirname(__filename);
 
 // Sirve los archivos estáticos de tu aplicación (por ejemplo, CSS, JS, imágenes)
 const publicPath = path.join(__dirname, '..', 'dist');
+
+console.log("__dirname", __dirname)
+console.log("publicPath", publicPath)
+
 app.use(express.static(publicPath));
-
-
 
 const openai = new OpenAI(process.env.OPENAI_API_KEY);
 

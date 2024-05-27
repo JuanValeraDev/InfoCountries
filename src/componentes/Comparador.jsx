@@ -1,12 +1,12 @@
-import { Rectangulo } from "./Rectangulo"
-import { Col } from "react-bootstrap";
-import React, { useEffect, useState } from "react";
+import {Rectangulo} from "./Rectangulo"
+import {Col} from "react-bootstrap";
+import React, {useEffect, useState} from "react";
 import Select from 'react-select'
-import { countries, theme } from '../utils/countries.js'
+import {countries, theme} from '../utils/countries.js'
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { compareCountries } from "../utils/chatgpt.js";
+import {compareCountries} from "../utils/chatgpt.js";
 
 export const Comparador = () => {
 
@@ -29,7 +29,9 @@ export const Comparador = () => {
         setLoading(true);
         const answer = await compareCountries(firstCountry, secondCountry)
         console.log("Answer: ", answer)
+        console.log("process.env.NODE_ENV", process.env.NODE_ENV)
         setLoading(false);
+        if (answer == null) return alert("Ha ocurrido un error con el servidor. Sentimos las molestias!")
         const finalResult = answer.split('\n\n')
         setResult(finalResult)
     }
@@ -48,9 +50,15 @@ export const Comparador = () => {
             <div className="d-flex flex-column flex-lg-row justify-content-around align-items-center mb-5">
                 <h1 className={"titulo_comparador mt-5"}>Comparador de países</h1>
                 <Col xs={7} md={5} xl={3}>
-                    <Select className="mt-5 buscador-galeria text-start" onChange={handleFirstCountryChange} options={(secondCountry != null ? countries.filter(x => x != secondCountry) : countries)} isClearable isSearchable placeholder={"Primer país a comparar"} />
-                    <Select className="mt-3 buscador-galeria text-start" onChange={handleSecondCountryChange} options={(firstCountry != null ? countries.filter(x => x != firstCountry) : countries)} isClearable isSearchable placeholder={"Segundo país a comparar"} />
-                    <button onClick={compare} disabled={(firstCountry == null || secondCountry == null)} className={"my-3 boton_comparar" + (firstCountry == null || secondCountry == null ? " disabled" : "")}>Comparar</button>
+                    <Select className="mt-5 buscador-galeria text-start" onChange={handleFirstCountryChange}
+                            options={(secondCountry != null ? countries.filter(x => x != secondCountry) : countries)}
+                            isClearable isSearchable placeholder={"Primer país a comparar"}/>
+                    <Select className="mt-3 buscador-galeria text-start" onChange={handleSecondCountryChange}
+                            options={(firstCountry != null ? countries.filter(x => x != firstCountry) : countries)}
+                            isClearable isSearchable placeholder={"Segundo país a comparar"}/>
+                    <button onClick={compare} disabled={(firstCountry == null || secondCountry == null)}
+                            className={"my-3 boton_comparar" + (firstCountry == null || secondCountry == null ? " disabled" : "")}>Comparar
+                    </button>
                 </Col>
             </div>
             <div className="d-flex flex-column align-items-center">
@@ -69,8 +77,8 @@ export const Comparador = () => {
                                         backgroundColor={"#113946"}
                                         borderColor={"#FDF6EA"}
                                         textColor={"#FDF6EA"}
-                                        height={{ height: "min-content" }}
-                                        width={{ width: "auto" }}>
+                                        height={{height: "min-content"}}
+                                        width={{width: "auto"}}>
                                         <p className="p-2 p-sm-4 text-center">{text}</p>
                                     </Rectangulo>
                                 ))}

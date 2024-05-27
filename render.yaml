@@ -1,7 +1,14 @@
+routes:
+  - source_ /
+  - destination_ /index.html
 services:
 - type: web
   name: InfoCountries
   buildCommand: npm run server
+
   envVars:
   - key: NODE_ENV
     value: production
+  runtime: node
+
+

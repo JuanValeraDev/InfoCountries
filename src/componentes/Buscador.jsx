@@ -148,10 +148,8 @@ export const Buscador = () => {
     }
     const fetchCountryDetails = async (countryName) => {
         try {
-            console.log("countryName: ", countryName)
             const response = await fetch(`https://restcountries.com/v3.1/name/${countryName}`);
             const data = await response.json();
-            console.log("data[o]: ", data[0])
             setCountryDetails(data[0]);
         } catch (error) {
             console.error("Error al obtener los detalles del país:", error);

@@ -1,6 +1,6 @@
 //Cuando se ejecuta npm start NODE_ENV se establece en development, y cuando se ejecuta npm run build NODE_ENV se establece en production.
 
-const API_URL = process.env.NODE_ENV === 'production' ? 'https://infocountries-32ap.onrender.com' : 'http://localhost:3000';
+const API_URL = process.env.NODE_ENV === 'production' ? 'https://infocountrieswebservice.onrender.com' : 'http://localhost:3000';
 
 export const compareCountries = async (firstCountry, secondCountry) => {
     try {

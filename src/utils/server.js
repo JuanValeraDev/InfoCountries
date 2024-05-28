@@ -14,10 +14,11 @@ app.use(cors());
 app.use(express.json());
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.resolve(path.dirname(__filename), '..');
+const __dirname = path.resolve(path.dirname(__filename), '..', '..');
 
 const publicPath = path.join(__dirname, 'dist');
 
+console.log("__filename", __filename)
 console.log("__dirname", __dirname)
 console.log("publicPath", publicPath)
 

@@ -14,10 +14,8 @@ app.use(cors());
 app.use(express.json());
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = path.resolve(path.dirname(__filename), '..');
 
-// Sirve los archivos estáticos de tu aplicación (por ejemplo, CSS, JS, imágenes)
-//const publicPath = path.join(__dirname, '..', 'dist');
 const publicPath = path.join(__dirname, 'dist');
 
 console.log("__dirname", __dirname)

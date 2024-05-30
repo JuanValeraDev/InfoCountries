@@ -18,9 +18,6 @@ const __dirname = path.resolve(path.dirname(__filename), '..', '..');
 
 const publicPath = path.join(__dirname, 'dist');
 
-console.log("__filename", __filename)
-console.log("__dirname", __dirname)
-console.log("publicPath", publicPath)
 
 app.use(express.static(publicPath));
 

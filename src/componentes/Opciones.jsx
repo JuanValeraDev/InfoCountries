@@ -6,6 +6,7 @@ import card_options_2 from '../assets/card_options_2.jpeg'
 import card_options_3 from '../assets/card_options_3.jpeg'
 import card_options_4 from '../assets/card_options_4.jpeg'
 
+
 export const Opciones = () => {
     const textBusqueda = "Elige qué carácteristicas deseas que tenga tu país de destino y sorpréndete con la lista de oportunidades"
     const textComparador = "Compara al momento dos o más países para conocer todo lo que los diferencia y también lo que los hace iguales"

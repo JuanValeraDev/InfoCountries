@@ -105,7 +105,7 @@ export const JuegoBandera = () => {
                 <Rectangulo classNames={"z-2 mx-5 my-5 p-2"} backgroundColor={"#113946"}
                     borderColor={"#FFF2D8"}
                     textColor={"#113946"}>
-                    <h1 className={"subtitulo_juego my-4 mx-5"}>Adivina la capital</h1>
+                    <h1 className={"subtitulo_juego my-4 mx-5"}>Adivina la bandera</h1>
                     <div className="round_counter">Ronda {round}/10</div>
                     <img className="animacionbandera img-fluid img_bandera my-3" src={correctAnswer.flag} />
 

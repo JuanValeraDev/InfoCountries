@@ -40,6 +40,10 @@
     cursor: pointer;
     color: white;
 }
+.rectangulo_about_2{
+    text-align: start !important;
+    text-emphasis: #0a53be;
+}
 
 /* ----------------- */
 

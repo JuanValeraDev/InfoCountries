@@ -5,7 +5,7 @@ import {MyContext} from "./Buscador.jsx";
 
 const RectanguloBuscador = () => {
 
-   const {handlers, selectData} = useContext(MyContext);
+   const {handleDataChange, selectData} = useContext(MyContext);
 
     return (
         <div style={{
@@ -22,7 +22,7 @@ const RectanguloBuscador = () => {
         }}>
             <div className="container p-4">
                 <Row>
-                    {selectData.map((select, index) => (
+                    {selectData && selectData.map((select, index) => (
                         <Col xs={12} md={6} key={index}>
                             <Row className="mb-3">
                                 <Col xs={12} lg={4}>
@@ -34,7 +34,7 @@ const RectanguloBuscador = () => {
                                         options={select.options}
                                         isClearable
                                         isSearchable
-                                        onChange={handlers[select.field]}
+                                        onChange={(selectedOption) => handleDataChange(select.field, selectedOption)}
                                         styles={{
                                             control: (provided) => ({
                                                 ...provided,

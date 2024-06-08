@@ -1,7 +1,6 @@
 import React, {useContext, useEffect, useState} from "react";
 import {Row, Col} from "react-bootstrap";
 import Select from "react-select";
-import {countries} from '../utils/countries.js'
 import {MyContext} from "./Buscador.jsx";
 
 const RectanguloBuscador = () => {

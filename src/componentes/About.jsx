@@ -1,17 +1,11 @@
 import React from "react"
 import {Col, Row} from "react-bootstrap";
 import {Rectangulo} from "./Rectangulo.jsx";
-import shape_7 from "../assets/shapes/shape_7_modified.png";
-import {TextField} from "@mui/material";
-import Footer from "./Footer.jsx";
-
 
 export const About = () => {
     return (
         <div>
-
             <div className={"fondo fondo_about pb-5 pb-sm-0"}>
-
                 <h1 className={"titulo_about pt-5 mt-lg-5"}>Sobre nosotros</h1>
                 <Row className={"d-flex "}>
                     <Col className={"z-2"}>

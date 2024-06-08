@@ -162,7 +162,7 @@ export const Buscador = () => {
         // Función para obtener los datos de los países
         const fetchData = async () => {
             // Función para buscar por nombre
-            async function fetchByName(data) {
+            async function fetchByName() {
                 let apiUrl = "https://restcountries.com/v3.1/name/";
 
                 if (filteredData["Nombre"] && filteredData["Nombre"] !== lastSearchedName) {
@@ -183,13 +183,11 @@ export const Buscador = () => {
                     alert("Ha ocurrido un error con el servidor. Sentimos las molestias!")
                 }
 
-                const names = data.map(country => ({value: country.name.common, label: country.name.common}));
-                const uniqueNames = getUniqueSorted(names);
-                setCountryNames(uniqueNames);
+
             }
 
             // Función para buscar por moneda
-            async function fetchByCurrency(data) {
+            async function fetchByCurrency() {
                 let apiUrl = "https://restcountries.com/v3.1/currency/";
 
                 if (filteredData["Moneda"] && filteredData["Moneda"] !== lastSearchedCurrency) {
@@ -209,15 +207,11 @@ export const Buscador = () => {
                     alert("Ha ocurrido un error con el servidor. Sentimos las molestias!")
                 }
 
-                const currencies = data.flatMap(country =>
-                    Object.values(country.currencies).map(currency => ({value: currency.name, label: currency.name}))
-                );
-                const uniqueCurrencies = getUniqueSorted(currencies);
-                setCountryCurrencies(uniqueCurrencies);
+
             }
 
             // Función para buscar por idioma
-            async function fetchByLanguage(data) {
+            async function fetchByLanguage() {
                 let apiUrl = "https://restcountries.com/v3.1/lang/";
 
                 if (filteredData["Idioma"] && filteredData["Idioma"] !== lastSearchedLanguage) {
@@ -237,15 +231,11 @@ export const Buscador = () => {
                     alert("Ha ocurrido un error con el servidor. Sentimos las molestias!")
                 }
 
-                const languages = data.flatMap(country =>
-                    Object.values(country.languages).map(language => ({value: language, label: language}))
-                );
-                const uniqueLanguages = getUniqueSorted(languages);
-                setCountryLanguages(uniqueLanguages);
+
             }
 
             // Función para buscar por idioma
-            async function fetchByRegion(data) {
+            async function fetchByRegion() {
                 let apiUrl = "https://restcountries.com/v3.1/region/";
 
                 if (filteredData["Región"] && filteredData["Región"] !== lastSearchedRegion) {
@@ -265,15 +255,10 @@ export const Buscador = () => {
                     alert("Ha ocurrido un error con el servidor. Sentimos las molestias!")
                 }
 
-                const regions = data.flatMap(country =>
-                    Object.values(country.region).map(region => ({value: region, label: region}))
-                );
-                const uniqueRegions = getUniqueSorted(regions);
-                setCountryLanguages(uniqueRegions);
             }
 
 // Función para buscar por subregión
-            async function fetchBySubregion(data) {
+            async function fetchBySubregion() {
                 let apiUrl = "https://restcountries.com/v3.1/subregion/";
 
                 if (filteredData["Subregión"] && filteredData["Subregión"] !== lastSearchedSubregion) {
@@ -292,10 +277,6 @@ export const Buscador = () => {
                     console.error("Error al obtener los países:", error);
                     alert("Ha ocurrido un error con el servidor. Sentimos las molestias!")
                 }
-
-                const subregions = data.map(country => ({value: country.subregion, label: country.subregion}));
-                const uniqueSubregions = getUniqueSorted(subregions);
-                setCountrySubregions(uniqueSubregions);
             }
 
 // Función para buscar por capital
@@ -319,14 +300,6 @@ export const Buscador = () => {
                     alert("Ha ocurrido un error con el servidor. Sentimos las molestias!")
                 }
 
-                const capitals = data.reduce((acc, country) => {
-                    if (country.capital[0]) {
-                        acc.push({value: country.capital[0], label: country.capital[0]});
-                    }
-                    return acc;
-                }, []);
-                const uniqueCapitals = getUniqueSorted(capitals);
-                setCountryCapitals(uniqueCapitals);
             }
 
             try {
@@ -340,11 +313,23 @@ export const Buscador = () => {
                 await fetchBySubregion(data);
                 await fetchByCapital(data);
 
+                const names = data.map(country => ({value: country.name.common, label: country.name.common}));
+                const uniqueNames = getUniqueSorted(names);
+                setCountryNames(uniqueNames);
+
                 const languages = data.flatMap(country =>
                     Object.values(country.languages).map(language => ({value: language, label: language}))
                 );
                 const uniqueLanguages = getUniqueSorted(languages);
                 setCountryLanguages(uniqueLanguages);
+
+
+                const currencies = data.flatMap(country =>
+                    Object.values(country.currencies).map(currency => ({value: currency.name, label: currency.name}))
+                );
+                const uniqueCurrencies = getUniqueSorted(currencies);
+                setCountryCurrencies(uniqueCurrencies);
+
 
                 const regions = data.map(country => ({value: country.region, label: country.region}));
                 const uniqueRegions = getUniqueSorted(regions);

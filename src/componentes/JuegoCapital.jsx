@@ -27,9 +27,9 @@ export const JuegoCapital = () => {
         loadGame()
     }, []);
 
-    const loadGame = () => {
-        const correctAnswerResult = correctCountry();
-        const buttonOptions = options(correctAnswerResult);
+    const loadGame = async () => {
+        const correctAnswerResult = await correctCountry();
+        const buttonOptions = await options(correctAnswerResult);
         setCorrectAnswer(correctAnswerResult)
         setButtonOptions(buttonOptions);
     }

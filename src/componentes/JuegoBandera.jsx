@@ -52,7 +52,7 @@ export const JuegoBandera = () => {
             return "Has suspendido... ¡la próxima vez será! ¡Ánimo!"
         }
         if (count >= 5 && count < 7) {
-            return "¡Bien hecho! A ver si la próxima vez las aciertas todas"
+            return "¡Buen trabajo! Seguro que la próxima vez te irá mejor"
         }
         if (count >= 7 && count < 10) {
             return "¡Bien hecho! A ver si la próxima vez las aciertas todas"

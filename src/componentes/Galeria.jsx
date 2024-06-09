@@ -1,12 +1,11 @@
 import React from "react";
-import { Rectangulo } from "./Rectangulo.jsx";
-import { Col, Row, Modal } from "react-bootstrap";
+import {Rectangulo} from "./Rectangulo.jsx";
+import {Col, Modal} from "react-bootstrap";
 import Select from "react-select";
-import { countries } from '../utils/countries.js'
-import { useEffect, useState } from "react";
+import {countries} from '../utils/countries.js'
+import {useEffect, useState} from "react";
 
 export const Galeria = () => {
-
 
     const [selectedCountry, setSelectedCountry] = useState(null);
     const [images, setImages] = useState([]);
@@ -66,7 +65,8 @@ export const Galeria = () => {
                         />
                     </Col>
                 </div>
-                <div className={"d-flex flex-column flex-xl-row align-items-center justify-content-center justify-content-lg-around"}>
+                <div
+                    className={"d-flex flex-column flex-xl-row align-items-center justify-content-center justify-content-lg-around"}>
                     {images.length === 0 && selectedCountry ? (
                         <div>
                             <p className="no_images">No hay imágenes para mostrar</p>
@@ -80,9 +80,10 @@ export const Galeria = () => {
                                         backgroundColor={"#FFF2D8"}
                                         borderColor={"#113946"}
                                         textColor={"#113946"}
-                                        height={{ height: "400px" }}
+                                        height={{height: "400px"}}
                                     >
-                                        <img className="imageGallery" src={images[index].src.large} onClick={() => handleImageClick(images[index])} />
+                                        <img className="imageGallery" src={images[index].src.large}
+                                             onClick={() => handleImageClick(images[index])}/>
                                     </Rectangulo>
                                     {images[index + 1] && (
                                         <Rectangulo
@@ -90,9 +91,10 @@ export const Galeria = () => {
                                             backgroundColor={"#FFF2D8"}
                                             borderColor={"#113946"}
                                             textColor={"#113946"}
-                                            height={{ height: "400px" }}
+                                            height={{height: "400px"}}
                                         >
-                                            <img className="imageGallery" src={images[index + 1].src.large} onClick={() => handleImageClick(images[index + 1])} />
+                                            <img className="imageGallery" src={images[index + 1].src.large}
+                                                 onClick={() => handleImageClick(images[index + 1])}/>
                                         </Rectangulo>
                                     )}
                                 </Col>
@@ -105,7 +107,7 @@ export const Galeria = () => {
             <Modal show={showModal} onHide={handleModalClose} centered size="xl">
                 <Modal.Body className="modal_gallery">
                     {modalImage && (
-                        <img src={modalImage.src.large2x} alt="" className="img-fluid imageModal" />
+                        <img src={modalImage.src.large2x} alt="" className="img-fluid imageModal"/>
                     )}
                 </Modal.Body>
             </Modal>

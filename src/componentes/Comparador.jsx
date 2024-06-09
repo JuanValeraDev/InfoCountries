@@ -1,8 +1,8 @@
 import {Rectangulo} from "./Rectangulo"
 import {Col} from "react-bootstrap";
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import Select from 'react-select'
-import {countries, theme} from '../utils/countries.js'
+import {countries} from '../utils/countries.js'
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -62,11 +62,9 @@ export const Comparador = () => {
                 </Col>
             </div>
             <div className="d-flex flex-column align-items-center">
-
                 {loading ? (
                     <div id="loading" className="mt-5"></div>
                 ) : (
-
                     result.length > 0 && (
                         <Col xs={12} sm={10} lg={5} xxl={5}>
                             <Slider {...settings}>
@@ -86,7 +84,6 @@ export const Comparador = () => {
                         </Col>
                     )
                 )}
-
             </div>
         </div>
     </div>

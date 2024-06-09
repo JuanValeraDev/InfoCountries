@@ -86,9 +86,7 @@ export const About = () => {
                             </p>
                         </Rectangulo>
                     </Col>
-
                 </Row>
-
             </div>
         </div>
     )

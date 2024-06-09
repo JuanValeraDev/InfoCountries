@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react"
-import { Rectangulo } from "./Rectangulo.jsx";
-import { Modal } from 'react-bootstrap'
-import { correctCountry, options } from '../utils/juego.js';
-import { Navigate, useNavigate } from 'react-router-dom'
+import React, {useState, useEffect} from "react"
+import {Rectangulo} from "./Rectangulo.jsx";
+import {Modal} from 'react-bootstrap'
+import {correctCountry, options} from '../utils/juego.js';
+import {Navigate, useNavigate} from 'react-router-dom'
 import gameMusic from '../assets/audio/game.mp3';
 import correctSound from '../assets/audio/correct.mp3';
 import incorrectSound from '../assets/audio/incorrect.mp3';
-import { MdMusicOff } from "react-icons/md";
-import { MdMusicNote } from "react-icons/md";
+import {MdMusicOff} from "react-icons/md";
+import {MdMusicNote} from "react-icons/md";
 
 export const JuegoBandera = () => {
 
@@ -95,25 +95,25 @@ export const JuegoBandera = () => {
         <div className={"fondo fondo_juego justify-content-center"}>
             {!isMuted && (
                 <audio loop autoPlay>
-                    <source src={gameMusic} type="audio/mpeg" />
+                    <source src={gameMusic} type="audio/mpeg"/>
                 </audio>
             )}
             <div className={" d-flex flex-column align-items-center justify-content-center"}>
                 <button className="button_sound" onClick={toggleMute}>
-                    {isMuted ? <MdMusicOff /> : <MdMusicNote />}
+                    {isMuted ? <MdMusicOff/> : <MdMusicNote/>}
                 </button>
                 <Rectangulo classNames={"z-2 mx-5 my-5 p-2"} backgroundColor={"#113946"}
-                    borderColor={"#FFF2D8"}
-                    textColor={"#113946"}>
+                            borderColor={"#FFF2D8"}
+                            textColor={"#113946"}>
                     <h1 className={"subtitulo_juego my-4 mx-5"}>Adivina la bandera</h1>
                     <div className="round_counter">Ronda {round}/10</div>
-                    <img className="animacionbandera img-fluid img_bandera my-3" src={correctAnswer.flag} />
+                    <img className="animacionbandera img-fluid img_bandera my-3" src={correctAnswer.flag}/>
 
                     <div className={"d-flex flex-column align-items-center"}>
                         {buttonOptions.map((option, index) => (
                             <button key={index} onClick={() => buttonClick(option)}
-                                className={" m-4 p-3 ps-5 pe-5 boton_juego" + (selectedButton === option.name ? (option.name === correctAnswer.name ? " respuesta_correcta" : " respuesta_incorrecta") : "")}
-                                disabled={isSelect}>
+                                    className={" m-4 p-3 ps-5 pe-5 boton_juego" + (selectedButton === option.name ? (option.name === correctAnswer.name ? " respuesta_correcta" : " respuesta_incorrecta") : "")}
+                                    disabled={isSelect}>
                                 {option.name}
                             </button>
                         ))}
@@ -128,7 +128,8 @@ export const JuegoBandera = () => {
                         <p className="text-center my-4">{finalMessage()}</p>
                         <div className="d-flex">
                             <button className="mx-2 boton_modal_juego" onClick={resetGame}>Reiniciar</button>
-                            <button className="mx-2 boton_modal_juego" onClick={() => navigate("/minijuego")}>Salir</button>
+                            <button className="mx-2 boton_modal_juego" onClick={() => navigate("/minijuego")}>Salir
+                            </button>
                         </div>
                     </div>
                 </Modal.Body>

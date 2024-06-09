@@ -16,11 +16,6 @@
 
 }
 
-.imagenes_fullsize {
-    z-index: 1000;
-}
-
-
 /* ------- COMPONENTE ABOUT ---------*/
 
 
@@ -345,11 +340,6 @@
     color: #113946;
     font-family: 'Patua One', serif;
     position: relative;
-}
-
-.rectangulo_buscador_1_grande {
-    position: relative;
-    z-index: 3;
 }
 
 .rectangulo_buscador_2 {

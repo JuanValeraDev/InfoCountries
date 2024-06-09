@@ -1,4 +1,3 @@
-
 var countries = [];
 
 const fetchData = async () => {
@@ -10,7 +9,7 @@ const fetchData = async () => {
             name: country.translations.spa.common,
             flag: country.flags.png,
             capital: country.capital ? country.capital[0] : "Sin capital"
-        }));    
+        }));
     } catch (error) {
         console.error('Error con el fetch:', error);
         alert("Ha ocurrido un error con el servidor. Sentimos las molestias! (juego.js)")

@@ -5,7 +5,7 @@ import {MyContext} from "./Buscador.jsx";
 
 const RectanguloBuscador = () => {
 
-   const {handleDataChange, selectData} = useContext(MyContext);
+    const {handleDataChange, selectData} = useContext(MyContext);
 
     return (
         <div style={{

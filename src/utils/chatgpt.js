@@ -1,4 +1,3 @@
-
 const API_URL = process.env.NODE_ENV === 'production' ? 'https://infocountrieswebservice.onrender.com' : 'http://localhost:3000';
 
 export const compareCountries = async (firstCountry, secondCountry) => {

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Rectangulo } from "./Rectangulo.jsx";
 import { Modal } from 'react-bootstrap'
 import { correctCountry, options } from '../utils/juego.js';
-import { Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import gameMusic from '../assets/audio/game.mp3';
 import correctSound from '../assets/audio/correct.mp3';
 import incorrectSound from '../assets/audio/incorrect.mp3';

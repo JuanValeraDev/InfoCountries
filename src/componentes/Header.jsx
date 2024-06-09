@@ -30,7 +30,7 @@ const Header = () => {
                 <Navbar.Toggle onClick={() => setExpanded(expanded ? false : "expanded")} aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link onClick={() => setExpanded(false)} as={Link} to="/busquedaAvanzada">Búsqueda Avanzada</Nav.Link>
+                        <Nav.Link onClick={() => setExpanded(false)} as={Link} to="/busquedaAvanzada">Buscador</Nav.Link>
                         <Nav.Link onClick={() => setExpanded(false)} as={Link} to="/comparador">Comparador</Nav.Link>
                         <Nav.Link onClick={() => setExpanded(false)} as={Link} to="/galeria">Galería</Nav.Link>
                         <Nav.Link onClick={() => setExpanded(false)} as={Link} to="/minijuego">Mini Juego</Nav.Link>

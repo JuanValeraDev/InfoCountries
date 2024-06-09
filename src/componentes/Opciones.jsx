@@ -4,7 +4,7 @@ import {EstructuraOpcion} from './EstructuraOpcion'
 import card_options_1 from '../assets/card_options_1.jpeg'
 import card_options_2 from '../assets/card_options_2.jpeg'
 import card_options_3 from '../assets/card_options_3.jpeg'
-import card_options_4 from '../assets/card_options_4.jpeg'
+import card_options_4 from '../assets/images/card_options_4.jpeg'
 
 
 export const Opciones = () => {

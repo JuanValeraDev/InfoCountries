@@ -1,6 +1,5 @@
 import React from 'react'
-import videointro from '../assets/fondointro.mp4'
-import { Navigate, useNavigate } from 'react-router-dom'
+import videointro from '../assets/video/fondointro.mp4'
 import { Col } from "react-bootstrap";
 
 export const Introduccion = ({ opcionesRef }) => {
@@ -8,7 +7,6 @@ export const Introduccion = ({ opcionesRef }) => {
   const handleScroll = () => {
     if (opcionesRef && opcionesRef.current) {
       window.scrollTo({
-        // top: document.body.scrollHeight - 1000,
         top: opcionesRef.current.offsetTop,
         behavior: 'smooth'  //
       });

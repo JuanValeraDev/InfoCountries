@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useContext} from "react";
 import {Row, Col} from "react-bootstrap";
 import Select from "react-select";
 import {MyContext} from "./Buscador.jsx";

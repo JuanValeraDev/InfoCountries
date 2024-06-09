@@ -130,7 +130,6 @@ export const JuegoBandera = () => {
                             <button className="mx-2 boton_modal_juego" onClick={resetGame}>Reiniciar</button>
                             <button className="mx-2 boton_modal_juego" onClick={() => navigate("/minijuego")}>Salir</button>
                         </div>
-
                     </div>
                 </Modal.Body>
             </Modal>

@@ -2,8 +2,9 @@ import React, {useEffect, useState} from "react"
 import {Button, Card, Col, Modal, Row} from "react-bootstrap";
 import SearchRectangle from "./RectanguloBuscador.jsx";
 import {Rectangulo} from "./Rectangulo";
+import ClipLoader from "react-spinners/ClipLoader";
 
-// Contexto para compartir datos entre componentes
+
 export const MyContext = React.createContext({
     handleDataChange: () => {
     },
@@ -14,6 +15,8 @@ export const Buscador = () => {
     const [allCountries, setAllCountries] = useState([]);
     const [countryDetails, setCountryDetails] = useState(null);
     const [showModal, setShowModal] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+
     const [selectedData, setSelectedData] = useState({
         "Nombre": null,
         "Moneda": null,
@@ -30,7 +33,6 @@ export const Buscador = () => {
     const [countrySubregions, setCountrySubregions] = useState([]);
     const [countryCapitals, setCountryCapitals] = useState([]);
 
-    // Opciones para los selectores
     const searchFieldOptions = [
         {field: 'Nombre', options: countryNames},
         {field: 'Moneda', options: countryCurrencies},
@@ -41,10 +43,8 @@ export const Buscador = () => {
     ];
 
     let combinedSearchResults = Object.values(selectedData).some(value => value !== null) ? allCountries : [];
-// Iteramos sobre los campos de búsqueda seleccionados
     for (let [field, value] of Object.entries(selectedData)) {
         if (value) {
-            // Aplicamos el filtro correspondiente a los resultados combinados
             switch (field) {
                 case "Nombre":
                     combinedSearchResults = combinedSearchResults.filter(country => country.name.common === value.value);
@@ -68,12 +68,15 @@ export const Buscador = () => {
         }
     }
     const handleDataChange = (field, selectedOption) => {
+        setIsLoading(false)
         setSelectedData(prevState => ({...prevState, [field]: selectedOption}));
     };
 
     const handleCardClick = (country) => {
+        setIsLoading(true);
         fetchCountryDetails(country.name.common).then(() => {
             setShowModal(true);
+            setIsLoading(false);
         });
     };
 
@@ -88,7 +91,6 @@ export const Buscador = () => {
     };
 
 
-    // Función para obtener elementos únicos y ordenados
     const getUniqueSorted = (items) => {
         const uniqueItems = items.reduce((acc, current) => {
             const x = acc.find(item => item.label === current.label);
@@ -107,7 +109,6 @@ export const Buscador = () => {
             const response = await fetch("https://restcountries.com/v3.1/all?fields=name,currencies,languages,region,subregion,capital");
             const data = await response.json();
             setAllCountries(data)
-
 
             const names = data.map(country => ({value: country.name.common, label: country.name.common}));
             const uniqueNames = getUniqueSorted(names);
@@ -152,6 +153,26 @@ export const Buscador = () => {
     return (
         <MyContext.Provider value={{selectData: searchFieldOptions, handleDataChange: handleDataChange}}>
             <div className={"fondo fondo_buscador pb-5 pb-lg-0 main-content"}>
+                {isLoading && (
+                    <div style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        backgroundColor: 'rgba(0, 0, 0, 0.5)'
+                    }}>
+                        <ClipLoader
+                            type="Puff"
+                            color="#00BFFF"
+                            height={100}
+                            width={100}
+                        />
+                    </div>
+                )}
                 <div className={"d-flex flex-column"}>
                     <h1 className={"titulo_buscador pt-5 mt-lg-5 mb-5"}>Busca como un profesional</h1>
                     <Row className={"mb-lg-5  justify-content-center "}>
@@ -259,6 +280,7 @@ export const Buscador = () => {
                         </Col>
                     </Row>
                 </div>
+
             </div>
         </MyContext.Provider>
     )

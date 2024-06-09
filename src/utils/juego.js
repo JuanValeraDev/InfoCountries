@@ -13,16 +13,16 @@ const fetchData = async () => {
         }));    
     } catch (error) {
         console.error('Error con el fetch:', error);
-        alert("Ha ocurrido un error con el servidor. Sentimos las molestias!")
+        alert("Ha ocurrido un error con el servidor. Sentimos las molestias! (juego.js)")
     }
 };
 
-export function correctCountry() {
+export async function correctCountry() {
     const randomIndex = Math.floor(Math.random() * countries.length);
     return countries[randomIndex]
 }
 
-export function options(correctCountryVar) {
+export async function options(correctCountryVar) {
     const otherCountries = countries.filter(country => country.name !== correctCountryVar.name).sort(() => Math.random() - 0.5).slice(0, 2);
     return shuffleArray([...otherCountries, correctCountryVar]);
 }

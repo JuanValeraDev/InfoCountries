@@ -1,5 +1,5 @@
 import React from "react"
-import flagCrying from '../assets/flag_crying.png'
+import flagCrying from '../assets/images/flag_crying.png'
 
 export const Pagenotfound = () => {
     return (
